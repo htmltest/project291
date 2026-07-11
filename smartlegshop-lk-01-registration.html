@@ -53,30 +53,25 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SmartLeg" itemprop="item"><span itemprop="name">SmartLeg</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><a href="#" title="Каталог товаров" itemprop="item"><span itemprop="name">Каталог товаров</span><meta itemprop="position" content="2" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="Колготки" itemprop="item"><span itemprop="name">Колготки</span><meta itemprop="position" content="3" /></div></div></div>
-                    <div class="breadcrumbs-mobile"><a href="#"><span><svg><use xlink:href="images/sprite.svg#breadcrumbs-mobile"></use></svg></span>Каталог товаров</a></div>
+                    <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SmartLeg" itemprop="item"><span itemprop="name">SmartLeg</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="Регистрация" itemprop="item"><span itemprop="name">Регистрация</span><meta itemprop="position" content="2" /></div></div></div>
+                    <div class="breadcrumbs-mobile"><a href="#"><span><svg><use xlink:href="images/sprite.svg#breadcrumbs-mobile"></use></svg></span>SmartLeg</a></div>
 
-                    <h1>Колготки</h1>
-
-                    <!-- catalogue category -->
-                    <div class="catalogue-category">
-
-                        <!-- catalogue category item -->
-                        <a href="#" class="catalogue-category-item">
-                            <div class="catalogue-category-item-photo"><img src="files/catalogue-subcategory-01.jpg" alt=""></div>
-                            <div class="catalogue-category-item-title"><span>прозрачные<svg><use xlink:href="images/sprite.svg#btn-arrow"></use></svg></span></div>
-                        </a>
-                        <!-- catalogue category item END -->
-
-                        <!-- catalogue category item -->
-                        <a href="#" class="catalogue-category-item">
-                            <div class="catalogue-category-item-photo"><img src="files/catalogue-subcategory-02.jpg" alt=""></div>
-                            <div class="catalogue-category-item-title"><span>полупрозрачные<svg><use xlink:href="images/sprite.svg#btn-arrow"></use></svg></span></div>
-                        </a>
-                        <!-- catalogue category item END -->
-
+                    <!-- lk auth -->
+                    <div class="lk-auth">
+                        <h1>Регистрация</h1>
+                        <form action="#" method="post">
+                            <div class="form-input"><span class="form-input-label">Фамилия <em>*</em></span><input type="text" name="lastname" value="" class="required"></div>
+                            <div class="form-input"><span class="form-input-label">Имя</span><input type="text" name="firstname" value=""></div>
+                            <div class="form-input"><span class="form-input-label">Отчество</span><input type="text" name="middlename" value=""></div>
+                            <div class="form-input"><span class="form-input-label">Мобильный телефон <em>*</em></span><input type="text" name="phone" value="" class="required phoneRU"></div>
+                            <div class="form-input"><span class="form-input-label">Электронная почта <em>*</em></span><input type="text" name="email" value="" class="required email"></div>
+                            <div class="form-input"><span class="form-input-label">Пароль <em>*</em></span><input type="password" name="password" value="" class="required" id="password"><a href="#" class="form-input-password-view"><svg><use xlink:href="images/sprite.svg#password-view"></use></svg><svg><use xlink:href="images/sprite.svg#password-notview"></use></svg></a></div>
+                            <div class="form-input"><span class="form-input-label">Поовторите пароль <em>*</em></span><input type="password" name="repassword" value="" class="required" equalTo="#password"><a href="#" class="form-input-password-view"><svg><use xlink:href="images/sprite.svg#password-view"></use></svg><svg><use xlink:href="images/sprite.svg#password-notview"></use></svg></a></div>
+                            <div class="form-checkbox lk-auth-confirm"><label><input type="checkbox" name="confirm" class="required"><span>Я&nbsp;принимаю <a href="#">условия политики конфиденциальности</a> и&nbsp;<a href="#">пользовательского соглашения</a></span></label></div>
+                            <div class="form-submit"><button type="submit" class="btn">Регистрация</button></div>
+                        </form>
                     </div>
-                    <!-- catalogue list END -->
+                    <!-- lk auth END -->
 
                 </div>
                 <!-- container END -->

@@ -23,7 +23,7 @@
                 <header>
                     <div class="container">
                         <div class="header-inner">
-                            <div class="header-logo"><a href="#"><img src="images/logo.svg" alt=""><img src="images/logo-mobile.svg" alt=""></a></div>
+                            <div class="header-logo"><a href="#"><img src="images/logo.svg" alt=""></a></div>
                             <nav class="header-menu">
                                 <ul>
                                     <li><a href="#">Каталог товаров</a></li>
@@ -159,7 +159,7 @@
                     </table>
 
                     <p>Как мы&nbsp;знаем, кровь перемещается в&nbsp;теле человека по&nbsp;2&nbsp;кругам&nbsp;&mdash; малому и&nbsp;большому. Сердце, сокращаясь в&nbsp;определенном ритме, толкает ее&nbsp;по&nbsp;сосудам. Из-за гравитации кровь с&nbsp;легкостью перемещается сверху вниз, а&nbsp;вот в&nbsp;обратном направлении&nbsp;&mdash; намного сложнее.</p>
-                    
+
                     <h2>Файлы</h2>
                     <div class="docs-list">
                         <div class="docs-item">
@@ -191,6 +191,41 @@
                         </div>
                     </div>
 
+                    <h2>Форма</h2>
+                    <form action="windows/success.json" method="post" style="max-width:855px" class="window-form">
+                        <div class="message message-success">
+                            <div class="message-title">Отправлено</div>
+                            <div class="message-text">The ad&nbsp;block has been verified. Brand management, of&nbsp;course, is&nbsp;a&nbsp;heterogeneous specification of&nbsp;the placement budget. Targeted traffic changes the sociometric ad&nbsp;unit. The market situation slows down the dictatorship of&nbsp;the consumer.</div>
+                        </div>
+
+                        <div class="message message-error">
+                            <div class="message-title">Ошибка</div>
+                            <div class="message-text">The ad&nbsp;block has been verified. Brand management, of&nbsp;course, is&nbsp;a&nbsp;heterogeneous specification of&nbsp;the placement budget. Targeted traffic changes the sociometric ad&nbsp;unit. The market situation slows down the dictatorship of&nbsp;the consumer.</div>
+                        </div>
+
+                        <div class="form-input"><span class="form-input-label">Фамилия <em>*</em></span><input type="text" name="lastname" value="" class="required"></div>
+
+                        <div class="form-input"><span class="form-input-label">Имя <em>*</em></span><input type="text" name="firstname" value="" class="required"></div>
+
+                        <div class="form-input"><span class="form-input-label">Отчество</span><input type="text" name="middlename" value=""></div>
+
+                        <div class="form-input"><span class="form-input-label">Комментарии курьеру</span><textarea name="comment" rows="1" cols="1"></textarea></div>
+
+                        <h3>Цвет</h3>
+                        <div class="form-checkbox"><label><input type="checkbox" name="color1" checked><span>Цвет Rayonnante</span></label></div>
+                        <div class="form-checkbox"><label><input type="checkbox" name="color2"><span>Цвет Radieuse</span></label></div>
+                        <div class="form-checkbox"><label><input type="checkbox" name="color3"><span>Цвет Mysterieuse</span></label></div>
+                        <div class="form-checkbox"><label><input type="checkbox" name="color4"><span>Цвет Imperiale</span></label></div>
+
+                        <h3>Цвет</h3>
+                        <div class="form-radio"><label><input type="radio" name="color" value="1" checked><span>Цвет Rayonnante</span></label></div>
+                        <div class="form-radio"><label><input type="radio" name="color" value="2"><span>Цвет Radieuse</span></label></div>
+                        <div class="form-radio"><label><input type="radio" name="color" value="3"><span>Цвет Mysterieuse</span></label></div>
+                        <div class="form-radio"><label><input type="radio" name="color" value="4"><span>Цвет Imperiale</span></label></div>
+
+                        <div class="form-submit"><input type="submit" value="Отправить" class="btn"></div>
+                    </form>
+
                     <h3>Кнопки</h3>
                     <p><button class="btn">Основная</button></p>
                     <p><button class="btn btn-border btn-mini">Вторичная</button></p>
@@ -208,6 +243,12 @@
                         <div class="footer-content">
                             <div class="footer-left">
                                 <div class="footer-logo"><img src="images/footer-logo.png" alt=""></div>
+                                <div class="footer-user">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></a>
+                                </div>
+                                <div class="footer-cart">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-cart"></use></svg></a>
+                                </div>
                             </div>
 
                             <div class="footer-menu">
@@ -261,6 +302,8 @@
                     </div>
                 </div>
             </footer>
+
+            <a href="#" class="up-link"><svg><use xlink:href="images/sprite.svg#up-link"></use></svg></a>
 
         </div>
         <!-- wrapper END -->
