@@ -54,12 +54,149 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="page-404">
-                        <h1>Страница не найдена</h1>
-                        <div class="page-404-text">Это значит, что запрашиваемая вами страница была удалена,<br> перемещена или вы&nbsp;просто набрали неточный адрес</div>
-                        <div class="page-404-img-mobile"><img src="images/page-404-mobile.png" alt=""></div>
-                        <div class="page-404-btn"><a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#icon-back"></use></svg>Вернуться на главную</a></div>
+                    <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SmartLeg" itemprop="item"><span itemprop="name">SmartLeg</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="Корзина" itemprop="item"><span itemprop="name">Корзина</span><meta itemprop="position" content="2" /></div></div></div>
+                    <div class="breadcrumbs-mobile"><a href="#"><span><svg><use xlink:href="images/sprite.svg#breadcrumbs-mobile"></use></svg></span>SmartLeg</a></div>
+
+                    <h1>Корзина</h1>
+
+                    <!-- basket -->
+                    <div id="basket-root" class="bx-basket bx-blue bx-step-opacity" style="opacity: 1;">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="alert alert-warning alert-dismissable" id="basket-warning" style="display: none;">
+                                    <span class="close" data-entity="basket-items-warning-notification-close">×</span>
+                                    <div data-entity="basket-general-warnings" style="display: none;"></div>
+                                    <div data-entity="basket-item-warnings" style="display: none;">
+                                        В вашей корзине <a href="javascript:void(0)" data-entity="basket-items-warning-count"></a> требует внимания.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flexbox flexbox--row basket-items-list">
+                            <div class="basket-items-list-outer">
+                                <div class="basket-items-list-wrapper basket-items-list-wrapper-height-fixed" id="basket-items-list-wrapper">
+                                    <div class="basket-items-list-header" data-entity="basket-items-list-header" style="display: none;">
+                                        <div class="basket-items-list-header-filter no-clear-button">
+                                            <a href="javascript:void(0)" class="basket-items-list-header-filter-item active chip bg-theme-active" data-entity="basket-items-count" data-filter="all" style=""><span class="chip__label">Товары в корзине</span></a>
+                                            <a href="javascript:void(0)" class="basket-items-list-header-filter-item chip bg-theme-active" data-entity="basket-items-count" data-filter="similar" style="display: none;"></a>
+                                            <a href="javascript:void(0)" class="basket-items-list-header-filter-item chip bg-theme-active" data-entity="basket-items-count" data-filter="warning" style="display: none;"></a>
+                                            <a href="javascript:void(0)" class="basket-items-list-header-filter-item chip bg-theme-active" data-entity="basket-items-count" data-filter="delayed" style="display: none;"></a>
+                                            <a href="javascript:void(0)" class="basket-items-list-header-filter-item chip bg-theme-active" data-entity="basket-items-count" data-filter="not-available" style="display: none;"></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="basket-items-list-container bordered outer-rounded-x" id="basket-items-list-container">
+                                        <div class="basket-items-list-overlay" id="basket-items-list-overlay" style="display: none;"></div>
+                                        <div class="basket-items-list" id="basket-item-list">
+                                            <div class="basket-search-not-found" id="basket-item-list-empty-result" style="display: none;">
+                                                <div class="basket-search-not-found-icon"></div>
+                                                <div class="basket-search-not-found-text">
+                                                    По данному запросу товаров не найдено
+                                                </div>
+                                            </div>
+
+                                            <table class="basket-items-list-table height-100" id="basket-item-table">
+                                                <tbody>
+                                                    <tr class="basket-items-list-item-wrapper height-100 basket-items-list-item-container-expend js-popup-block" id="basket-item-961" data-entity="basket-item" data-id="961">
+                                                        <td class="basket-items-list-notification" colspan="5">
+                                                            <div class="basket-items-list-item-notification-inner basket-items-list-item-notification-removed" id="basket-item-height-aligner-961" style="min-height: 0px;">
+                                                                <div class="basket-items-list-item-overlay"></div>
+                                                                <div class="basket-items-list-item-removed-container">
+                                                                    <div>
+                                                                        Товар <strong>Колготки прозрачные Rayonnante</strong> был удален из корзины.
+                                                                    </div>
+                                                                    <div class="basket-items-list-item-removed-block">
+                                                                        <a href="javascript:void(0)" data-entity="basket-item-restore-button">
+                                                                            Восстановить
+                                                                        </a>
+                                                                        <span class="basket-items-list-item-clear-btn" data-entity="basket-item-close-restore-button"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="basket-total-outer">
+                                <div class="basket-total-block" data-entity="basket-total-block">
+                                    <div class="basket-checkout-container visible" data-entity="basket-checkout-aligner">
+                                        <div class="basket-checkout-section">
+                                            <div class="basket-checkout-section-inner">
+                                                <div class="basket-checkout-section-left">
+                                                    <div class="basket-checkout-block basket-checkout-total">
+                                                        <div class="basket-checkout-block-total-inner">
+                                                            <div class="basket-checkout-total-title font_24">Итого</div>
+                                                            <div class="basket-coupon-block-total-price-current font_24" data-entity="basket-total-price">
+                                                                0 ₽
+                                                            </div>
+                                                            <div class="basket-checkout-block-total-description hidden">
+                                                                Сумма НДС: 0 ₽
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="basket-checkout-block basket-checkout-total-price">
+                                                        <div class="basket-checkout-total-price-inner font_short">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="basket-coupon-section">
+                                                        <div class="basket-coupon-block-field">
+                                                            <div class="form">
+                                                                <div class="form-group" style="position: relative;">
+                                                                    <input type="text" placeholder="Есть промокод?" class="form-control" id="" data-entity="basket-coupon-input">
+                                                                    <span class="basket-coupon-block-coupon-btn">
+                                                                        <i class="svg inline  svg-inline-coupon" aria-hidden="true">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10">
+                                                                                <defs>
+                                                                                    <style>
+                                                                                        .cls-1 {
+                                                                                            fill: #333;
+                                                                                            fill-rule: evenodd;
+                                                                                        }
+                                                                                    </style>
+                                                                                </defs>
+                                                                                <path id="Rounded_Rectangle_934_copy_3" data-name="Rounded Rectangle 934 copy 3" class="cls-1" d="M654.7,381.707l-3.991,3.985a1,1,0,0,1-1.41-1.414L651.576,382H640a1,1,0,0,1,0-2h11.589l-2.3-2.31a1,1,0,0,1,1.41-1.414l3.991,4.017A1,1,0,0,1,654.7,381.707Z" transform="translate(-639 -376)"></path>
+                                                                            </svg>
+                                                                        </i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="basket-coupon-alert-section">
+                                                        <div class="basket-coupon-alert-inner ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="basket-checkout-section-right">
+                                                    <div class="basket-checkout-block basket-checkout-btn checkout-order">
+                                                        <button class="btn btn-elg btn-default basket-btn-checkout disabled" data-entity="basket-checkout-button">
+                                                            Перейти к оформлению
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="basket-total-block__clear">
+                                        <div class="delete_all colored_theme_hover_text remove_all_basket font_14 link-opacity-color base-to-title-hover">
+                                            Очистить корзину
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- basket END -->
 
                     <!-- catalogue others -->
                     <div class="catalogue-others">

@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>SmartLeg</title>
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="js/select2/select2.css">
+        <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css">
+        <link rel="stylesheet" href="js/nouislider/nouislider.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width">
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+
+            <!-- wrapper inner -->
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="container">
+                        <div class="header-inner">
+                            <div class="header-logo"><a href="#"><img src="images/logo.svg" alt=""></a></div>
+                            <nav class="header-menu">
+                                <ul>
+                                    <li><a href="#">Каталог товаров</a></li>
+                                    <li><a href="#">Подобрать размер</a></li>
+                                    <li><a href="#">Почему SMARTLEG</a></li>
+                                    <li><a href="#">Контакты</a></li>
+                                </ul>
+                            </nav>
+                            <div class="header-right">
+                                <div class="header-search">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-search"></use></svg><span>поиск</span></a>
+                                </div>
+                                <div class="header-user">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg><span>Войти</span></a>
+                                </div>
+                                <div class="header-cart">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-cart"></use></svg><em>2</em><span>корзина</span></a>
+                                </div>
+                                <div class="mobile-menu-link">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#mobile-menu-link"></use></svg></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- container -->
+                <div class="container">
+
+                    <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SmartLeg" itemprop="item"><span itemprop="name">SmartLeg</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="Корзина" itemprop="item"><span itemprop="name">Корзина</span><meta itemprop="position" content="2" /></div></div></div>
+                    <div class="breadcrumbs-mobile"><a href="#"><span><svg><use xlink:href="images/sprite.svg#breadcrumbs-mobile"></use></svg></span>SmartLeg</a></div>
+
+                    <h1>Корзина</h1>
+
+                    <!-- basket -->
+                    <div id="basket-root" class="bx-basket bx-blue bx-step-opacity" style="opacity: 1;">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="alert alert-warning alert-dismissable" id="basket-warning" style="display: none;">
+                                    <span class="close" data-entity="basket-items-warning-notification-close">×</span>
+                                    <div data-entity="basket-general-warnings" style="display: none;"></div>
+                                    <div data-entity="basket-item-warnings" style="display: none;">
+                                        В вашей корзине <a href="javascript:void(0)" data-entity="basket-items-warning-count"></a> требует внимания.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flexbox flexbox--row basket-items-list">
+                            <div class="basket-items-list-outer">
+                                <div class="basket-items-list-wrapper basket-items-list-wrapper-height-fixed" id="basket-items-list-wrapper">
+                                    <div class="basket-items-list-header" data-entity="basket-items-list-header" style="display: none;">
+                                        <div class="basket-items-list-header-filter no-clear-button">
+                                            <a href="javascript:void(0)" class="basket-items-list-header-filter-item active chip bg-theme-active" data-entity="basket-items-count" data-filter="all" style=""><span class="chip__label">Товары в корзине</span></a>
+                                            <a href="javascript:void(0)" class="basket-items-list-header-filter-item chip bg-theme-active" data-entity="basket-items-count" data-filter="similar" style="display: none;"></a>
+                                            <a href="javascript:void(0)" class="basket-items-list-header-filter-item chip bg-theme-active" data-entity="basket-items-count" data-filter="warning" style="display: none;"></a>
+                                            <a href="javascript:void(0)" class="basket-items-list-header-filter-item chip bg-theme-active" data-entity="basket-items-count" data-filter="delayed" style="display: none;"></a>
+                                            <a href="javascript:void(0)" class="basket-items-list-header-filter-item chip bg-theme-active" data-entity="basket-items-count" data-filter="not-available" style="display: none;"></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="basket-items-list-container bordered outer-rounded-x" id="basket-items-list-container">
+                                        <div class="basket-items-list-overlay" id="basket-items-list-overlay" style="display: none;"></div>
+                                        <div class="basket-items-list" id="basket-item-list">
+                                            <div class="basket-search-not-found" id="basket-item-list-empty-result" style="display: none;">
+                                                <div class="basket-search-not-found-icon"></div>
+                                                <div class="basket-search-not-found-text">
+                                                    По данному запросу товаров не найдено
+                                                </div>
+                                            </div>
+
+                                            <table class="basket-items-list-table height-100" id="basket-item-table">
+                                                <tbody>
+                                                    <tr class="basket-items-list-item-wrapper height-100 js-popup-block" id="basket-item-961" data-entity="basket-item" data-id="961">
+                                                        <td class="basket-items-list-item-picture">
+                                                            <div class="basket-item-block-image">
+                                                                <a href="#" class="basket-item-image-link">
+                                                                    <img class="basket-item-image js-popup-image" alt="Колготки прозрачные" src="files/catalogue-category-02.jpg">
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-961">
+                                                            <div class="basket-item-block-info">
+                                                                <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                                                                <div class="stickers-basket sticker sticker--static mb mb--8 print-hide">
+                                                                    <div class="stickers-basket--item sticker__item sticker__item--novinka font_12 ">
+                                                                        Новинка
+                                                                    </div>
+                                                                </div>
+                                                                <div class="basket-item-info-title">
+                                                                    <h2 class="basket-item-info-name">
+                                                                        <a href="#" class="basket-item-info-name-link">
+                                                                            <span class="js-popup-title" data-entity="basket-item-name">Колготки прозрачные</span>
+                                                                        </a>
+                                                                    </h2>
+                                                                </div>
+                                                                <div class="basket-item-block-properties">
+                                                                    <div class="basket-item-property basket-item-property-scu-image" data-entity="basket-item-sku-block">
+                                                                        <div class="basket-item-property-name">Цвет</div>
+                                                                        <div class="basket-item-property-value">
+                                                                            <ul class="basket-item-scu-list">
+                                                                                <li class="basket-item-scu-item selected" title="Rayonnante" data-entity="basket-item-sku-field" data-initial="true" data-value-id="Rayonnante" data-sku-name="Rayonnante" data-property="COLOR_REF">
+                                                                                    <span class="basket-item-scu-item-inner" style="background-image: url(files/catalogue-color-01.svg);"></span>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="basket-item-property basket-item-property-scu-text" data-entity="basket-item-sku-block">
+                                                                        <div class="basket-item-property-name">Размер</div>
+                                                                        <div class="basket-item-property-value">
+                                                                            <ul class="basket-item-scu-list">
+                                                                                <li class="basket-item-scu-item selected" title="OneSize" data-entity="basket-item-sku-field" data-initial="true" data-value-id="T1+" data-sku-name="T1+" data-property="SIZES">
+                                                                                    <span class="basket-item-scu-item-inner">T1+</span>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="basket-items-list-item-amount-outer">
+                                                            <div class="basket-item-amount" data-entity="basket-item-quantity-block">
+                                                                <span class="basket-item-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                                                                <div class="basket-item-amount-filed-block">
+                                                                    <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-961">
+                                                                </div>
+                                                                <span class="basket-item-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                                                            </div>
+                                                            <div class="basket-items-list-item-price basket-items-list-item-price-for-one hidden-xs1">
+                                                                <div class="basket-item-price">
+                                                                    <div class="basket-item-price-current">
+                                                                        <span class="basket-item-price-current-text" id="basket-item-price-961">
+                                                                            12&nbsp;000 ₽/<div class="basket-item-amount-field-description">шт</div>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="basket-items-list-item-price">
+                                                            <div class="flexbox height-100">
+                                                                <div class="basket-items-list-item-price-action-wrap flexbox flexbox--row flexbox--align-start gap gap--32">
+                                                                    <div class="basket-item-price flex-1">
+                                                                        <div class="basket-item-price-current">
+                                                                            <div class="basket-item-price-current-value" id="basket-item-sum-price-961">
+                                                                                12&nbsp;000 ₽
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="basket-item-block-actions line-block line-block--column line-block--gap line-block--gap-20">
+                                                                        <div class="basket-items-list-item-removes line-block__item">
+                                                                            <span class="basket-item-actions-remove fill-dark-light-block" data-entity="basket-item-delete"><i class="svg inline remove wrapper inline " aria-hidden="true"><svg width="18" height="18"><use xlink:href="/bitrix/templates/aspro-premier/images/svg/header_icons.svg?1761038895#remove"></use></svg></i></span>
+                                                                        </div>
+                                                                        <div class="basket-items-list-item-favorite line-block__item" data-item="{&quot;IBLOCK_ID&quot;:14,&quot;ID&quot;:2364,&quot;NAME&quot;:&quot;\u041f\u043e\u043d\u0447\u043e \u0441 \u043f\u0435\u043b\u0435\u0440\u0438\u043d\u043e\u0439&quot;,&quot;DETAIL_PAGE_URL&quot;:null,&quot;PREVIEW_PICTURE&quot;:null,&quot;DETAIL_PICTURE&quot;:null,&quot;PROPERTY_FILTER_PRICE_VALUE&quot;:null,&quot;PROPERTY_PRICE_VALUE&quot;:null,&quot;PROPERTY_PRICEOLD_VALUE&quot;:null,&quot;PROPERTY_PRICE_CURRENCY_VALUE&quot;:null,&quot;PROPERTY_ARTICLE_VALUE&quot;:null,&quot;PROPERTY_STATUS_VALUE&quot;:null}">
+                                                                            <div class="item-action item-action--horizontal item-action--favorite ">
+                                                                                <button type="button" class="btn--no-btn-appearance item-action__inner item-action__inner--sm item-action__inner--sm-to-600 js-item-action" data-action="favorite" data-id="2364" title="В избранное" data-title="В избранное" data-title_added="В избранном" data-notice="1">
+                                                                                    <i class="svg inline  svg-inline- item-action__wrapper" aria-hidden="true">
+                                                                                        <!--?xml version="1.0" standalone="no"?-->
+                                                                                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="57.000000pt" height="57.000000pt" viewBox="0 0 57.000000 57.000000" preserveAspectRatio="xMidYMid meet">
+                                                                                            <g transform="translate(0.000000,57.000000) scale(0.100000,-0.100000)" fill="#6C645C" stroke="none">
+                                                                                            <path d="M110 509 c-14 -6 -36 -20 -48 -32 -58 -53 -67 -123 -27 -203 29 -59
+                                                                                            75 -104 174 -172 l74 -51 86 59 c130 87 190 167 191 253 0 70 -57 140 -125
+                                                                                            153 -44 8 -72 1 -118 -30 -21 -14 -39 -21 -42 -15 -11 17 -84 49 -112 48 -15
+                                                                                            0 -39 -5 -53 -10z M97 -20 c15 -5 40 -21 54 -35 l25 -24 24 25 c52 55 139 53
+                                                                                            194 -4 54 -56 41 -149 -32 -233 -40 -45 -179 -141 -195 -135 -35 15 -160 112
+                                                                                            -190 149 -65 80 -73 169 -18 222 42 40 91 53 138 35z"></path>
+                                                                                            </g>
+                                                                                        </svg>
+                                                                                    </i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr class="basket-items-list-item-wrapper height-100 js-popup-block" id="basket-item-962" data-entity="basket-item" data-id="962">
+                                                        <td class="basket-items-list-item-picture">
+                                                            <div class="basket-item-block-image">
+                                                                <a href="#" class="basket-item-image-link">
+                                                                    <img class="basket-item-image js-popup-image" alt="Колготки прозрачные" src="files/catalogue-category-03.jpg">
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-962">
+                                                            <div class="basket-item-block-info">
+                                                                <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                                                                <div class="stickers-basket sticker sticker--static mb mb--8 print-hide">
+                                                                    <div class="stickers-basket--item sticker__item sticker__item--novinka font_12 ">
+                                                                        Новинка
+                                                                    </div>
+                                                                </div>
+                                                                <div class="basket-item-info-title">
+                                                                    <h2 class="basket-item-info-name">
+                                                                        <a href="#" class="basket-item-info-name-link">
+                                                                            <span class="js-popup-title" data-entity="basket-item-name">Колготки прозрачные</span>
+                                                                        </a>
+                                                                    </h2>
+                                                                </div>
+                                                                <div class="basket-item-block-properties">
+                                                                    <div class="basket-item-property basket-item-property-scu-image" data-entity="basket-item-sku-block">
+                                                                        <div class="basket-item-property-name">Цвет</div>
+                                                                        <div class="basket-item-property-value">
+                                                                            <ul class="basket-item-scu-list">
+                                                                                <li class="basket-item-scu-item selected" title="Rayonnante" data-entity="basket-item-sku-field" data-initial="true" data-value-id="Rayonnante" data-sku-name="Rayonnante" data-property="COLOR_REF">
+                                                                                    <span class="basket-item-scu-item-inner" style="background-image: url(files/catalogue-color-01.svg);"></span>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="basket-item-property basket-item-property-scu-text" data-entity="basket-item-sku-block">
+                                                                        <div class="basket-item-property-name">Размер</div>
+                                                                        <div class="basket-item-property-value">
+                                                                            <ul class="basket-item-scu-list">
+                                                                                <li class="basket-item-scu-item selected" title="OneSize" data-entity="basket-item-sku-field" data-initial="true" data-value-id="T1+" data-sku-name="T1+" data-property="SIZES">
+                                                                                    <span class="basket-item-scu-item-inner">T1+</span>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="basket-items-list-item-amount-outer">
+                                                            <div class="basket-item-amount" data-entity="basket-item-quantity-block">
+                                                                <span class="basket-item-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                                                                <div class="basket-item-amount-filed-block">
+                                                                    <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-962">
+                                                                </div>
+                                                                <span class="basket-item-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                                                            </div>
+                                                            <div class="basket-items-list-item-price basket-items-list-item-price-for-one hidden-xs1">
+                                                                <div class="basket-item-price">
+                                                                    <div class="basket-item-price-current">
+                                                                        <span class="basket-item-price-current-text" id="basket-item-price-962">
+                                                                            12&nbsp;000 ₽/<div class="basket-item-amount-field-description">шт</div>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="basket-items-list-item-price">
+                                                            <div class="flexbox height-100">
+                                                                <div class="basket-items-list-item-price-action-wrap flexbox flexbox--row flexbox--align-start gap gap--32">
+                                                                    <div class="basket-item-price flex-1">
+                                                                        <div class="basket-item-price-current">
+                                                                            <div class="basket-item-price-current-value" id="basket-item-sum-price-962">
+                                                                                12&nbsp;000 ₽
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="basket-item-block-actions line-block line-block--column line-block--gap line-block--gap-20">
+                                                                        <div class="basket-items-list-item-removes line-block__item">
+                                                                            <span class="basket-item-actions-remove fill-dark-light-block" data-entity="basket-item-delete"><i class="svg inline remove wrapper inline " aria-hidden="true"><svg width="18" height="18"><use xlink:href="/bitrix/templates/aspro-premier/images/svg/header_icons.svg?1761038895#remove"></use></svg></i></span>
+                                                                        </div>
+                                                                        <div class="basket-items-list-item-favorite line-block__item" data-item="{&quot;IBLOCK_ID&quot;:14,&quot;ID&quot;:2364,&quot;NAME&quot;:&quot;\u041f\u043e\u043d\u0447\u043e \u0441 \u043f\u0435\u043b\u0435\u0440\u0438\u043d\u043e\u0439&quot;,&quot;DETAIL_PAGE_URL&quot;:null,&quot;PREVIEW_PICTURE&quot;:null,&quot;DETAIL_PICTURE&quot;:null,&quot;PROPERTY_FILTER_PRICE_VALUE&quot;:null,&quot;PROPERTY_PRICE_VALUE&quot;:null,&quot;PROPERTY_PRICEOLD_VALUE&quot;:null,&quot;PROPERTY_PRICE_CURRENCY_VALUE&quot;:null,&quot;PROPERTY_ARTICLE_VALUE&quot;:null,&quot;PROPERTY_STATUS_VALUE&quot;:null}">
+                                                                            <div class="item-action item-action--horizontal item-action--favorite ">
+                                                                                <button type="button" class="btn--no-btn-appearance item-action__inner item-action__inner--sm item-action__inner--sm-to-600 js-item-action" data-action="favorite" data-id="2364" title="В избранное" data-title="В избранное" data-title_added="В избранном" data-notice="1">
+                                                                                    <i class="svg inline  svg-inline- item-action__wrapper" aria-hidden="true">
+                                                                                        <!--?xml version="1.0" standalone="no"?-->
+                                                                                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="57.000000pt" height="57.000000pt" viewBox="0 0 57.000000 57.000000" preserveAspectRatio="xMidYMid meet">
+                                                                                            <g transform="translate(0.000000,57.000000) scale(0.100000,-0.100000)" fill="#6C645C" stroke="none">
+                                                                                            <path d="M110 509 c-14 -6 -36 -20 -48 -32 -58 -53 -67 -123 -27 -203 29 -59
+                                                                                            75 -104 174 -172 l74 -51 86 59 c130 87 190 167 191 253 0 70 -57 140 -125
+                                                                                            153 -44 8 -72 1 -118 -30 -21 -14 -39 -21 -42 -15 -11 17 -84 49 -112 48 -15
+                                                                                            0 -39 -5 -53 -10z M97 -20 c15 -5 40 -21 54 -35 l25 -24 24 25 c52 55 139 53
+                                                                                            194 -4 54 -56 41 -149 -32 -233 -40 -45 -179 -141 -195 -135 -35 15 -160 112
+                                                                                            -190 149 -65 80 -73 169 -18 222 42 40 91 53 138 35z"></path>
+                                                                                            </g>
+                                                                                        </svg>
+                                                                                    </i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr class="basket-items-list-item-wrapper height-100 js-popup-block" id="basket-item-963" data-entity="basket-item" data-id="963">
+                                                        <td class="basket-items-list-item-picture">
+                                                            <div class="basket-item-block-image">
+                                                                <a href="#" class="basket-item-image-link">
+                                                                    <img class="basket-item-image js-popup-image" alt="Колготки прозрачные" src="files/catalogue-category-01.jpg">
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-963">
+                                                            <div class="basket-item-block-info">
+                                                                <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                                                                <div class="stickers-basket sticker sticker--static mb mb--8 print-hide">
+                                                                    <div class="stickers-basket--item sticker__item sticker__item--novinka font_12 ">
+                                                                        Новинка
+                                                                    </div>
+                                                                </div>
+                                                                <div class="basket-item-info-title">
+                                                                    <h2 class="basket-item-info-name">
+                                                                        <a href="#" class="basket-item-info-name-link">
+                                                                            <span class="js-popup-title" data-entity="basket-item-name">Колготки прозрачные</span>
+                                                                        </a>
+                                                                    </h2>
+                                                                </div>
+                                                                <div class="basket-item-block-properties">
+                                                                    <div class="basket-item-property basket-item-property-scu-image" data-entity="basket-item-sku-block">
+                                                                        <div class="basket-item-property-name">Цвет</div>
+                                                                        <div class="basket-item-property-value">
+                                                                            <ul class="basket-item-scu-list">
+                                                                                <li class="basket-item-scu-item selected" title="Rayonnante" data-entity="basket-item-sku-field" data-initial="true" data-value-id="Rayonnante" data-sku-name="Rayonnante" data-property="COLOR_REF">
+                                                                                    <span class="basket-item-scu-item-inner" style="background-image: url(files/catalogue-color-01.svg);"></span>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="basket-item-property basket-item-property-scu-text" data-entity="basket-item-sku-block">
+                                                                        <div class="basket-item-property-name">Размер</div>
+                                                                        <div class="basket-item-property-value">
+                                                                            <ul class="basket-item-scu-list">
+                                                                                <li class="basket-item-scu-item selected" title="OneSize" data-entity="basket-item-sku-field" data-initial="true" data-value-id="T1+" data-sku-name="T1+" data-property="SIZES">
+                                                                                    <span class="basket-item-scu-item-inner">T1+</span>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="basket-items-list-item-amount-outer">
+                                                            <div class="basket-item-amount" data-entity="basket-item-quantity-block">
+                                                                <span class="basket-item-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                                                                <div class="basket-item-amount-filed-block">
+                                                                    <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-961">
+                                                                </div>
+                                                                <span class="basket-item-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                                                            </div>
+                                                            <div class="basket-items-list-item-price basket-items-list-item-price-for-one hidden-xs1">
+                                                                <div class="basket-item-price">
+                                                                    <div class="basket-item-price-current">
+                                                                        <span class="basket-item-price-current-text" id="basket-item-price-963">
+                                                                            12&nbsp;000 ₽/<div class="basket-item-amount-field-description">шт</div>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="basket-items-list-item-price">
+                                                            <div class="flexbox height-100">
+                                                                <div class="basket-items-list-item-price-action-wrap flexbox flexbox--row flexbox--align-start gap gap--32">
+                                                                    <div class="basket-item-price flex-1">
+                                                                        <div class="basket-item-price-current">
+                                                                            <div class="basket-item-price-current-value" id="basket-item-sum-price-963">
+                                                                                12&nbsp;000 ₽
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="basket-item-block-actions line-block line-block--column line-block--gap line-block--gap-20">
+                                                                        <div class="basket-items-list-item-removes line-block__item">
+                                                                            <span class="basket-item-actions-remove fill-dark-light-block" data-entity="basket-item-delete"><i class="svg inline remove wrapper inline " aria-hidden="true"><svg width="18" height="18"><use xlink:href="/bitrix/templates/aspro-premier/images/svg/header_icons.svg?1761038895#remove"></use></svg></i></span>
+                                                                        </div>
+                                                                        <div class="basket-items-list-item-favorite line-block__item" data-item="{&quot;IBLOCK_ID&quot;:14,&quot;ID&quot;:2364,&quot;NAME&quot;:&quot;\u041f\u043e\u043d\u0447\u043e \u0441 \u043f\u0435\u043b\u0435\u0440\u0438\u043d\u043e\u0439&quot;,&quot;DETAIL_PAGE_URL&quot;:null,&quot;PREVIEW_PICTURE&quot;:null,&quot;DETAIL_PICTURE&quot;:null,&quot;PROPERTY_FILTER_PRICE_VALUE&quot;:null,&quot;PROPERTY_PRICE_VALUE&quot;:null,&quot;PROPERTY_PRICEOLD_VALUE&quot;:null,&quot;PROPERTY_PRICE_CURRENCY_VALUE&quot;:null,&quot;PROPERTY_ARTICLE_VALUE&quot;:null,&quot;PROPERTY_STATUS_VALUE&quot;:null}">
+                                                                            <div class="item-action item-action--horizontal item-action--favorite ">
+                                                                                <button type="button" class="btn--no-btn-appearance item-action__inner item-action__inner--sm item-action__inner--sm-to-600 js-item-action" data-action="favorite" data-id="2364" title="В избранное" data-title="В избранное" data-title_added="В избранном" data-notice="1">
+                                                                                    <i class="svg inline  svg-inline- item-action__wrapper" aria-hidden="true">
+                                                                                        <!--?xml version="1.0" standalone="no"?-->
+                                                                                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="57.000000pt" height="57.000000pt" viewBox="0 0 57.000000 57.000000" preserveAspectRatio="xMidYMid meet">
+                                                                                            <g transform="translate(0.000000,57.000000) scale(0.100000,-0.100000)" fill="#6C645C" stroke="none">
+                                                                                            <path d="M110 509 c-14 -6 -36 -20 -48 -32 -58 -53 -67 -123 -27 -203 29 -59
+                                                                                            75 -104 174 -172 l74 -51 86 59 c130 87 190 167 191 253 0 70 -57 140 -125
+                                                                                            153 -44 8 -72 1 -118 -30 -21 -14 -39 -21 -42 -15 -11 17 -84 49 -112 48 -15
+                                                                                            0 -39 -5 -53 -10z M97 -20 c15 -5 40 -21 54 -35 l25 -24 24 25 c52 55 139 53
+                                                                                            194 -4 54 -56 41 -149 -32 -233 -40 -45 -179 -141 -195 -135 -35 15 -160 112
+                                                                                            -190 149 -65 80 -73 169 -18 222 42 40 91 53 138 35z"></path>
+                                                                                            </g>
+                                                                                        </svg>
+                                                                                    </i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="basket-total-outer">
+                                <div class="basket-total-block" data-entity="basket-total-block">
+                                    <div class="basket-checkout-container visible" data-entity="basket-checkout-aligner">
+                                        <div class="basket-checkout-section">
+                                            <div class="basket-checkout-section-inner">
+                                                <div class="basket-checkout-section-left">
+                                                    <div class="basket-checkout-block basket-checkout-total">
+                                                        <div class="basket-checkout-block-total-inner">
+                                                            <div class="basket-checkout-total-title font_24">Итого</div>
+                                                            <div class="basket-coupon-block-total-price-current font_24" data-entity="basket-total-price">
+                                                                12&nbsp;000 ₽
+                                                            </div>
+                                                            <div class="basket-checkout-block-total-description hidden">
+                                                                Сумма НДС: 0 ₽
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="basket-checkout-block basket-checkout-total-price">
+                                                        <div class="basket-checkout-total-price-inner font_short">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="basket-coupon-section">
+                                                        <div class="basket-coupon-block-field">
+                                                            <div class="form">
+                                                                <div class="form-group" style="position: relative;">
+                                                                    <input type="text" placeholder="Есть промокод?" class="form-control" id="" data-entity="basket-coupon-input">
+                                                                    <span class="basket-coupon-block-coupon-btn">
+                                                                        <i class="svg inline  svg-inline-coupon" aria-hidden="true">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10">
+                                                                                <defs>
+                                                                                    <style>
+                                                                                        .cls-1 {
+                                                                                            fill: #333;
+                                                                                            fill-rule: evenodd;
+                                                                                        }
+                                                                                    </style>
+                                                                                </defs>
+                                                                                <path id="Rounded_Rectangle_934_copy_3" data-name="Rounded Rectangle 934 copy 3" class="cls-1" d="M654.7,381.707l-3.991,3.985a1,1,0,0,1-1.41-1.414L651.576,382H640a1,1,0,0,1,0-2h11.589l-2.3-2.31a1,1,0,0,1,1.41-1.414l3.991,4.017A1,1,0,0,1,654.7,381.707Z" transform="translate(-639 -376)"></path>
+                                                                            </svg>
+                                                                        </i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="basket-coupon-alert-section">
+                                                        <div class="basket-coupon-alert-inner ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="basket-checkout-section-right">
+                                                    <div class="basket-checkout-block basket-checkout-btn checkout-order">
+                                                        <button class="btn btn-elg btn-default basket-btn-checkout" data-entity="basket-checkout-button">
+                                                            Перейти к оформлению
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="basket-total-block__clear">
+                                        <div class="delete_all colored_theme_hover_text remove_all_basket font_14 link-opacity-color base-to-title-hover">
+                                            Очистить корзину
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- basket END -->
+
+                    <!-- catalogue others -->
+                    <div class="catalogue-others">
+                        <h3>Рекомендуем так же</h3>
+                        <div class="catalogue-others-catalogue">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+
+                                        <!-- catalogue list -->
+                                        <div class="catalogue-list">
+
+                                            <!-- catalogue item -->
+                                            <div class="catalogue-item">
+                                                <a href="#" class="catalogue-item-inner">
+                                                    <div class="catalogue-item-preview">
+                                                        <div class="catalogue-item-preview-slides">
+                                                            <div class="catalogue-item-preview-slide"><img src="files/catalogue-03.jpg" alt=""></div>
+                                                            <div class="catalogue-item-preview-slide"><img src="files/catalogue-02.jpg" alt=""></div>
+                                                            <div class="catalogue-item-preview-slide"><img src="files/catalogue-01.jpg" alt=""></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="catalogue-item-content">
+                                                        <div class="catalogue-item-info">
+                                                            <div class="catalogue-item-title">Колготки прозрачные</div>
+                                                            <div class="catalogue-item-color">
+                                                                <div class="catalogue-item-color-eng">Rayonnante</div>
+                                                                <div class="catalogue-item-color-img"><img src="files/catalogue-color-01.svg" alt=""></div>
+                                                                <div class="catalogue-item-color-rus">Сияющий бежевый</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="catalogue-item-buy">
+                                                            <div class="catalogue-item-price">12 000 ₽</div>
+                                                            <div class="catalogue-item-cart"><svg><use xlink:href="images/sprite.svg#icon-cart-add"></use></svg></div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- catalogue item END -->
+
+                                            <!-- catalogue item -->
+                                            <div class="catalogue-item">
+                                                <a href="#" class="catalogue-item-inner">
+                                                    <div class="catalogue-item-preview">
+                                                        <div class="catalogue-item-preview-slides">
+                                                            <div class="catalogue-item-preview-slide"><img src="files/catalogue-02.jpg" alt=""></div>
+                                                            <div class="catalogue-item-preview-slide"><img src="files/catalogue-01.jpg" alt=""></div>
+                                                            <div class="catalogue-item-preview-slide"><img src="files/catalogue-03.jpg" alt=""></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="catalogue-item-content">
+                                                        <div class="catalogue-item-info">
+                                                            <div class="catalogue-item-title">Колготки прозрачные</div>
+                                                            <div class="catalogue-item-color">
+                                                                <div class="catalogue-item-color-eng">Rayonnante</div>
+                                                                <div class="catalogue-item-color-img"><img src="files/catalogue-color-01.svg" alt=""></div>
+                                                                <div class="catalogue-item-color-rus">Сияющий бежевый</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="catalogue-item-buy">
+                                                            <div class="catalogue-item-price">12 000 ₽</div>
+                                                            <div class="catalogue-item-cart"><svg><use xlink:href="images/sprite.svg#icon-cart-add"></use></svg></div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- catalogue item END -->
+
+                                            <!-- catalogue item -->
+                                            <div class="catalogue-item">
+                                                <a href="#" class="catalogue-item-inner">
+                                                    <div class="catalogue-item-preview">
+                                                        <div class="catalogue-item-preview-slides">
+                                                            <div class="catalogue-item-preview-slide"><img src="files/catalogue-01.jpg" alt=""></div>
+                                                            <div class="catalogue-item-preview-slide"><img src="files/catalogue-02.jpg" alt=""></div>
+                                                            <div class="catalogue-item-preview-slide"><img src="files/catalogue-03.jpg" alt=""></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="catalogue-item-content">
+                                                        <div class="catalogue-item-info">
+                                                            <div class="catalogue-item-title">Колготки прозрачные</div>
+                                                            <div class="catalogue-item-color">
+                                                                <div class="catalogue-item-color-eng">Rayonnante</div>
+                                                                <div class="catalogue-item-color-img"><img src="files/catalogue-color-01.svg" alt=""></div>
+                                                                <div class="catalogue-item-color-rus">Сияющий бежевый</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="catalogue-item-buy">
+                                                            <div class="catalogue-item-price">12 000 ₽</div>
+                                                            <div class="catalogue-item-cart"><svg><use xlink:href="images/sprite.svg#icon-cart-add"></use></svg></div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- catalogue item END -->
+
+                                            <!-- catalogue item -->
+                                            <div class="catalogue-item">
+                                                <a href="#" class="catalogue-item-inner">
+                                                    <div class="catalogue-item-preview">
+                                                        <div class="catalogue-item-preview-slides">
+                                                            <div class="catalogue-item-preview-slide"><img src="files/catalogue-04.jpg" alt=""></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="catalogue-item-content">
+                                                        <div class="catalogue-item-info">
+                                                            <div class="catalogue-item-title">Колготки прозрачные</div>
+                                                            <div class="catalogue-item-color">
+                                                                <div class="catalogue-item-color-eng">Rayonnante</div>
+                                                                <div class="catalogue-item-color-img"><img src="files/catalogue-color-01.svg" alt=""></div>
+                                                                <div class="catalogue-item-color-rus">Сияющий бежевый</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="catalogue-item-buy">
+                                                            <div class="catalogue-item-price">12 000 ₽</div>
+                                                            <div class="catalogue-item-cart"><svg><use xlink:href="images/sprite.svg#icon-cart-add"></use></svg></div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- catalogue item END -->
+
+                                        </div>
+                                        <!-- catalogue list END -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- catalogue others END -->
+
+                </div>
+                <!-- container END -->
+
+            </div>
+            <!-- wrapper inner END -->
+
+            <footer>
+                <div class="container">
+                    <div class="footer-container">
+                        <div class="footer-content">
+                            <div class="footer-left">
+                                <div class="footer-logo"><img src="images/footer-logo.png" alt=""></div>
+                                <div class="footer-user">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></a>
+                                </div>
+                                <div class="footer-cart">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-cart"></use></svg></a>
+                                </div>
+                            </div>
+
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="#">Каталог товаров</a></li>
+                                    <li><a href="#">Подобрать размер</a></li>
+                                    <li><a href="#">Почему SMARTLEG</a></li>
+                                    <li><a href="#">Возврат и обмен</a></li>
+                                    <li><a href="#">Контакты</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="footer-right">
+                                <div class="footer-consult">
+                                    <div class="footer-consult-title">Консультация и&nbsp;заказ продукции Smartleg&reg; для&nbsp;медицинских работников:</div>
+                                    <div class="footer-consult-phone"><a href="tel:+74956400458">+7 (495) 640-04-58</a></div>
+                                </div>
+
+                                <div class="footer-quality">
+                                    <div class="footer-quality-title">Для&nbsp;вопросов по&nbsp;качеству и&nbsp;использованию продукции Smartleg&reg;:</div>
+                                    <div class="footer-quality-email"><a href="mailto:smartlegclub@innothera.com">smartlegclub@innothera.com</a></div>
+                                </div>
+
+                                <div class="footer-social">
+                                    <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-fb"></use></svg></a>
+                                    <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-yt"></use></svg></a>
+                                    <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-inst"></use></svg></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer-disclamer">Имеются противопоказания. Перед применением ознакомьтесь с&nbsp;инструкцией</div>
+
+                        <div class="footer-links">
+                            <div class="footer-link"><a href="#">Карта сайта</a></div>
+                            <div class="footer-link"><a href="#">Условия использования сайта</a></div>
+                            <div class="footer-link"><a href="#">Политика в&nbsp;отношении персональных данных</a></div>
+                        </div>
+
+                        <div class="footer-sep"></div>
+
+                        <div class="footer-info">
+                            <p>Владельцем сайта smartlegclub.&nbsp;ru&nbsp;является ООО &laquo;ИННОТЕК&raquo;, которое полностью отвечает за&nbsp;его содержимое. Сайт ориентирован на&nbsp;физических и&nbsp;юридических лиц из&nbsp;России. Номера рег. удостоверений: Трикотаж медицинский компрессионный SMARTLEG&reg; РУ &#8470; РЗН 2020/9894 от&nbsp;07&nbsp;апреля 2020&nbsp;г</p>
+                            <p>Информация, размещенная на&nbsp;сайте, носит справочный характер и&nbsp;не&nbsp;может считаться консультацией медицинского работника или заменить&nbsp;ее. Для получения более подробной информации мы&nbsp;рекомендуем вам обратиться к&nbsp;специалисту. Последнее обновление: 11.11.2020&nbsp;г.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-cookie">
+                    <div class="container">
+                        На&nbsp;этом сайте используются файлы cookie. Продолжая просмотр сайта, Вы&nbsp;разрешаете их&nbsp;использование.
+                    </div>
+                </div>
+            </footer>
+
+            <a href="#" class="up-link"><svg><use xlink:href="images/sprite.svg#up-link"></use></svg></a>
+
+        </div>
+        <!-- wrapper END -->
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/fileupload/jquery.ui.widget.js"></script>
+        <script src="js/fileupload/jquery.iframe-transport.js"></script>
+        <script src="js/fileupload/jquery.fileupload.js"></script>
+        <script src="js/fileupload/jquery.fileupload-ui.js"></script>
+        <script src="js/swiper/swiper-bundle.min.js"></script>
+        <script src="js/nouislider/nouislider.min.js"></script>
+        <script src="js/nouislider/wNumb.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>

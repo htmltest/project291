@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css">
+        <link rel="stylesheet" href="js/nouislider/nouislider.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width">
@@ -58,6 +59,149 @@
 
                     <h1>Каталог продукции</h1>
 
+                    <!-- catalogue filter -->
+                    <div class="catalogue-filter">
+                        <form action="#" method="post">
+                            <div class="catalogue-filter-params">
+
+                                <div class="catalogue-filter-param">
+                                    <div class="catalogue-filter-param-title">
+                                        <div class="catalogue-filter-param-title-text">Прозрачность</div>
+                                        <div class="catalogue-filter-param-title-count"></div>
+                                        <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                        <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                    </div>
+                                    <div class="catalogue-filter-param-content">
+                                        <div class="catalogue-filter-param-list">
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="opacity[0]"><span>Прозрачные</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="opacity[1]"><span>Полупрозрачные</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="opacity[2]"><span>Непрозрачные</span></label></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="catalogue-filter-param">
+                                    <div class="catalogue-filter-param-title">
+                                        <div class="catalogue-filter-param-title-text">Цвет</div>
+                                        <div class="catalogue-filter-param-title-count"></div>
+                                        <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                        <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                    </div>
+                                    <div class="catalogue-filter-param-content">
+                                        <div class="catalogue-filter-param-list">
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Radieuse]"><span><img src="files/catalogue-color-03.svg" alt="">Radieuse (Светлый телесный)</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Rayonnante]"><span><img src="files/catalogue-color-01.svg" alt="">Rayonnante (Сияющий бежевый)</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Irresistible]"><span><img src="files/catalogue-color-02.svg" alt="">Irresistible (Неотразимый чёрный)</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Mysterieuse]"><span><img src="files/catalogue-color-04.svg" alt="">Mysterieuse (Мистический чёрный)</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Imperiale]"><span><img src="files/catalogue-color-05.svg" alt="">Imperiale (Королевский голубой)</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Audacieuse]"><span><img src="files/catalogue-color-06.svg" alt="">Audacieuse (Дерзкий бордо)</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Delicieuse]"><span><img src="files/catalogue-color-07.svg" alt="">Delicieuse (Вкусная карамель)</span></label></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="catalogue-filter-param">
+                                    <div class="catalogue-filter-param-title">
+                                        <div class="catalogue-filter-param-title-text">Длина</div>
+                                        <div class="catalogue-filter-param-title-count"></div>
+                                        <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                        <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                    </div>
+                                    <div class="catalogue-filter-param-content">
+                                        <div class="catalogue-filter-param-list">
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="length[Short]"><span>Short</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="length[Normal]"><span>Normal</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="length[Long]"><span>Long</span></label></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="catalogue-filter-param">
+                                    <div class="catalogue-filter-param-title">
+                                        <div class="catalogue-filter-param-title-text">Размер</div>
+                                        <div class="catalogue-filter-param-title-count"></div>
+                                        <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                        <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                    </div>
+                                    <div class="catalogue-filter-param-content">
+                                        <div class="catalogue-filter-param-list">
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T0]"><span>T0</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T1]"><span>T1</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T1+]"><span>T1+</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T2]"><span>T2</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T2+]"><span>T2+</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T3]"><span>T3</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T3+]"><span>T3+</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T4]"><span>T4</span></label></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="catalogue-filter-param">
+                                    <div class="catalogue-filter-param-title">
+                                        <div class="catalogue-filter-param-title-text">Цена</div>
+                                        <div class="catalogue-filter-param-title-count"></div>
+                                        <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                        <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                    </div>
+                                    <div class="catalogue-filter-param-content">
+                                        <div class="catalogue-filter-slider">
+                                            <div class="form-slider">
+                                                <div class="form-slider-hints">
+                                                    <div class="form-slider-hints-item form-slider-hints-from"><span></span> ₽</div>
+                                                    <div class="form-slider-hints-item form-slider-hints-to"><span></span> ₽</div>
+                                                </div>
+                                                <input type="hidden" name="priceFrom" value="1000" class="form-slider-from">
+                                                <input type="hidden" name="priceTo" value="20000" class="form-slider-to">
+                                                <div class="form-slider-range">
+                                                    <div class="form-slider-range-inner"></div>
+                                                </div>
+                                                <div class="form-slider-params">
+                                                    <div class="form-slider-min">1000</div>
+                                                    <div class="form-slider-max">20000</div>
+                                                    <div class="form-slider-step">1</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="catalogue-filter-param">
+                                    <div class="catalogue-filter-param-title">
+                                        <div class="catalogue-filter-param-title-text">Наличие</div>
+                                        <div class="catalogue-filter-param-title-count"></div>
+                                        <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                        <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                    </div>
+                                    <div class="catalogue-filter-param-content">
+                                        <div class="catalogue-filter-param-list">
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="availability[yes]"><span>В наличии</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="availability[preorder]"><span>Под заказ</span></label></div>
+                                            <div class="catalogue-filter-param-item"><label><input type="checkbox" name="availability[no]"><span>Нет в наличии</span></label></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="catalogue-filter-params-count">В наличие (<span>50</span>)</div>
+
+                                <div class="catalogue-filter-params-clear">Сбросить все<svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                            </div>
+
+                            <div class="catalogue-sort">
+                                <div class="catalogue-sort-select">
+                                    <div class="catalogue-sort-current"><span>По популярности</span><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                    <div class="catalogue-sort-list">
+                                        <div class="catalogue-sort-item active" data-value="popular">По популярности</div>
+                                        <div class="catalogue-sort-item" data-value="priceup">По возрастанию цены</div>
+                                        <div class="catalogue-sort-item" data-value="pricedown">По убыванию цены</div>
+                                        <div class="catalogue-sort-item" data-value="name">По названию</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- catalogue filter END -->
+
                     <!-- catalogue list -->
                     <div class="catalogue-list">
 
@@ -101,7 +245,7 @@
                                 </div>
                                 <div class="catalogue-item-content">
                                     <div class="catalogue-item-info">
-                                        <div class="catalogue-item-title">Колготки прозрачные</div>
+                                        <div class="catalogue-item-title">Колготки прозрачные Колготки прозрачные Колготки прозрачные Колготки прозрачные Колготки прозрачные</div>
                                         <div class="catalogue-item-color">
                                             <div class="catalogue-item-color-eng">Rayonnante</div>
                                             <div class="catalogue-item-color-img"><img src="files/catalogue-color-01.svg" alt=""></div>
@@ -288,14 +432,30 @@
 
                     <div class="catalogue-more"><a href="#" class="btn btn-mini btn-border-light">показать еще</a></div>
 
-                    <div class="pager">
-                        <a href="#" class="pager-prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#" class="active">3</a>
-                        <span>...</span>
-                        <a href="#">12</a>
-                        <a href="#" class="pager-next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                    <div class="catalogue-paging">
+                        <div class="pager">
+                            <a href="#" class="pager-prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#" class="active">3</a>
+                            <span>...</span>
+                            <a href="#">12</a>
+                            <a href="#" class="pager-next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                        </div>
+
+                        <div class="page-size">
+                            <div class="page-size-title">Показать:</div>
+                            <div class="page-size-select">
+                                <div class="page-size-current">по<span>9</span><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                <div class="page-size-list">
+                                    <div class="page-size-item">6</div>
+                                    <div class="page-size-item active">9</div>
+                                    <div class="page-size-item">12</div>
+                                    <div class="page-size-item">16</div>
+                                    <div class="page-size-item">20</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -391,6 +551,8 @@
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/fileupload/jquery.fileupload-ui.js"></script>
         <script src="js/swiper/swiper-bundle.min.js"></script>
+        <script src="js/nouislider/nouislider.min.js"></script>
+        <script src="js/nouislider/wNumb.js"></script>
         <script src="js/tools.js"></script>
 
     </body>
