@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>SmartLeg</title>
 
+        <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css">
@@ -99,126 +100,145 @@
                     <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SmartLeg" itemprop="item"><span itemprop="name">SmartLeg</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="История заказов" itemprop="item"><span itemprop="name">История заказов</span><meta itemprop="position" content="2" /></div></div></div>
                     <div class="breadcrumbs-mobile"><a href="#"><span><svg><use xlink:href="images/sprite.svg#breadcrumbs-mobile"></use></svg></span>SmartLeg</a></div>
 
-                    <h1>История заказов</h1>
+                    <!-- lk container -->
+                    <div class="lk-container">
 
-                    <div class="lk-history-ctrl">
-                        <div class="lk-history-filter">
-                            <a href="#" class="btn btn-mini btn-border lk-history-filter-link">Фильтр</a>
+                        <div class="lk-menu">
+                            <ul>
+                                <li><a href="#">Мой кабинет</a></li>
+                                <li class="active"><a href="#">Личные данные</a></li>
+                                <li><a href="#">Заказы</a></li>
+                                <li><a href="#">История заказов</a></li>
+                                <li><a href="#">Выйти</a></li>
+                            </ul>
                         </div>
-                        <div class="lk-history-actions">
-                            <div class="lk-history-search">
-                                <a href="#" class="btn btn-mini btn-border-light lk-history-search-link"><svg><use xlink:href="images/sprite.svg#icon-search"></use></svg><span>поиск</span></a>
+
+                        <div class="lk-content">
+                            <h1>История заказов</h1>
+
+                            <div class="lk-history-ctrl">
+                                <div class="lk-history-filter">
+                                    <a href="#" class="btn btn-mini btn-border lk-history-filter-link">Фильтр</a>
+                                </div>
+                                <div class="lk-history-actions">
+                                    <div class="lk-history-search">
+                                        <a href="#" class="btn btn-mini btn-border-light lk-history-search-link"><svg><use xlink:href="images/sprite.svg#icon-search"></use></svg><span>поиск</span></a>
+                                    </div>
+                                    <a href="#" class="btn btn-mini btn-border-light lk-history-download-link"><svg><use xlink:href="images/sprite.svg#icon-download"></use></svg><span>выгрузить</span></a>
+                                    <a href="#" class="btn btn-mini btn-border-light lk-history-print-link"><svg><use xlink:href="images/sprite.svg#icon-print"></use></svg><span>Распечатать</span></a>
+                                </div>
                             </div>
-                            <a href="#" class="btn btn-mini btn-border-light lk-history-download-link"><svg><use xlink:href="images/sprite.svg#icon-download"></use></svg><span>выгрузить</span></a>
-                            <a href="#" class="btn btn-mini btn-border-light lk-history-print-link"><svg><use xlink:href="images/sprite.svg#icon-print"></use></svg><span>Распечатать</span></a>
+
+                            <!-- lk history list -->
+                            <div class="lk-history-list">
+
+                                <!-- lk history item -->
+                                <div class="lk-history-item">
+                                    <div class="lk-history-item-info">
+                                        <div class="lk-history-item-header">
+                                            <div class="lk-history-item-title"><a href="#">Заказ №3210144</a></div>
+                                            <div class="lk-history-item-date">от 19.08.2023, 18:52</div>
+                                            <div class="lk-history-item-status">
+                                                <span class="lk-history-item-status-paid">оплачен</span>
+                                                <span class="lk-history-item-status-delivery">Ожидает доставки</span>
+                                            </div>
+                                        </div>
+                                        <div class="lk-history-item-detail">
+                                            <div class="lk-history-item-detail-row">
+                                                <div class="lk-history-item-detail-label">Оплата:</div>
+                                                <div class="lk-history-item-detail-value">3 товара на сумму 36 000 ₽, Ю-касаса, онлайн</div>
+                                            </div>
+                                            <div class="lk-history-item-detail-row">
+                                                <div class="lk-history-item-detail-label">Доставка:</div>
+                                                <div class="lk-history-item-detail-value">Деловые линии, 660 ₽</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="lk-history-item-ctrl">
+                                        <a href="#" class="btn">Повторить заказ</a>
+                                        <a href="#">Отменить заказ</a>
+                                    </div>
+                                </div>
+                                <!-- lk history item END -->
+
+                                <!-- lk history item -->
+                                <div class="lk-history-item">
+                                    <div class="lk-history-item-info">
+                                        <div class="lk-history-item-header">
+                                            <div class="lk-history-item-title"><a href="#">Заказ №3210144</a></div>
+                                            <div class="lk-history-item-date">от 19.08.2023, 18:52</div>
+                                            <div class="lk-history-item-status">
+                                                <span class="lk-history-item-status-paid">оплачен</span>
+                                                <span class="lk-history-item-status-delivered">получен</span>
+                                            </div>
+                                        </div>
+                                        <div class="lk-history-item-detail">
+                                            <div class="lk-history-item-detail-row">
+                                                <div class="lk-history-item-detail-label">Оплата:</div>
+                                                <div class="lk-history-item-detail-value">27 товаров на сумму 1 368 000 ₽, Наличными при получении</div>
+                                            </div>
+                                            <div class="lk-history-item-detail-row">
+                                                <div class="lk-history-item-detail-label">Доставка:</div>
+                                                <div class="lk-history-item-detail-value">Деловые линии, 660 ₽</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="lk-history-item-ctrl">
+                                        <a href="#" class="btn">Повторить заказ</a>
+                                        <a href="#">Отменить заказ</a>
+                                    </div>
+                                </div>
+                                <!-- lk history item END -->
+
+                                <!-- lk history item -->
+                                <div class="lk-history-item">
+                                    <div class="lk-history-item-info">
+                                        <div class="lk-history-item-header">
+                                            <div class="lk-history-item-title"><a href="#">Заказ №3210144</a></div>
+                                            <div class="lk-history-item-date">от 19.08.2023, 18:52</div>
+                                            <div class="lk-history-item-status">
+                                                <span class="lk-history-item-status-paid">оплачен</span>
+                                                <span class="lk-history-item-status-delivery">Ожидает доставки</span>
+                                            </div>
+                                        </div>
+                                        <div class="lk-history-item-detail">
+                                            <div class="lk-history-item-detail-row">
+                                                <div class="lk-history-item-detail-label">Оплата:</div>
+                                                <div class="lk-history-item-detail-value">3 товара на сумму 36 000 ₽, Ю-касаса, онлайн</div>
+                                            </div>
+                                            <div class="lk-history-item-detail-row">
+                                                <div class="lk-history-item-detail-label">Доставка:</div>
+                                                <div class="lk-history-item-detail-value">Деловые линии, 660 ₽</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="lk-history-item-ctrl">
+                                        <a href="#" class="btn">Повторить заказ</a>
+                                        <a href="#">Отменить заказ</a>
+                                    </div>
+                                </div>
+                                <!-- lk history item END -->
+
+                            </div>
+                            <!-- lk history list END -->
+
+                            <div class="pager">
+                                <a href="#" class="pager-prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
+                                <a href="#">1</a>
+                                <a href="#">2</a>
+                                <a href="#" class="active">3</a>
+                                <span>...</span>
+                                <a href="#">12</a>
+                                <a href="#" class="pager-next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                            </div>
+
                         </div>
+
                     </div>
-
-                    <!-- lk history list -->
-                    <div class="lk-history-list">
-
-                        <!-- lk history item -->
-                        <div class="lk-history-item">
-                            <div class="lk-history-item-info">
-                                <div class="lk-history-item-header">
-                                    <div class="lk-history-item-title"><a href="#">Заказ №3210144</a></div>
-                                    <div class="lk-history-item-date">от 19.08.2023, 18:52</div>
-                                    <div class="lk-history-item-status">
-                                        <span class="lk-history-item-status-paid">оплачен</span>
-                                        <span class="lk-history-item-status-delivery">Ожидает доставки</span>
-                                    </div>
-                                </div>
-                                <div class="lk-history-item-detail">
-                                    <div class="lk-history-item-detail-row">
-                                        <div class="lk-history-item-detail-label">Оплата:</div>
-                                        <div class="lk-history-item-detail-value">3 товара на сумму 36 000 ₽, Ю-касаса, онлайн</div>
-                                    </div>
-                                    <div class="lk-history-item-detail-row">
-                                        <div class="lk-history-item-detail-label">Доставка:</div>
-                                        <div class="lk-history-item-detail-value">Деловые линии, 660 ₽</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="lk-history-item-ctrl">
-                                <a href="#" class="btn">Повторить заказ</a>
-                                <a href="#">Отменить заказ</a>
-                            </div>
-                        </div>
-                        <!-- lk history item END -->
-
-                        <!-- lk history item -->
-                        <div class="lk-history-item">
-                            <div class="lk-history-item-info">
-                                <div class="lk-history-item-header">
-                                    <div class="lk-history-item-title"><a href="#">Заказ №3210144</a></div>
-                                    <div class="lk-history-item-date">от 19.08.2023, 18:52</div>
-                                    <div class="lk-history-item-status">
-                                        <span class="lk-history-item-status-paid">оплачен</span>
-                                        <span class="lk-history-item-status-delivered">получен</span>
-                                    </div>
-                                </div>
-                                <div class="lk-history-item-detail">
-                                    <div class="lk-history-item-detail-row">
-                                        <div class="lk-history-item-detail-label">Оплата:</div>
-                                        <div class="lk-history-item-detail-value">27 товаров на сумму 1 368 000 ₽, Наличными при получении</div>
-                                    </div>
-                                    <div class="lk-history-item-detail-row">
-                                        <div class="lk-history-item-detail-label">Доставка:</div>
-                                        <div class="lk-history-item-detail-value">Деловые линии, 660 ₽</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="lk-history-item-ctrl">
-                                <a href="#" class="btn">Повторить заказ</a>
-                                <a href="#">Отменить заказ</a>
-                            </div>
-                        </div>
-                        <!-- lk history item END -->
-
-                        <!-- lk history item -->
-                        <div class="lk-history-item">
-                            <div class="lk-history-item-info">
-                                <div class="lk-history-item-header">
-                                    <div class="lk-history-item-title"><a href="#">Заказ №3210144</a></div>
-                                    <div class="lk-history-item-date">от 19.08.2023, 18:52</div>
-                                    <div class="lk-history-item-status">
-                                        <span class="lk-history-item-status-paid">оплачен</span>
-                                        <span class="lk-history-item-status-delivery">Ожидает доставки</span>
-                                    </div>
-                                </div>
-                                <div class="lk-history-item-detail">
-                                    <div class="lk-history-item-detail-row">
-                                        <div class="lk-history-item-detail-label">Оплата:</div>
-                                        <div class="lk-history-item-detail-value">3 товара на сумму 36 000 ₽, Ю-касаса, онлайн</div>
-                                    </div>
-                                    <div class="lk-history-item-detail-row">
-                                        <div class="lk-history-item-detail-label">Доставка:</div>
-                                        <div class="lk-history-item-detail-value">Деловые линии, 660 ₽</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="lk-history-item-ctrl">
-                                <a href="#" class="btn">Повторить заказ</a>
-                                <a href="#">Отменить заказ</a>
-                            </div>
-                        </div>
-                        <!-- lk history item END -->
-
-                    </div>
-                    <!-- lk history list END -->
-
-                    <div class="pager">
-                        <a href="#" class="pager-prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#" class="active">3</a>
-                        <span>...</span>
-                        <a href="#">12</a>
-                        <a href="#" class="pager-next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
-                    </div>
+                    <!-- lk container END -->
 
                 </div>
                 <!-- container END -->
@@ -300,7 +320,6 @@
         <script>
             var pathTemplate = './';
         </script>
-        <script src="js/fonts.js"></script>
 
         <script src="js/jquery-3.7.1.min.js"></script>
         <script src="js/jquery.mask.min.js"></script>

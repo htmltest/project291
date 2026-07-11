@@ -33,7 +33,7 @@ $(document).ready(function() {
 
     $.validator.addMethod('phoneRU',
         function(phone_number, element) {
-            return this.optional(element) || phone_number.match(/^\+\d \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/);
+            return this.optional(element) || phone_number.match(/^\+\d \d{3} \d{3}\-\d{2}\-\d{2}$/);
         },
         'Ошибка заполнения'
     );
@@ -270,6 +270,27 @@ $(document).ready(function() {
 
     });
 
+    $('.catalogue-card-detail-buy-btn').click(function(e) {
+        $('.catalogue-card-detail-buy').addClass('incart');
+        e.preventDefault();
+    });
+
+    $('.catalogue-card-detail-buy-count-minus').click(function() {
+        let curValue = Number($('.catalogue-card-detail-buy-count-input input').val());
+        curValue--;
+        if (curValue <= 0) {
+            $('.catalogue-card-detail-buy').removeClass('incart');
+        } else {
+            $('.catalogue-card-detail-buy-count-input input').val(curValue);
+        }
+    });
+
+    $('.catalogue-card-detail-buy-count-plus').click(function() {
+        let curValue = Number($('.catalogue-card-detail-buy-count-input input').val());
+        curValue++;
+        $('.catalogue-card-detail-buy-count-input input').val(curValue);
+    });
+
     $('.catalogue-card-add').each(function() {
         let menuHTML =  '<div class="swiper"><div class="swiper-wrapper"><div class="swiper-slide"><div class="catalogue-card-add-menu-inner">';
         $('.catalogue-card-add-tab').each(function() {
@@ -312,6 +333,14 @@ $(document).ready(function() {
         const curBlock = $(this).parents().filter('.catalogue-guarantee');
         curBlock.toggleClass('open');
         e.preventDefault();
+    });
+
+    $('.catalogue-video-list').each(function() {
+        const curSlider = $(this);
+        new Swiper(curSlider.find('.swiper')[0], {
+            slidesPerView: 'auto',
+            freeMode: true,
+        });
     });
 
     $('.catalogue-others-catalogue').each(function() {
@@ -488,6 +517,30 @@ $(document).ready(function() {
         });
     });
 
+    $('.catalogue-sizes-table').each(function() {
+        const curTable = $(this);
+        curTable.wrap('<div class="catalogue-sizes-table-wrap"><div class="swiper"><div class="swiper-wrapper"><div class="swiper-slide"></div></div></div></div>');
+    });
+
+    $('.catalogue-sizes-table-wrap').each(function() {
+        const curSlider = $(this);
+        new Swiper(curSlider.find('.swiper')[0], {
+            slidesPerView: 'auto',
+            freeMode: true,
+        });
+    });
+
+    $('.lk-profile-edit-link').click(function(e) {
+        const curLink = $(this);
+        curLink.toggleClass('active');
+        if (curLink.hasClass('active')) {
+            $('.lk-profile input, .lk-profile .btn').prop('disabled', false);
+        } else {
+            $('.lk-profile input, .lk-profile .btn').prop('disabled', true);
+        }
+        e.preventDefault();
+    });
+
 });
 
 function checkCatalogueFilter() {
@@ -509,7 +562,7 @@ function checkCatalogueFilter() {
 
 function initForm(curForm) {
     curForm.find('input.phoneRU').attr('autocomplete', 'off');
-    curForm.find('input.phoneRU').mask('+0 (000) 000-00-00');
+    curForm.find('input.phoneRU').mask('+0 000 000-00-00');
 
     curForm.find('.form-input input, .form-input textarea').each(function() {
         if ($(this).val() != '') {

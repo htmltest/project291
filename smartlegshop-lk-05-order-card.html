@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>SmartLeg</title>
 
+        <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css">
@@ -99,122 +100,142 @@
                     <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SmartLeg" itemprop="item"><span itemprop="name">SmartLeg</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="Карточка заказа" itemprop="item"><span itemprop="name">Карточка заказа</span><meta itemprop="position" content="2" /></div></div></div>
                     <div class="breadcrumbs-mobile"><a href="#"><span><svg><use xlink:href="images/sprite.svg#breadcrumbs-mobile"></use></svg></span>SmartLeg</a></div>
 
-                    <div class="lk-order-card-header">
-                        <a href="#"><svg><use xlink:href="images/sprite.svg#icon-order-back"></use></svg></a>
-                        Заказ №3210144
+                    <!-- lk container -->
+                    <div class="lk-container">
+
+                        <div class="lk-menu">
+                            <ul>
+                                <li><a href="#">Мой кабинет</a></li>
+                                <li class="active"><a href="#">Личные данные</a></li>
+                                <li><a href="#">Заказы</a></li>
+                                <li><a href="#">История заказов</a></li>
+                                <li><a href="#">Выйти</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="lk-content">
+
+                            <div class="lk-order-card-header">
+                                <a href="#"><svg><use xlink:href="images/sprite.svg#icon-order-back"></use></svg></a>
+                                Заказ №3210144
+                            </div>
+
+                            <!-- lk order card -->
+                            <div class="lk-order-card">
+
+                                <div class="lk-order-card-main">
+                                    <div class="lk-order-card-main-info">
+                                        <div class="lk-order-card-main-title">Номер заказа в системе: 3210144</div>
+                                        <div class="lk-order-card-main-status">
+                                            <span class="lk-history-item-status-paid">оплачен</span>
+                                            <span class="lk-history-item-status-delivered">получен</span>
+                                        </div>
+                                    </div>
+                                    <div class="lk-order-card-main-btn"><a href="#" class="btn">Повторить заказ</a></div>
+                                </div>
+
+                                <div class="lk-order-card-detail">
+                                    <h3>Информация о заказе</h3>
+
+                                    <div class="lk-order-card-detail-list">
+                                        <div class="lk-order-card-detail-row">
+                                            <div class="lk-order-card-detail-label">Адрес</div>
+                                            <div class="lk-order-card-detail-value">г. Москва, Центральный проезд Хорошевского Серебряного Бора, д .14</div>
+                                        </div>
+                                        <div class="lk-order-card-detail-row">
+                                            <div class="lk-order-card-detail-label">Получатель</div>
+                                            <div class="lk-order-card-detail-value">Александров Игорь Владимирович</div>
+                                        </div>
+                                        <div class="lk-order-card-detail-row">
+                                            <div class="lk-order-card-detail-label">Электронная почта</div>
+                                            <div class="lk-order-card-detail-value">none@gmail.com</div>
+                                        </div>
+                                        <div class="lk-order-card-detail-row">
+                                            <div class="lk-order-card-detail-label">Телефон</div>
+                                            <div class="lk-order-card-detail-value">+7 915 123-45-67</div>
+                                        </div>
+                                        <div class="lk-order-card-detail-row">
+                                            <div class="lk-order-card-detail-label">Доставка</div>
+                                            <div class="lk-order-card-detail-value">Почта России</div>
+                                        </div>
+                                        <div class="lk-order-card-detail-row">
+                                            <div class="lk-order-card-detail-label">Оплата</div>
+                                            <div class="lk-order-card-detail-value">Ю-касса</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lk-order-card-content">
+                                    <h3>Товары в заказе</h3>
+
+                                    <div class="lk-order-card-content-list">
+
+                                        <div class="lk-order-card-content-item">
+                                            <div class="lk-order-card-content-item-photo"><img src="files/lk-order-1.jpg" alt=""></div>
+                                            <div class="lk-order-card-content-item-detail">
+                                                <div class="lk-order-card-content-item-info">
+                                                    <div class="lk-order-card-content-item-title">Колготки прозрачные</div>
+                                                    <div class="lk-order-card-content-item-color">
+                                                        <div class="lk-order-card-content-item-color-eng">Rayonnante</div>
+                                                        <div class="lk-order-card-content-item-color-img"><img src="files/catalogue-color-01.svg" alt=""></div>
+                                                        <div class="lk-order-card-content-item-color-rus">Сияющий бежевый</div>
+                                                    </div>
+                                                    <div class="lk-order-card-content-item-size">Размер: T1+</div>
+                                                </div>
+                                                <div class="lk-order-card-content-item-cost">
+                                                    <div class="lk-order-card-content-item-price">1 х 12 000 ₽ </div>
+                                                    <div class="lk-order-card-content-item-summ">12 000 ₽ </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="lk-order-card-content-item">
+                                            <div class="lk-order-card-content-item-photo"><img src="files/lk-order-2.jpg" alt=""></div>
+                                            <div class="lk-order-card-content-item-detail">
+                                                <div class="lk-order-card-content-item-info">
+                                                    <div class="lk-order-card-content-item-title">Колготки прозрачные</div>
+                                                    <div class="lk-order-card-content-item-color">
+                                                        <div class="lk-order-card-content-item-color-eng">Rayonnante</div>
+                                                        <div class="lk-order-card-content-item-color-img"><img src="files/catalogue-color-01.svg" alt=""></div>
+                                                        <div class="lk-order-card-content-item-color-rus">Сияющий бежевый</div>
+                                                    </div>
+                                                    <div class="lk-order-card-content-item-size">Размер: T1+</div>
+                                                </div>
+                                                <div class="lk-order-card-content-item-cost">
+                                                    <div class="lk-order-card-content-item-price">1 х 12 000 ₽ </div>
+                                                    <div class="lk-order-card-content-item-summ">12 000 ₽ </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="lk-order-card-content-item">
+                                            <div class="lk-order-card-content-item-photo"><img src="files/lk-order-3.jpg" alt=""></div>
+                                            <div class="lk-order-card-content-item-detail">
+                                                <div class="lk-order-card-content-item-info">
+                                                    <div class="lk-order-card-content-item-title">Колготки прозрачные</div>
+                                                    <div class="lk-order-card-content-item-color">
+                                                        <div class="lk-order-card-content-item-color-eng">Rayonnante</div>
+                                                        <div class="lk-order-card-content-item-color-img"><img src="files/catalogue-color-01.svg" alt=""></div>
+                                                        <div class="lk-order-card-content-item-color-rus">Сияющий бежевый</div>
+                                                    </div>
+                                                    <div class="lk-order-card-content-item-size">Размер: T1+</div>
+                                                </div>
+                                                <div class="lk-order-card-content-item-cost">
+                                                    <div class="lk-order-card-content-item-price">1 х 12 000 ₽ </div>
+                                                    <div class="lk-order-card-content-item-summ">12 000 ₽ </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- lk order card END -->
+
+                        </div>
+
                     </div>
-
-                    <!-- lk order card -->
-                    <div class="lk-order-card">
-
-                        <div class="lk-order-card-main">
-                            <div class="lk-order-card-main-info">
-                                <div class="lk-order-card-main-title">Номер заказа в системе: 3210144</div>
-                                <div class="lk-order-card-main-status">
-                                    <span class="lk-history-item-status-paid">оплачен</span>
-                                    <span class="lk-history-item-status-delivered">получен</span>
-                                </div>
-                            </div>
-                            <div class="lk-order-card-main-btn"><a href="#" class="btn">Повторить заказ</a></div>
-                        </div>
-
-                        <div class="lk-order-card-detail">
-                            <h3>Информация о заказе</h3>
-
-                            <div class="lk-order-card-detail-list">
-                                <div class="lk-order-card-detail-row">
-                                    <div class="lk-order-card-detail-label">Адрес</div>
-                                    <div class="lk-order-card-detail-value">г. Москва, Центральный проезд Хорошевского Серебряного Бора, д .14</div>
-                                </div>
-                                <div class="lk-order-card-detail-row">
-                                    <div class="lk-order-card-detail-label">Получатель</div>
-                                    <div class="lk-order-card-detail-value">Александров Игорь Владимирович</div>
-                                </div>
-                                <div class="lk-order-card-detail-row">
-                                    <div class="lk-order-card-detail-label">Электронная почта</div>
-                                    <div class="lk-order-card-detail-value">none@gmail.com</div>
-                                </div>
-                                <div class="lk-order-card-detail-row">
-                                    <div class="lk-order-card-detail-label">Телефон</div>
-                                    <div class="lk-order-card-detail-value">+7 915 123-45-67</div>
-                                </div>
-                                <div class="lk-order-card-detail-row">
-                                    <div class="lk-order-card-detail-label">Доставка</div>
-                                    <div class="lk-order-card-detail-value">Почта России</div>
-                                </div>
-                                <div class="lk-order-card-detail-row">
-                                    <div class="lk-order-card-detail-label">Оплата</div>
-                                    <div class="lk-order-card-detail-value">Ю-касса</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lk-order-card-content">
-                            <h3>Товары в заказе</h3>
-
-                            <div class="lk-order-card-content-list">
-
-                                <div class="lk-order-card-content-item">
-                                    <div class="lk-order-card-content-item-photo"><img src="files/lk-order-1.jpg" alt=""></div>
-                                    <div class="lk-order-card-content-item-detail">
-                                        <div class="lk-order-card-content-item-info">
-                                            <div class="lk-order-card-content-item-title">Колготки прозрачные</div>
-                                            <div class="lk-order-card-content-item-color">
-                                                <div class="lk-order-card-content-item-color-eng">Rayonnante</div>
-                                                <div class="lk-order-card-content-item-color-img"><img src="files/catalogue-color-01.svg" alt=""></div>
-                                                <div class="lk-order-card-content-item-color-rus">Сияющий бежевый</div>
-                                            </div>
-                                            <div class="lk-order-card-content-item-size">Размер: T1+</div>
-                                        </div>
-                                        <div class="lk-order-card-content-item-cost">
-                                            <div class="lk-order-card-content-item-price">1 х 12 000 ₽ </div>
-                                            <div class="lk-order-card-content-item-summ">12 000 ₽ </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="lk-order-card-content-item">
-                                    <div class="lk-order-card-content-item-photo"><img src="files/lk-order-2.jpg" alt=""></div>
-                                    <div class="lk-order-card-content-item-detail">
-                                        <div class="lk-order-card-content-item-info">
-                                            <div class="lk-order-card-content-item-title">Колготки прозрачные</div>
-                                            <div class="lk-order-card-content-item-color">
-                                                <div class="lk-order-card-content-item-color-eng">Rayonnante</div>
-                                                <div class="lk-order-card-content-item-color-img"><img src="files/catalogue-color-01.svg" alt=""></div>
-                                                <div class="lk-order-card-content-item-color-rus">Сияющий бежевый</div>
-                                            </div>
-                                            <div class="lk-order-card-content-item-size">Размер: T1+</div>
-                                        </div>
-                                        <div class="lk-order-card-content-item-cost">
-                                            <div class="lk-order-card-content-item-price">1 х 12 000 ₽ </div>
-                                            <div class="lk-order-card-content-item-summ">12 000 ₽ </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="lk-order-card-content-item">
-                                    <div class="lk-order-card-content-item-photo"><img src="files/lk-order-3.jpg" alt=""></div>
-                                    <div class="lk-order-card-content-item-detail">
-                                        <div class="lk-order-card-content-item-info">
-                                            <div class="lk-order-card-content-item-title">Колготки прозрачные</div>
-                                            <div class="lk-order-card-content-item-color">
-                                                <div class="lk-order-card-content-item-color-eng">Rayonnante</div>
-                                                <div class="lk-order-card-content-item-color-img"><img src="files/catalogue-color-01.svg" alt=""></div>
-                                                <div class="lk-order-card-content-item-color-rus">Сияющий бежевый</div>
-                                            </div>
-                                            <div class="lk-order-card-content-item-size">Размер: T1+</div>
-                                        </div>
-                                        <div class="lk-order-card-content-item-cost">
-                                            <div class="lk-order-card-content-item-price">1 х 12 000 ₽ </div>
-                                            <div class="lk-order-card-content-item-summ">12 000 ₽ </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- lk order card END -->
+                    <!-- lk container END -->
 
                 </div>
                 <!-- container END -->
@@ -296,7 +317,6 @@
         <script>
             var pathTemplate = './';
         </script>
-        <script src="js/fonts.js"></script>
 
         <script src="js/jquery-3.7.1.min.js"></script>
         <script src="js/jquery.mask.min.js"></script>

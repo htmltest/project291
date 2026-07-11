@@ -97,44 +97,43 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SmartLeg" itemprop="item"><span itemprop="name">SmartLeg</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="Личный кабинет" itemprop="item"><span itemprop="name">Личный кабинет</span><meta itemprop="position" content="2" /></div></div></div>
+                    <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SmartLeg" itemprop="item"><span itemprop="name">SmartLeg</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="Личные данные" itemprop="item"><span itemprop="name">Личные данные</span><meta itemprop="position" content="2" /></div></div></div>
                     <div class="breadcrumbs-mobile"><a href="#"><span><svg><use xlink:href="images/sprite.svg#breadcrumbs-mobile"></use></svg></span>SmartLeg</a></div>
 
-                    <h1>Личный кабинет</h1>
+                    <!-- lk container -->
+                    <div class="lk-container">
 
-                    <div class="lk-dashboard">
-                        <a href="#">
-                            <div class="lk-dashboard-item-header">
-                                <div class="lk-dashboard-item-icon"><svg><use xlink:href="images/sprite.svg#icon-orders"></use></svg></div>
-                            </div>
-                            <div class="lk-dashboard-item-title">Заказы</div>
-                            <div class="lk-dashboard-item-text">Активные заказы: <span>2</span></div>
-                        </a>
+                        <div class="lk-menu">
+                            <ul>
+                                <li><a href="#">Мой кабинет</a></li>
+                                <li class="active"><a href="#">Личные данные</a></li>
+                                <li><a href="#">Заказы</a></li>
+                                <li><a href="#">История заказов</a></li>
+                                <li><a href="#">Выйти</a></li>
+                            </ul>
+                        </div>
 
-                        <a href="#">
-                            <div class="lk-dashboard-item-header">
-                                <div class="lk-dashboard-item-icon"><svg><use xlink:href="images/sprite.svg#icon-history"></use></svg></div>
+                        <div class="lk-content">
+                            <div class="lk-profile-header">
+                                <h1>Личные данные</h1>
+                                <a href="#" class="lk-profile-edit-link"><span>Редактировать</span><span>Отменить</span></a>
                             </div>
-                            <div class="lk-dashboard-item-title">История заказов</div>
-                            <div class="lk-dashboard-item-text">Заказов: <span>23</span></div>
-                        </a>
+                            <div class="lk-profile">
+                                <form action="#" method="post">
+                                    <div class="form-input"><span class="form-input-label">Фамилия <em>*</em></span><input type="text" name="lastname" value="Иванов" class="required" disabled></div>
+                                    <div class="form-input"><span class="form-input-label">Имя</span><input type="text" name="firstname" value="Иван" disabled></div>
+                                    <div class="form-input"><span class="form-input-label">Отчество</span><input type="text" name="middlename" value="" disabled></div>
+                                    <div class="form-input"><span class="form-input-label">Мобильный телефон <em>*</em></span><input type="text" name="phone" value="+7 915 123–45–67" class="required phoneRU" disabled></div>
+                                    <div class="form-input"><span class="form-input-label">Электронная почта <em>*</em></span><input type="text" name="email" value="smartlegclub@innothera.com" class="required email" disabled></div>
+                                    <div class="form-input"><span class="form-input-label">Пароль <em>*</em></span><input type="password" name="password" value="password" class="required" id="password" disabled><a href="#" class="form-input-password-view"><svg><use xlink:href="images/sprite.svg#password-view"></use></svg><svg><use xlink:href="images/sprite.svg#password-notview"></use></svg></a></div>
+                                    <div class="lk-profile-change-password-link"><a href="#">Сменить пароль</a></div>
+                                    <div class="form-submit"><button type="submit" class="btn" disabled>Сохранить</button></div>
+                                </form>
+                            </div>
+                        </div>
 
-                        <a href="#">
-                            <div class="lk-dashboard-item-header">
-                                <div class="lk-dashboard-item-icon"><svg><use xlink:href="images/sprite.svg#icon-user-big"></use></svg></div>
-                            </div>
-                            <div class="lk-dashboard-item-title">Личные данные</div>
-                            <div class="lk-dashboard-item-text">Профиль заполнен на: <span>80%</span></div>
-                        </a>
-
-                        <a href="#">
-                            <div class="lk-dashboard-item-header">
-                                <div class="lk-dashboard-item-icon"><svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></div>
-                            </div>
-                            <div class="lk-dashboard-item-title">Выйти</div>
-                            <div class="lk-dashboard-item-text">Или сменить пользователя</div>
-                        </a>
                     </div>
+                    <!-- lk container END -->
 
                 </div>
                 <!-- container END -->

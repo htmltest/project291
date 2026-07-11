@@ -97,44 +97,148 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SmartLeg" itemprop="item"><span itemprop="name">SmartLeg</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="Личный кабинет" itemprop="item"><span itemprop="name">Личный кабинет</span><meta itemprop="position" content="2" /></div></div></div>
+                    <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SmartLeg" itemprop="item"><span itemprop="name">SmartLeg</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="Калькулятор размеров" itemprop="item"><span itemprop="name">Калькулятор размеров</span><meta itemprop="position" content="2" /></div></div></div>
                     <div class="breadcrumbs-mobile"><a href="#"><span><svg><use xlink:href="images/sprite.svg#breadcrumbs-mobile"></use></svg></span>SmartLeg</a></div>
 
-                    <h1>Личный кабинет</h1>
+                    <h1>Калькулятор размеров</h1>
 
-                    <div class="lk-dashboard">
-                        <a href="#">
-                            <div class="lk-dashboard-item-header">
-                                <div class="lk-dashboard-item-icon"><svg><use xlink:href="images/sprite.svg#icon-orders"></use></svg></div>
-                            </div>
-                            <div class="lk-dashboard-item-title">Заказы</div>
-                            <div class="lk-dashboard-item-text">Активные заказы: <span>2</span></div>
-                        </a>
+                    <!-- calc -->
+                    <div class="calc">
+                        <div class="calc-form">
+                            <form action="#" method="post">
+                                <div class="calc-form-col">
+                                    <div class="calc-form-block">
+                                        <h3>Основное</h3>
 
-                        <a href="#">
-                            <div class="lk-dashboard-item-header">
-                                <div class="lk-dashboard-item-icon"><svg><use xlink:href="images/sprite.svg#icon-history"></use></svg></div>
-                            </div>
-                            <div class="lk-dashboard-item-title">История заказов</div>
-                            <div class="lk-dashboard-item-text">Заказов: <span>23</span></div>
-                        </a>
+                                        <div class="form-select">
+                                            <select name="type" data-placeholder="Тип">
+                                                <option value=""></option>
+                                                <option value="1">Колготки</option>
+                                                <option value="2">Гольфы</option>
+                                                <option value="3">Чулки</option>
+                                            </select>
+                                        </div>
 
-                        <a href="#">
-                            <div class="lk-dashboard-item-header">
-                                <div class="lk-dashboard-item-icon"><svg><use xlink:href="images/sprite.svg#icon-user-big"></use></svg></div>
-                            </div>
-                            <div class="lk-dashboard-item-title">Личные данные</div>
-                            <div class="lk-dashboard-item-text">Профиль заполнен на: <span>80%</span></div>
-                        </a>
+                                        <div class="form-select">
+                                            <select name="model" data-placeholder="Модель">
+                                                <option value=""></option>
+                                                <option value="1">Прозрачные</option>
+                                                <option value="2">Полупрозрачные</option>
+                                            </select>
+                                        </div>
 
-                        <a href="#">
-                            <div class="lk-dashboard-item-header">
-                                <div class="lk-dashboard-item-icon"><svg><use xlink:href="images/sprite.svg#icon-logout"></use></svg></div>
+                                        <div class="form-select">
+                                            <select name="height" data-placeholder="Тип">
+                                                <option value=""></option>
+                                                <option value="1">Short</option>
+                                                <option value="2">Normal</option>
+                                                <option value="3">Long</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="calc-form-block">
+                                        <h3>Бедра и талия</h3>
+
+                                        <div class="form-input"><span class="form-input-label">Окружность бёдер</span><input type="text" name="hip" value=""><div class="calc-form-input-unit">см</div></div>
+                                        <div class="form-input"><span class="form-input-label">Окружность талии</span><input type="text" name="waist" value=""><div class="calc-form-input-unit">см</div></div>
+                                    </div>
+                                </div>
+
+                                <div class="calc-form-col">
+                                    <div class="calc-form-block">
+                                        <h3>Щиколотки</h3>
+
+                                        <div class="form-input"><span class="form-input-label">Окружность правой щиколотки</span><input type="text" name="rightAnkle" value=""><div class="calc-form-input-unit">см</div></div>
+                                        <div class="form-input"><span class="form-input-label">Окружность левой щиколотки</span><input type="text" name="leftAnkle" value=""><div class="calc-form-input-unit">см</div></div>
+                                    </div>
+
+                                    <div class="calc-form-block">
+                                        <h3>Икры</h3>
+
+                                        <div class="form-input"><span class="form-input-label">Окружность правой икры</span><input type="text" name="rightCalf" value=""><div class="calc-form-input-unit">см</div></div>
+                                        <div class="form-input"><span class="form-input-label">Окружность левой икры</span><input type="text" name="leftCalf" value=""><div class="calc-form-input-unit">см</div></div>
+                                    </div>
+
+                                    <div class="calc-form-block">
+                                        <h3>Бедра</h3>
+
+                                        <div class="form-input"><span class="form-input-label">Окружность правого бедра</span><input type="text" name="rightHip" value=""><div class="calc-form-input-unit">см</div></div>
+                                        <div class="form-input"><span class="form-input-label">Окружность левого бедра</span><input type="text" name="leftHip" value=""><div class="calc-form-input-unit">см</div></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="calc-info">
+                            <div class="calc-info-size">
+                                <div class="calc-info-size-title">Ваш размер:</div>
+                                <div class="calc-info-size-value">Т2+</div>
                             </div>
-                            <div class="lk-dashboard-item-title">Выйти</div>
-                            <div class="lk-dashboard-item-text">Или сменить пользователя</div>
-                        </a>
+                            <div class="calc-info-text">
+                                <div class="calc-info-text-title">Если вы предпочитаете определить размер самостоятельно.</div>
+                                <div class="calc-info-text-descr">Утренние замеры&nbsp;&mdash; самые точные. В&nbsp;течение дня ноги могут отекать, и&nbsp;результат будет искажён.</div>
+                            </div>
+                            <div class="calc-info-photo"><img src="images/calc-photo.jpg" alt=""></div>
+                        </div>
                     </div>
+                    <!-- calc END -->
+
+                    <h2>Таблица размеров</h2>
+                    <table class="catalogue-sizes-table">
+                        <body>
+                            <tr>
+                                <td>Максимальная окружность талии, см<br> (на уровне пупка)</td>
+                                <td colspan="2">88,5</td>
+                                <td>96</td>
+                                <td class="sep-mini">95</td>
+                                <td colspan="2">106</td>
+                                <td>120</td>
+                                <td class="sep-mini">129</td>
+                            </tr>
+                            <tr class="catalogue-sizes-table-header">
+                                <td>РАЗМЕРЫ</td>
+                                <td>T0</td>
+                                <td class="sep-mini">T1</td>
+                                <td>T1+</td>
+                                <td class="sep-mini">T2</td>
+                                <td>T2+</td>
+                                <td class="sep-mini">T3</td>
+                                <td>T3+</td>
+                                <td class="sep-mini">T4</td>
+                            </tr>
+                            <tr>
+                                <td>Окружность бедер, см<br> (в самом широком месте таза)</td>
+                                <td>80-120</td>
+                                <td class="sep-mini">70-110</td>
+                                <td>90-130</td>
+                                <td class="sep-mini">80-120</td>
+                                <td>95-135</td>
+                                <td class="sep-mini">90-130</td>
+                                <td>115-155</td>
+                                <td class="sep-mini">110-150</td>
+                            </tr>
+                            <tr>
+                                <td>Окружность бедра, см<br> (на 5 см ниже ягодичной складки)</td>
+                                <td>43-57</td>
+                                <td class="sep-mini">40-54</td>
+                                <td>54-66</td>
+                                <td class="sep-mini">45-59</td>
+                                <td>59-71</td>
+                                <td class="sep-mini">51-65</td>
+                                <td>65-77</td>
+                                <td class="sep-mini">60-74</td>
+                            </tr>
+                            <tr>
+                                <td>Окружность щиколотки, см<br> (в самой узкой части)</td>
+                                <td>16-19</td>
+                                <td colspan="2">19-22</td>
+                                <td colspan="2">22-25</td>
+                                <td colspan="2">25-28</td>
+                                <td>28-31</td>
+                            </tr>
+                        </body>
+                    </table>
 
                 </div>
                 <!-- container END -->
