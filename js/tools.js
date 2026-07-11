@@ -417,9 +417,28 @@ $(document).ready(function() {
     });
 
     $(document).click(function(e) {
-        if ($(e.target).parents().filter('.catalogue-filter-param').length == 0) {
+        if ($(e.target).parents().filter('.catalogue-filter-param').length == 0 || $(e.target).hasClass('catalogue-filter-param-content')) {
             $('.catalogue-filter-param').removeClass('open');
         }
+    });
+
+    $('.catalogue-filter-param-header-mobile-close').click(function() {
+        $('.catalogue-filter-param').removeClass('open');
+    });
+
+    $('.catalogue-filter-param-apply').click(function(e) {
+        $('.catalogue-filter-param').removeClass('open');
+        checkCatalogueFilter();
+        e.preventDefault();
+    });
+
+    $('.catalogue-filter-param-clear').click(function(e) {
+        const curParam = $(this).parents().filter('.catalogue-filter-param');
+        if (curParam.find('.catalogue-filter-param-list').length == 1) {
+            curParam.find('.catalogue-filter-param-item input:checked').prop('checked', false);
+            curParam.removeClass('active');
+        }
+        e.preventDefault();
     });
 
     $('.catalogue-filter-param-item input').change(function() {
@@ -447,6 +466,64 @@ $(document).ready(function() {
         $('.catalogue-filter-param.active .catalogue-filter-param-title-remove').trigger('click');
     });
 
+    $('.catalogue-filter-mobile-link a').click(function(e) {
+        if (!$('html').hasClass('catalogue-filter-mobile-open')) {
+            var curWidth = $(window).width();
+            if (curWidth < 375) {
+                curWidth = 375;
+            }
+            var curScroll = $(window).scrollTop();
+            $('html').addClass('catalogue-filter-mobile-open');
+            if ($(window).width() < 1200) {
+                $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+                $('html').data('scrollTop', curScroll);
+            }
+        }
+        e.preventDefault();
+    });
+
+    $('.catalogue-filter-params-mobile-close').click(function(e) {
+        if ($('html').hasClass('catalogue-filter-mobile-open')) {
+            $('html').removeClass('catalogue-filter-mobile-open');
+            if ($(window).width() < 1200) {
+                $('meta[name="viewport"]').attr('content', 'width=device-width');
+                $(window).scrollTop($('html').data('scrollTop'));
+            }
+        }
+        e.preventDefault();
+    });
+
+    $('.catalogue-filter-params-mobile-cancel').click(function(e) {
+        if ($('html').hasClass('catalogue-filter-mobile-open')) {
+            $('html').removeClass('catalogue-filter-mobile-open');
+            if ($(window).width() < 1200) {
+                $('meta[name="viewport"]').attr('content', 'width=device-width');
+                $(window).scrollTop($('html').data('scrollTop'));
+            }
+        }
+        e.preventDefault();
+    });
+
+    $('.catalogue-filter-params-mobile-apply').click(function(e) {
+        if ($('html').hasClass('catalogue-filter-mobile-open')) {
+            $('html').removeClass('catalogue-filter-mobile-open');
+            if ($(window).width() < 1200) {
+                $('meta[name="viewport"]').attr('content', 'width=device-width');
+                $(window).scrollTop($('html').data('scrollTop'));
+            }
+        }
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.catalogue-filter-param-selected-item a', function(e) {
+        const curItem = $(this).parent();
+        const curIndex = curItem.attr('data-index');
+        const curParam = curItem.parents().filter('.catalogue-filter-param');
+        curParam.find('.catalogue-filter-param-item input').eq(curIndex).prop('checked', false);
+        checkCatalogueFilter();
+        e.preventDefault();
+    });
+
     $('.catalogue-sort-current').click(function() {
         const curSelect = $(this).parent();
         if (curSelect.hasClass('open')) {
@@ -457,9 +534,19 @@ $(document).ready(function() {
     });
 
     $(document).click(function(e) {
-        if ($(e.target).parents().filter('.catalogue-sort-select').length == 0) {
+        if ($(e.target).parents().filter('.catalogue-sort-select').length == 0 || $(e.target).hasClass('catalogue-sort-list')) {
             $('.catalogue-sort-select').removeClass('open');
         }
+    });
+
+    $('.catalogue-sort-list-header-mobile-close').click(function(e) {
+        $('.catalogue-sort-select').removeClass('open');
+        e.preventDefault();
+    });
+
+    $('.catalogue-sort-list-mobile-cancel').click(function(e) {
+        $('.catalogue-sort-select').removeClass('open');
+        e.preventDefault();
     });
 
     $('.catalogue-sort-item').click(function() {
@@ -547,9 +634,16 @@ function checkCatalogueFilter() {
     let countParams = 0;
     $('.catalogue-filter-param').each(function() {
         const curParam = $(this);
+        let selectedHTML = '';
         if (curParam.find('.catalogue-filter-param-item input:checked').length > 0) {
             countParams++;
+            curParam.find('.catalogue-filter-param-item input:checked').each(function() {
+                const curInput = $(this);
+                const curIndex = curParam.find('.catalogue-filter-param-item input').index(curInput);
+                selectedHTML += '<div class="catalogue-filter-param-selected-item" data-index="' + curIndex + '"><span>' + curInput.next().text() + '</span><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#catalogue-filter-param-selected-item-remove"></use></svg></a></div>';
+            });
         }
+        curParam.find('.catalogue-filter-param-selected-mobile').html(selectedHTML);
     });
     if (countParams) {
         $('.catalogue-filter-params-count').addClass('visible');
