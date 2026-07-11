@@ -1211,8 +1211,11 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
 .catalogue-guarantee.open .catalogue-guarantee-more a span {display:none}
 .catalogue-guarantee.open .catalogue-guarantee-more a span+span {display:block}
 
-.calc {margin:40px 0 60px 0; display:flex; flex-direction:row-reverse; gap:0 40px; align-items:flex-start}
+.calc {margin:40px 0 0 0}
+
+.calc-container {margin:0 0 60px 0; display:flex; flex-direction:row-reverse; gap:0 40px; align-items:flex-start}
 .calc-form {min-width:calc(66.66% - 20px); max-width:calc(66.66% - 20px)}
+.calc .hidden {display:none}
 .calc-form form {display:flex; margin:0; padding:0; align-items:flex-start; gap:0 40px}
 .calc-form-col {flex:1; display:flex; flex-direction:column; gap:40px 0}
 .calc-form-block {width:100%; display:flex; flex-direction:column; gap:20px 0}
@@ -1225,11 +1228,18 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
 .calc-info-size {display:flex; align-items:center; width:100%; justify-content:space-between}
 .calc-info-size-title {color:rgba(28, 28, 28, 0.8)}
 .calc-info-size-value {color:#000000; font-weight:normal; font-size:30px; line-height:36px}
-.calc-info-text {border-top:1px solid #ECECEE; padding:20px 0 0 0; display:flex; flex-direction:column; gap:5px 0}
-.calc-info-text-descr {font-weight:500; color:#000000}
+.calc-info-size+.calc-info-size {border-top:1px solid #ECECEE; padding:20px 0 0 0}
+.calc-info-text {border-top:1px solid #ECECEE; padding:20px 0 0 0; font-weight:500; color:#000000}
+.calc-info-photo a {display:block; background:rgba(0, 0, 0, 0.03); position:relative}
+.calc-info-photo a img {display:block; width:100%}
+.calc-info-photo a span {position:absolute; left:10px; top:10px; width:42px; height:42px; border:1px solid #ECECEE; transition:border-color 0.2s; display:flex; align-items:center; justify-content:center; border-radius:50%}
+@media (min-width:1200px) {
+    .calc-info-photo a:hover span {border-color:#866857}
+}
+.calc-info-photo a span svg {width:30px; height:30px; fill:#866857}
 
 @media (max-width:1199px) {
-    .calc {margin:20px 0 60px 0; flex-direction:column; gap:40px 0; align-items:stretch}
+    .calc-container {flex-direction:column; gap:40px 0; align-items:stretch}
     .calc-form {min-width:0; max-width:none}
     .calc-form form {flex-direction:column; gap:40px 0; align-items:stretch}
     .calc-form-input-unit {font-size:16px; line-height:1.5em; top:11px}
@@ -2014,4 +2024,31 @@ footer {margin:120px 0 0 0; border-top:1px solid #ECECEE}
 
 @media (max-width:1199px) {
     .footer-cookie {padding:15px 0; font-size:14px; line-height:1.5em; letter-spacing:-0.01em}
+}
+
+.window-open,
+.window-open body {overflow:hidden; position:fixed; left:0; top:0; right:0; bottom:0}
+
+.window {position:fixed; left:0; top:0; right:0; bottom:0; overflow:auto; z-index:9999; background:rgba(0, 0, 0, 0.5); display:flex; padding:20px}
+.window-loading {position:absolute; left:0; top:0; right:0; bottom:0; background:url(../images/loading.svg) no-repeat center}
+.window-container {display:block; position:relative; background:#FFFFFF; margin:auto}
+.window-close {position:absolute; right:20px; top:20px; width:30px; height:30px}
+.window-close svg {display:block; width:30px; height:30px; fill:#FFFFFF}
+
+.window-title {background:#000000; padding:23px 70px 23px 20px; color:#FFFFFF; font-weight:500; text-transform:uppercase; font-size:16px; line-height:1.5em}
+.window-content {padding:20px}
+.window-content > *:first-child {margin-top:0}
+.window-content > *:last-child {margin-top:0}
+.window-ctrl {border-top:1px solid #ECECEE; padding:20px; display:flex; align-items:center; justify-content:center; gap:0 20px}
+
+@media (max-width:1199px) {
+    .window-ctrl {flex-direction:column; gap:20px 0}
+    .window-ctrl .btn {width:100%; align-items:stretch}
+}
+
+.window-calc-photo {width:781px}
+.window-calc-photo-img img {display:block; width:100%}
+
+@media (max-width:1199px) {
+    .window-calc-photo {width:345px}
 }

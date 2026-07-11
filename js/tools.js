@@ -628,6 +628,379 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.calc-form-select-type').change(function() {
+        const curValue = $(this).val();
+        if (curValue == 'tights') {
+            $('.calc-form-inputs-tights').removeClass('hidden');
+            $('.calc-form-inputs-socks').addClass('hidden');
+        } else {
+            $('.calc-form-inputs-tights').addClass('hidden');
+            $('.calc-form-inputs-socks').removeClass('hidden');
+        }
+        updateCalc();
+    });
+
+    function updateCalc() {
+        const paramHeight = Number($('.calc .form-input input[name="height"]').val().replace(/\,/g, '.'));
+
+        const paramWaist = Number($('.calc .form-input input[name="waist"]').val().replace(/\,/g, '.'));
+
+        const paramHips = Number($('.calc .form-input input[name="hip"]').val().replace(/\,/g, '.'));
+
+        const paramRightAnkle = Number($('.calc .form-input input[name="rightAnkle"]').val().replace(/\,/g, '.'));
+        const paramLeftAnkle = Number($('.calc .form-input input[name="leftAnkle"]').val().replace(/\,/g, '.'));
+        let paramAnkle = paramRightAnkle;
+        if (paramRightAnkle < paramLeftAnkle) {
+            paramAnkle = paramLeftAnkle;
+        }
+
+        const paramRightHip = Number($('.calc .form-input input[name="rightHip"]').val().replace(/\,/g, '.'));
+        const paramLeftHip = Number($('.calc .form-input input[name="leftHip"]').val().replace(/\,/g, '.'));
+        let paramHip = paramRightHip;
+        if (paramRightHip < paramLeftHip) {
+            paramHip = paramLeftHip;
+        }
+
+        const paramRightCalf = Number($('.calc .form-input input[name="rightCalf"]').val().replace(/\,/g, '.'));
+        const paramLeftCalf = Number($('.calc .form-input input[name="leftCalf"]').val().replace(/\,/g, '.'));
+        let paramCalf = paramRightCalf;
+        if (paramRightCalf < paramLeftCalf) {
+            paramCalf = paramLeftCalf;
+        }
+
+        const curType = $('.calc-form-select-type').val();
+
+        const sizesTights = [
+            {
+                'title' : 'Т0',
+                'waist' : 88.5,
+                'hips'  : [80, 120],
+                'hip'   : [43, 57],
+                'ankle' : [16, 19]
+            },
+            {
+                'title' : 'Т1',
+                'waist' : 88.5,
+                'hips'  : [70, 110],
+                'hip'   : [40, 54],
+                'ankle' : [16, 19]
+            },
+            {
+                'title' : 'Т1+',
+                'waist' : 96,
+                'hips'  : [90, 130],
+                'hip'   : [54, 66],
+                'ankle' : [19, 22]
+            },
+            {
+                'title' : 'Т2',
+                'waist' : 95,
+                'hips'  : [80, 120],
+                'hip'   : [45, 59],
+                'ankle' : [22, 25]
+            },
+            {
+                'title' : 'Т2+',
+                'waist' : 106,
+                'hips'  : [95, 135],
+                'hip'   : [59, 71],
+                'ankle' : [22, 25]
+            },
+            {
+                'title' : 'Т3',
+                'waist' : 106,
+                'hips'  : [90, 130],
+                'hip'   : [51, 65],
+                'ankle' : [25, 28]
+            },
+            {
+                'title' : 'Т3+',
+                'waist' : 120,
+                'hips'  : [115, 155],
+                'hip'   : [65, 77],
+                'ankle' : [25, 28]
+            },
+            {
+                'title' : 'Т4',
+                'waist' : 129,
+                'hips'  : [110, 150],
+                'hip'   : [60, 74],
+                'ankle' : [28, 31]
+            }
+        ];
+
+        const sizesStockings = [
+            {
+                'title' : 'Т0',
+                'hip'   : [45, 57],
+                'calf'  : [28, 36],
+                'ankle' : [16, 19]
+            },
+            {
+                'title' : 'Т1',
+                'hip'   : [42, 54],
+                'calf'  : [26, 34],
+                'ankle' : [19, 22]
+            },
+            {
+                'title' : 'Т1+',
+                'hip'   : [54, 66],
+                'calf'  : [34, 42],
+                'ankle' : [19, 22]
+            },
+            {
+                'title' : 'Т2',
+                'hip'   : [47, 59],
+                'calf'  : [30, 38],
+                'ankle' : [22, 25]
+            },
+            {
+                'title' : 'Т2+',
+                'hip'   : [59, 71],
+                'calf'  : [38, 46],
+                'ankle' : [22, 25]
+            },
+            {
+                'title' : 'Т3',
+                'hip'   : [53, 65],
+                'calf'  : [34, 42],
+                'ankle' : [25, 28]
+            },
+            {
+                'title' : 'Т3+',
+                'hip'   : [65, 77],
+                'calf'  : [42, 50],
+                'ankle' : [25, 28]
+            },
+            {
+                'title' : 'Т4',
+                'hip'   : [62, 74],
+                'calf'  : [40, 48],
+                'ankle' : [28, 31]
+            }
+        ];
+
+        $('.calc-result-size').html('&mdash;');
+        $('.calc-result-height').html('&mdash;');
+
+        if (curType == 'tights') {
+
+            if (paramHeight) {
+                let resultHeight = 'Court';
+                if (paramHeight > 69 && paramHeight <= 77) {
+                    resultHeight = 'Normal';
+                }
+                if (paramHeight > 77) {
+                    resultHeight = 'Long';
+                }
+                $('.calc-result-height').html(resultHeight);
+            }
+
+            if (paramWaist && paramHips && paramAnkle && paramHip) {
+                let resultSize = '&mdash;';
+
+                const sizesTightsLength = sizesTights.length;
+
+                let sizeWaist = sizesTightsLength - 1;
+                let sizeHips = sizesTightsLength - 1;
+                let sizeHip = sizesTightsLength - 1;
+                let sizeAnkle = sizesTightsLength - 1;
+
+                for (let i = sizesTightsLength - 1; i > -1; i--) {
+                    if (sizesTights[i].waist >= paramWaist) {
+                        sizeWaist = i;
+                    }
+                    if (paramHips >= sizesTights[i].hips[0] && paramHips <= sizesTights[i].hips[1]) {
+                        sizeHips = i;
+                    }
+                    if (paramHip >= sizesTights[i].hip[0] && paramHip <= sizesTights[i].hip[1]) {
+                        sizeHip = i;
+                    }
+                    if (paramAnkle >= sizesTights[i].ankle[0] && paramAnkle <= sizesTights[i].ankle[1]) {
+                        sizeAnkle = i;
+                    }
+                }
+                if (sizeHips == sizesTightsLength - 1) {
+                    let minHips = sizesTights[0].hips[0];
+                    for (let i = 1; i < sizesTightsLength; i++) {
+                        if (minHips > sizesTights[i].hips[i]) {
+                            minHips = sizesTights[i].hips[i];
+                        }
+                    }
+                    if (paramHips < minHips) {
+                        sizeHips = 0;
+                    }
+                }
+                if (sizeHip == sizesTightsLength - 1) {
+                    let minHip = sizesTights[0].hip[0];
+                    for (let i = 1; i < sizesTightsLength; i++) {
+                        if (minHip > sizesTights[i].hip[i]) {
+                            minHip = sizesTights[i].hip[i];
+                        }
+                    }
+                    if (paramHip < minHip) {
+                        sizeHip = 0;
+                    }
+                }
+                if (sizeAnkle == sizesTightsLength - 1) {
+                    let minAnkle = sizesTights[0].ankle[0];
+                    for (let i = 1; i < sizesTightsLength; i++) {
+                        if (minAnkle > sizesTights[i].ankle[i]) {
+                            minAnkle = sizesTights[i].ankle[i];
+                        }
+                    }
+                    if (paramAnkle < minAnkle) {
+                        sizeAnkle = 0;
+                    }
+                }
+                const sizeMax = Math.max(sizeWaist, sizeHips, sizeHip, sizeAnkle);
+
+                $('.calc-result-size').html(sizesTights[sizeMax].title);
+            }
+
+        } else if (curType == 'stockings') {
+
+            if (paramHeight) {
+                let resultHeight = 'Court';
+                if (paramHeight > 74) {
+                    resultHeight = 'Normal';
+                }
+                $('.calc-result-height').html(resultHeight);
+            }
+
+            if (paramAnkle && paramHip && paramCalf) {
+                let resultSize = '&mdash;';
+
+                const sizesStockingsLength = sizesStockings.length;
+
+                let sizeHip = sizesStockingsLength - 1;
+                let sizeCalf = sizesStockingsLength - 1;
+                let sizeAnkle = sizesStockingsLength - 1;
+
+                for (let i = sizesStockingsLength - 1; i > -1; i--) {
+                    if (paramHip >= sizesStockings[i].hip[0] && paramHip <= sizesStockings[i].hip[1]) {
+                        sizeHip = i;
+                    }
+                    if (paramCalf >= sizesStockings[i].calf[0] && paramCalf <= sizesStockings[i].calf[1]) {
+                        sizeCalf = i;
+                    }
+                    if (paramAnkle >= sizesStockings[i].ankle[0] && paramAnkle <= sizesStockings[i].ankle[1]) {
+                        sizeAnkle = i;
+                    }
+                }
+                if (sizeHip == sizesStockingsLength - 1) {
+                    let minHip = sizesStockings[0].hip[0];
+                    for (let i = 1; i < sizesStockingsLength; i++) {
+                        if (minHip > sizesStockings[i].hip[i]) {
+                            minHip = sizesStockings[i].hip[i];
+                        }
+                    }
+                    if (paramHip < minHip) {
+                        sizeHip = 0;
+                    }
+                }
+                if (sizeCalf == sizesStockingsLength - 1) {
+                    let minCalf = sizesStockings[0].calf[0];
+                    for (let i = 1; i < sizesStockingsLength; i++) {
+                        if (minCalf > sizesStockings[i].calf[i]) {
+                            minCalf = sizesStockings[i].calf[i];
+                        }
+                    }
+                    if (paramCalf < minCalf) {
+                        sizeCalf = 0;
+                    }
+                }
+                if (sizeAnkle == sizesStockingsLength - 1) {
+                    let minAnkle = sizesStockings[0].ankle[0];
+                    for (let i = 1; i < sizesStockingsLength; i++) {
+                        if (minAnkle > sizesStockings[i].ankle[i]) {
+                            minAnkle = sizesStockings[i].ankle[i];
+                        }
+                    }
+                    if (paramAnkle < minAnkle) {
+                        sizeAnkle = 0;
+                    }
+                }
+                const sizeMax = Math.max(sizeHip, sizeCalf, sizeAnkle);
+
+                $('.calc-result-size').html(sizesStockings[sizeMax].title);
+            }
+
+        } else {
+
+            if (paramHeight) {
+                let resultHeight = 'Court';
+                if (paramHeight > 40) {
+                    resultHeight = 'Normal';
+                }
+                $('.calc-result-height').html(resultHeight);
+            }
+
+            if (paramAnkle && paramHip && paramCalf) {
+                let resultSize = '&mdash;';
+
+                const sizesStockingsLength = sizesStockings.length;
+
+                let sizeHip = sizesStockingsLength - 1;
+                let sizeCalf = sizesStockingsLength - 1;
+                let sizeAnkle = sizesStockingsLength - 1;
+
+                for (let i = sizesStockingsLength - 1; i > -1; i--) {
+                    if (paramHip >= sizesStockings[i].hip[0] && paramHip <= sizesStockings[i].hip[1]) {
+                        sizeHip = i;
+                    }
+                    if (paramCalf >= sizesStockings[i].calf[0] && paramCalf <= sizesStockings[i].calf[1]) {
+                        sizeCalf = i;
+                    }
+                    if (paramAnkle >= sizesStockings[i].ankle[0] && paramAnkle <= sizesStockings[i].ankle[1]) {
+                        sizeAnkle = i;
+                    }
+                }
+                if (sizeHip == sizesStockingsLength - 1) {
+                    let minHip = sizesStockings[0].hip[0];
+                    for (let i = 1; i < sizesStockingsLength; i++) {
+                        if (minHip > sizesStockings[i].hip[i]) {
+                            minHip = sizesStockings[i].hip[i];
+                        }
+                    }
+                    if (paramHip < minHip) {
+                        sizeHip = 0;
+                    }
+                }
+                if (sizeCalf == sizesStockingsLength - 1) {
+                    let minCalf = sizesStockings[0].calf[0];
+                    for (let i = 1; i < sizesStockingsLength; i++) {
+                        if (minCalf > sizesStockings[i].calf[i]) {
+                            minCalf = sizesStockings[i].calf[i];
+                        }
+                    }
+                    if (paramCalf < minCalf) {
+                        sizeCalf = 0;
+                    }
+                }
+                if (sizeAnkle == sizesStockingsLength - 1) {
+                    let minAnkle = sizesStockings[0].ankle[0];
+                    for (let i = 1; i < sizesStockingsLength; i++) {
+                        if (minAnkle > sizesStockings[i].ankle[i]) {
+                            minAnkle = sizesStockings[i].ankle[i];
+                        }
+                    }
+                    if (paramAnkle < minAnkle) {
+                        sizeAnkle = 0;
+                    }
+                }
+                const sizeMax = Math.max(sizeHip, sizeCalf, sizeAnkle);
+
+                $('.calc-result-size').html(sizesStockings[sizeMax].title);
+            }
+
+        }
+    }
+
+    $('.calc .form-input input').change(function() {
+        updateCalc();
+    });
+
 });
 
 function checkCatalogueFilter() {
@@ -657,6 +1030,18 @@ function checkCatalogueFilter() {
 function initForm(curForm) {
     curForm.find('input.phoneRU').attr('autocomplete', 'off');
     curForm.find('input.phoneRU').mask('+0 000 000-00-00');
+
+    curForm.find('input.inputCalcNumber').attr('autocomplete', 'off');
+    curForm.find('input.inputCalcNumber').mask('X0ZZZ', {
+        translation: {
+            'X': {
+                pattern: /[1-9]/
+            },
+            'Z': {
+                pattern: /[0-9]|\,/, optional: true
+            }
+        }
+    });
 
     curForm.find('.form-input input, .form-input textarea').each(function() {
         if ($(this).val() != '') {
@@ -720,9 +1105,9 @@ function initForm(curForm) {
                     curFiles.find('label.error').remove();
                 } else {
                     if (typeof curInput.attr('multiple') !== 'undefined') {
-                        curFiles.find('.form-files-list').append('<div class="form-files-list-item error"><div class="form-files-list-item-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.3077 21.5C5.80257 21.5 5.375 21.325 5.025 20.975C4.675 20.625 4.5 20.1974 4.5 19.6923V4.3077C4.5 3.80257 4.675 3.375 5.025 3.025C5.375 2.675 5.80257 2.5 6.3077 2.5H14.25L19.5 7.74995V19.6923C19.5 20.1974 19.325 20.625 18.975 20.975C18.625 21.325 18.1974 21.5 17.6922 21.5H6.3077ZM13.5 8.49995V3.99998H6.3077C6.23077 3.99998 6.16024 4.03203 6.09612 4.09613C6.03202 4.16024 5.99997 4.23077 5.99997 4.3077V19.6923C5.99997 19.7692 6.03202 19.8397 6.09612 19.9038C6.16024 19.9679 6.23077 20 6.3077 20H17.6922C17.7692 20 17.8397 19.9679 17.9038 19.9038C17.9679 19.8397 18 19.7692 18 19.6923V8.49995H13.5Z" /></svg>></svg></div><div class="form-files-list-item-detail"><div class="form-files-list-item-name">' + data.result.path + '</div><div class="form-files-list-item-size">' + data.result.text + '</div></div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.48077 15.3743C5.10674 15.3743 4.78727 15.2419 4.52237 14.977C4.25746 14.7121 4.125 14.3926 4.125 14.0186V4.49937H3.375V3.37439H6.74998V2.71094H11.25V3.37439H14.625V4.49937H13.875V14.0186C13.875 14.3974 13.7437 14.7181 13.4812 14.9806C13.2187 15.2431 12.898 15.3743 12.5192 15.3743H5.48077ZM12.75 4.49937H5.24998V14.0186C5.24998 14.0859 5.27162 14.1412 5.31489 14.1845C5.35817 14.2277 5.41346 14.2494 5.48077 14.2494H12.5192C12.5769 14.2494 12.6298 14.2253 12.6779 14.1773C12.7259 14.1292 12.75 14.0763 12.75 14.0186V4.49937ZM7.05289 12.7494H8.17787V5.99937H7.05289V12.7494ZM9.82209 12.7494H10.9471V5.99937H9.82209V12.7494Z" /></svg></a></div>');
+                        curFiles.find('.form-files-list').append('<div class="form-files-list-item error"><div class="form-files-list-item-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.3077 21.5C5.80257 21.5 5.375 21.325 5.025 20.975C4.675 20.625 4.5 20.1974 4.5 19.6923V4.3077C4.5 3.80257 4.675 3.375 5.025 3.025C5.375 2.675 5.80257 2.5 6.3077 2.5H14.25L19.5 7.74995V19.6923C19.5 20.1974 19.325 20.625 18.975 20.975C18.625 21.325 18.1974 21.5 17.6922 21.5H6.3077ZM13.5 8.49995V3.99998H6.3077C6.23077 3.99998 6.16024 4.03203 6.09612 4.09613C6.03202 4.16024 5.99997 4.23077 5.99997 4.3077V19.6923C5.99997 19.7692 6.03202 19.8397 6.09612 19.9038C6.16024 19.9679 6.23077 20 6.3077 20H17.6922C17.7692 20 17.8397 19.9679 17.9038 19.9038C17.9679 19.8397 18 19.7692 18 19.6923V8.49995H13.5Z" /></svg></svg></div><div class="form-files-list-item-detail"><div class="form-files-list-item-name">' + data.result.path + '</div><div class="form-files-list-item-size">' + data.result.text + '</div></div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.48077 15.3743C5.10674 15.3743 4.78727 15.2419 4.52237 14.977C4.25746 14.7121 4.125 14.3926 4.125 14.0186V4.49937H3.375V3.37439H6.74998V2.71094H11.25V3.37439H14.625V4.49937H13.875V14.0186C13.875 14.3974 13.7437 14.7181 13.4812 14.9806C13.2187 15.2431 12.898 15.3743 12.5192 15.3743H5.48077ZM12.75 4.49937H5.24998V14.0186C5.24998 14.0859 5.27162 14.1412 5.31489 14.1845C5.35817 14.2277 5.41346 14.2494 5.48077 14.2494H12.5192C12.5769 14.2494 12.6298 14.2253 12.6779 14.1773C12.7259 14.1292 12.75 14.0763 12.75 14.0186V4.49937ZM7.05289 12.7494H8.17787V5.99937H7.05289V12.7494ZM9.82209 12.7494H10.9471V5.99937H9.82209V12.7494Z" /></svg></a></div>');
                     } else {
-                        curFiles.find('.form-files-list').html('<div class="form-files-list-item error"><div class="form-files-list-item-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.3077 21.5C5.80257 21.5 5.375 21.325 5.025 20.975C4.675 20.625 4.5 20.1974 4.5 19.6923V4.3077C4.5 3.80257 4.675 3.375 5.025 3.025C5.375 2.675 5.80257 2.5 6.3077 2.5H14.25L19.5 7.74995V19.6923C19.5 20.1974 19.325 20.625 18.975 20.975C18.625 21.325 18.1974 21.5 17.6922 21.5H6.3077ZM13.5 8.49995V3.99998H6.3077C6.23077 3.99998 6.16024 4.03203 6.09612 4.09613C6.03202 4.16024 5.99997 4.23077 5.99997 4.3077V19.6923C5.99997 19.7692 6.03202 19.8397 6.09612 19.9038C6.16024 19.9679 6.23077 20 6.3077 20H17.6922C17.7692 20 17.8397 19.9679 17.9038 19.9038C17.9679 19.8397 18 19.7692 18 19.6923V8.49995H13.5Z" /></svg>></svg></div><div class="form-files-list-item-detail"><div class="form-files-list-item-name">' + data.result.path + '</div><div class="form-files-list-item-size">' + data.result.text + '</div></div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.48077 15.3743C5.10674 15.3743 4.78727 15.2419 4.52237 14.977C4.25746 14.7121 4.125 14.3926 4.125 14.0186V4.49937H3.375V3.37439H6.74998V2.71094H11.25V3.37439H14.625V4.49937H13.875V14.0186C13.875 14.3974 13.7437 14.7181 13.4812 14.9806C13.2187 15.2431 12.898 15.3743 12.5192 15.3743H5.48077ZM12.75 4.49937H5.24998V14.0186C5.24998 14.0859 5.27162 14.1412 5.31489 14.1845C5.35817 14.2277 5.41346 14.2494 5.48077 14.2494H12.5192C12.5769 14.2494 12.6298 14.2253 12.6779 14.1773C12.7259 14.1292 12.75 14.0763 12.75 14.0186V4.49937ZM7.05289 12.7494H8.17787V5.99937H7.05289V12.7494ZM9.82209 12.7494H10.9471V5.99937H9.82209V12.7494Z" /></svg></a></div>');
+                        curFiles.find('.form-files-list').html('<div class="form-files-list-item error"><div class="form-files-list-item-icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.3077 21.5C5.80257 21.5 5.375 21.325 5.025 20.975C4.675 20.625 4.5 20.1974 4.5 19.6923V4.3077C4.5 3.80257 4.675 3.375 5.025 3.025C5.375 2.675 5.80257 2.5 6.3077 2.5H14.25L19.5 7.74995V19.6923C19.5 20.1974 19.325 20.625 18.975 20.975C18.625 21.325 18.1974 21.5 17.6922 21.5H6.3077ZM13.5 8.49995V3.99998H6.3077C6.23077 3.99998 6.16024 4.03203 6.09612 4.09613C6.03202 4.16024 5.99997 4.23077 5.99997 4.3077V19.6923C5.99997 19.7692 6.03202 19.8397 6.09612 19.9038C6.16024 19.9679 6.23077 20 6.3077 20H17.6922C17.7692 20 17.8397 19.9679 17.9038 19.9038C17.9679 19.8397 18 19.7692 18 19.6923V8.49995H13.5Z" /></svg></svg></div><div class="form-files-list-item-detail"><div class="form-files-list-item-name">' + data.result.path + '</div><div class="form-files-list-item-size">' + data.result.text + '</div></div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.48077 15.3743C5.10674 15.3743 4.78727 15.2419 4.52237 14.977C4.25746 14.7121 4.125 14.3926 4.125 14.0186V4.49937H3.375V3.37439H6.74998V2.71094H11.25V3.37439H14.625V4.49937H13.875V14.0186C13.875 14.3974 13.7437 14.7181 13.4812 14.9806C13.2187 15.2431 12.898 15.3743 12.5192 15.3743H5.48077ZM12.75 4.49937H5.24998V14.0186C5.24998 14.0859 5.27162 14.1412 5.31489 14.1845C5.35817 14.2277 5.41346 14.2494 5.48077 14.2494H12.5192C12.5769 14.2494 12.6298 14.2253 12.6779 14.1773C12.7259 14.1292 12.75 14.0763 12.75 14.0186V4.49937ZM7.05289 12.7494H8.17787V5.99937H7.05289V12.7494ZM9.82209 12.7494H10.9471V5.99937H9.82209V12.7494Z" /></svg></a></div>');
                     }
                 }
                 curFiles.addClass('full');
