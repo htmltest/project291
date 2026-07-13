@@ -1229,6 +1229,8 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
 .calc-info-size-title {color:rgba(28, 28, 28, 0.8)}
 .calc-info-size-value {color:#000000; font-weight:normal; font-size:30px; line-height:36px}
 .calc-info-size+.calc-info-size {border-top:1px solid #ECECEE; padding:20px 0 0 0}
+.calc-info-link {margin:0 0 20px 0}
+.calc-info-link a {display:flex}
 .calc-info-text {border-top:1px solid #ECECEE; padding:20px 0 0 0; font-weight:500; color:#000000}
 .calc-info-photo a {display:block; background:rgba(0, 0, 0, 0.03); position:relative}
 .calc-info-photo a img {display:block; width:100%}
@@ -1244,6 +1246,18 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
     .calc-form form {flex-direction:column; gap:40px 0; align-items:stretch}
     .calc-form-input-unit {font-size:16px; line-height:1.5em; top:11px}
     .calc-info {min-width:0; max-width:none; padding:15px}
+    .calc-info-link a {padding-left:0; padding-right:0}
+}
+
+.calc-height {display:flex; gap:0 60px; margin:40px 0}
+.calc-height table {width:auto; border-collapse:collapse; border-spacing:0; border:none}
+.calc-height table th {vertical-align:top; text-align:left; padding:0 0 20px 0; border-bottom:1px solid #ECECEE; color:#866857; font-weight:500; text-transform:uppercase}
+.calc-height table td {vertical-align:top; text-align:left; padding:20px 0; border-bottom:1px solid #ECECEE; color:#1C1C1C}
+.calc-height table td:first-child {width:90px; font-weight:500}
+
+@media (max-width:1199px) {
+    .calc-height {flex-direction:column; gap:40px 0}
+    .calc-height table {width:100%}
 }
 
 .returns {display:flex; margin:40px 0 0 0; align-items:flex-start; flex-direction:row-reverse; gap:0 60px}

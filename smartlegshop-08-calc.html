@@ -124,20 +124,20 @@
                                             <div class="form-input"><span class="form-input-label">Высота</span><input type="text" name="height" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
                                         </div>
 
-                                        <div class="calc-form-block">
+                                        <div class="calc-form-block calc-form-inputs-tights">
                                             <h3>Бедра и талия</h3>
 
-                                            <div class="form-input calc-form-inputs-tights"><span class="form-input-label">Окружность талии</span><input type="text" name="waist" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
+                                            <div class="form-input"><span class="form-input-label">Окружность талии</span><input type="text" name="waist" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
                                             <div class="form-input"><span class="form-input-label">Окружность бёдер</span><input type="text" name="hip" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
                                         </div>
                                     </div>
 
                                     <div class="calc-form-col">
                                         <div class="calc-form-block">
-                                            <h3>Щиколотки</h3>
+                                            <h3>Бедра</h3>
 
-                                            <div class="form-input"><span class="form-input-label">Окружность правой щиколотки</span><input type="text" name="rightAnkle" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
-                                            <div class="form-input"><span class="form-input-label">Окружность левой щиколотки</span><input type="text" name="leftAnkle" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
+                                            <div class="form-input"><span class="form-input-label">Окружность правого бедра</span><input type="text" name="rightHip" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
+                                            <div class="form-input"><span class="form-input-label">Окружность левого бедра</span><input type="text" name="leftHip" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
                                         </div>
 
                                         <div class="calc-form-block calc-form-inputs-socks hidden">
@@ -148,10 +148,10 @@
                                         </div>
 
                                         <div class="calc-form-block">
-                                            <h3>Бедра</h3>
+                                            <h3>Щиколотки</h3>
 
-                                            <div class="form-input"><span class="form-input-label">Окружность правого бедра</span><input type="text" name="rightHip" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
-                                            <div class="form-input"><span class="form-input-label">Окружность левого бедра</span><input type="text" name="leftHip" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
+                                            <div class="form-input"><span class="form-input-label">Окружность правой щиколотки</span><input type="text" name="rightAnkle" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
+                                            <div class="form-input"><span class="form-input-label">Окружность левой щиколотки</span><input type="text" name="leftAnkle" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
                                         </div>
                                     </div>
                                 </form>
@@ -166,6 +166,7 @@
                                     <div class="calc-info-size-title">Длина</div>
                                     <div class="calc-info-size-value calc-result-height">&mdash;</div>
                                 </div>
+                                <div class="calc-info-link"><a href="smartlegshop-02-catalogue.html" class="btn">посмотреть в каталоге<span><svg><use xlink:href="images/sprite.svg#calc-info-link"></use></svg></a></div>
                                 <div class="calc-info-text">Утренние замеры&nbsp;&mdash; самые точные. В&nbsp;течение дня ноги могут отекать, и&nbsp;результат будет искажён.</div>
                                 <div class="calc-info-photos">
                                     <div class="calc-info-photo calc-form-inputs-tights"><a href="windows/calc-photo.html" class="window-link"><img src="images/calc-photo.svg" alt=""><span><svg><use xlink:href="images/sprite.svg#icon-zoom"></use></svg></span></a></div>
@@ -173,9 +174,32 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <h2>Таблица размеров</h2>
                         <div class="calc-form-inputs-tights">
+                            <div class="calc-height">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Длина колготок</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Court</td>
+                                            <td>Менее или равно 69&nbsp;см</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Normal</td>
+                                            <td>Равно&nbsp;69,1&nbsp;&mdash; 77&nbsp;см</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Long</td>
+                                            <td>Более 77&nbsp;см</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <table class="catalogue-sizes-table">
                                 <body>
                                     <tr>
@@ -233,6 +257,42 @@
                         </div>
 
                         <div class="calc-form-inputs-socks hidden">
+                            <div class="calc-height">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Длина гольфов</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Court</td>
+                                            <td>Менее или равно 40&nbsp;см</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Normal</td>
+                                            <td>Более 40&nbsp;см</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Длина чулок</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Court</td>
+                                            <td>Менее или равно 74&nbsp;см</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Normal</td>
+                                            <td>Более 74&nbsp;см</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             <table class="catalogue-sizes-table">
                                 <body>
                                     <tr class="catalogue-sizes-table-header">

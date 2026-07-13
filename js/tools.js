@@ -782,6 +782,7 @@ $(document).ready(function() {
 
         $('.calc-result-size').html('&mdash;');
         $('.calc-result-height').html('&mdash;');
+        let newLink = $('.calc-info-link a').attr('href').split('?')[0];
 
         if (curType == 'tights') {
 
@@ -794,6 +795,7 @@ $(document).ready(function() {
                     resultHeight = 'Long';
                 }
                 $('.calc-result-height').html(resultHeight);
+                newLink += '?height=' + resultHeight;
             }
 
             if (paramWaist && paramHips && paramAnkle && paramHip) {
@@ -801,61 +803,43 @@ $(document).ready(function() {
 
                 const sizesTightsLength = sizesTights.length;
 
-                let sizeWaist = sizesTightsLength - 1;
-                let sizeHips = sizesTightsLength - 1;
-                let sizeHip = sizesTightsLength - 1;
-                let sizeAnkle = sizesTightsLength - 1;
+                const newSizes = [];
 
-                for (let i = sizesTightsLength - 1; i > -1; i--) {
-                    if (sizesTights[i].waist >= paramWaist) {
-                        sizeWaist = i;
-                    }
-                    if (paramHips >= sizesTights[i].hips[0] && paramHips <= sizesTights[i].hips[1]) {
-                        sizeHips = i;
-                    }
-                    if (paramHip >= sizesTights[i].hip[0] && paramHip <= sizesTights[i].hip[1]) {
-                        sizeHip = i;
-                    }
-                    if (paramAnkle >= sizesTights[i].ankle[0] && paramAnkle <= sizesTights[i].ankle[1]) {
-                        sizeAnkle = i;
-                    }
-                }
-                if (sizeHips == sizesTightsLength - 1) {
-                    let minHips = sizesTights[0].hips[0];
-                    for (let i = 1; i < sizesTightsLength; i++) {
-                        if (minHips > sizesTights[i].hips[i]) {
-                            minHips = sizesTights[i].hips[i];
-                        }
-                    }
-                    if (paramHips < minHips) {
-                        sizeHips = 0;
-                    }
-                }
-                if (sizeHip == sizesTightsLength - 1) {
-                    let minHip = sizesTights[0].hip[0];
-                    for (let i = 1; i < sizesTightsLength; i++) {
-                        if (minHip > sizesTights[i].hip[i]) {
-                            minHip = sizesTights[i].hip[i];
-                        }
-                    }
-                    if (paramHip < minHip) {
-                        sizeHip = 0;
-                    }
-                }
-                if (sizeAnkle == sizesTightsLength - 1) {
-                    let minAnkle = sizesTights[0].ankle[0];
-                    for (let i = 1; i < sizesTightsLength; i++) {
-                        if (minAnkle > sizesTights[i].ankle[i]) {
-                            minAnkle = sizesTights[i].ankle[i];
-                        }
-                    }
-                    if (paramAnkle < minAnkle) {
-                        sizeAnkle = 0;
-                    }
-                }
-                const sizeMax = Math.max(sizeWaist, sizeHips, sizeHip, sizeAnkle);
+                for (let i = 0; i < sizesTightsLength; i++) {
+                    let curStatus = true;
 
-                $('.calc-result-size').html(sizesTights[sizeMax].title);
+                    if (paramWaist > sizesTights[i].waist) {
+                        curStatus = false;
+                    }
+                    if (paramHips < sizesTights[i].hips[0] || paramHips > sizesTights[i].hips[1]) {
+                        curStatus = false;
+                    }
+                    if (paramHip < sizesTights[i].hip[0] || paramHip > sizesTights[i].hip[1]) {
+                        curStatus = false;
+                    }
+                    if (paramAnkle < sizesTights[i].ankle[0] || paramAnkle > sizesTights[i].ankle[1]) {
+                        curStatus = false;
+                    }
+
+                    if (curStatus) {
+                        newSizes.push(sizesTights[i].title);
+                    }
+                }
+
+                if (newSizes.length > 0) {
+                    $('.calc-result-size').html(newSizes.join(', '));
+                    if (paramHeight) {
+                        newLink += '&';
+                    } else {
+                        newLink += '?';
+                    }
+                    newSizes.forEach(function(newSize, index) {
+                        if (index > 0) {
+                            newLink += '&';
+                        }
+                        newLink += 'size[' + newSize + ']=' + newSize;
+                    });
+                }
             }
 
         } else if (curType == 'stockings') {
@@ -866,6 +850,7 @@ $(document).ready(function() {
                     resultHeight = 'Normal';
                 }
                 $('.calc-result-height').html(resultHeight);
+                newLink += '?height=' + resultHeight;
             }
 
             if (paramAnkle && paramHip && paramCalf) {
@@ -873,57 +858,40 @@ $(document).ready(function() {
 
                 const sizesStockingsLength = sizesStockings.length;
 
-                let sizeHip = sizesStockingsLength - 1;
-                let sizeCalf = sizesStockingsLength - 1;
-                let sizeAnkle = sizesStockingsLength - 1;
+                const newSizes = [];
 
-                for (let i = sizesStockingsLength - 1; i > -1; i--) {
-                    if (paramHip >= sizesStockings[i].hip[0] && paramHip <= sizesStockings[i].hip[1]) {
-                        sizeHip = i;
-                    }
-                    if (paramCalf >= sizesStockings[i].calf[0] && paramCalf <= sizesStockings[i].calf[1]) {
-                        sizeCalf = i;
-                    }
-                    if (paramAnkle >= sizesStockings[i].ankle[0] && paramAnkle <= sizesStockings[i].ankle[1]) {
-                        sizeAnkle = i;
-                    }
-                }
-                if (sizeHip == sizesStockingsLength - 1) {
-                    let minHip = sizesStockings[0].hip[0];
-                    for (let i = 1; i < sizesStockingsLength; i++) {
-                        if (minHip > sizesStockings[i].hip[i]) {
-                            minHip = sizesStockings[i].hip[i];
-                        }
-                    }
-                    if (paramHip < minHip) {
-                        sizeHip = 0;
-                    }
-                }
-                if (sizeCalf == sizesStockingsLength - 1) {
-                    let minCalf = sizesStockings[0].calf[0];
-                    for (let i = 1; i < sizesStockingsLength; i++) {
-                        if (minCalf > sizesStockings[i].calf[i]) {
-                            minCalf = sizesStockings[i].calf[i];
-                        }
-                    }
-                    if (paramCalf < minCalf) {
-                        sizeCalf = 0;
-                    }
-                }
-                if (sizeAnkle == sizesStockingsLength - 1) {
-                    let minAnkle = sizesStockings[0].ankle[0];
-                    for (let i = 1; i < sizesStockingsLength; i++) {
-                        if (minAnkle > sizesStockings[i].ankle[i]) {
-                            minAnkle = sizesStockings[i].ankle[i];
-                        }
-                    }
-                    if (paramAnkle < minAnkle) {
-                        sizeAnkle = 0;
-                    }
-                }
-                const sizeMax = Math.max(sizeHip, sizeCalf, sizeAnkle);
+                for (let i = 0; i < sizesStockingsLength; i++) {
+                    let curStatus = true;
 
-                $('.calc-result-size').html(sizesStockings[sizeMax].title);
+                    if (paramHip < sizesStockings[i].hip[0] || paramHip > sizesStockings[i].hip[1]) {
+                        curStatus = false;
+                    }
+                    if (paramCalf < sizesStockings[i].calf[0] || paramCalf > sizesStockings[i].calf[1]) {
+                        curStatus = false;
+                    }
+                    if (paramAnkle < sizesStockings[i].ankle[0] || paramAnkle > sizesStockings[i].ankle[1]) {
+                        curStatus = false;
+                    }
+
+                    if (curStatus) {
+                        newSizes.push(sizesStockings[i].title);
+                    }
+                }
+
+                if (newSizes.length > 0) {
+                    $('.calc-result-size').html(newSizes.join(', '));
+                    if (paramHeight) {
+                        newLink += '&';
+                    } else {
+                        newLink += '?';
+                    }
+                    newSizes.forEach(function(newSize, index) {
+                        if (index > 0) {
+                            newLink += '&';
+                        }
+                        newLink += 'size[' + newSize + ']=' + newSize;
+                    });
+                }
             }
 
         } else {
@@ -934,6 +902,7 @@ $(document).ready(function() {
                     resultHeight = 'Normal';
                 }
                 $('.calc-result-height').html(resultHeight);
+                newLink += '?height=' + resultHeight;
             }
 
             if (paramAnkle && paramHip && paramCalf) {
@@ -941,60 +910,44 @@ $(document).ready(function() {
 
                 const sizesStockingsLength = sizesStockings.length;
 
-                let sizeHip = sizesStockingsLength - 1;
-                let sizeCalf = sizesStockingsLength - 1;
-                let sizeAnkle = sizesStockingsLength - 1;
+                const newSizes = [];
 
-                for (let i = sizesStockingsLength - 1; i > -1; i--) {
-                    if (paramHip >= sizesStockings[i].hip[0] && paramHip <= sizesStockings[i].hip[1]) {
-                        sizeHip = i;
-                    }
-                    if (paramCalf >= sizesStockings[i].calf[0] && paramCalf <= sizesStockings[i].calf[1]) {
-                        sizeCalf = i;
-                    }
-                    if (paramAnkle >= sizesStockings[i].ankle[0] && paramAnkle <= sizesStockings[i].ankle[1]) {
-                        sizeAnkle = i;
-                    }
-                }
-                if (sizeHip == sizesStockingsLength - 1) {
-                    let minHip = sizesStockings[0].hip[0];
-                    for (let i = 1; i < sizesStockingsLength; i++) {
-                        if (minHip > sizesStockings[i].hip[i]) {
-                            minHip = sizesStockings[i].hip[i];
-                        }
-                    }
-                    if (paramHip < minHip) {
-                        sizeHip = 0;
-                    }
-                }
-                if (sizeCalf == sizesStockingsLength - 1) {
-                    let minCalf = sizesStockings[0].calf[0];
-                    for (let i = 1; i < sizesStockingsLength; i++) {
-                        if (minCalf > sizesStockings[i].calf[i]) {
-                            minCalf = sizesStockings[i].calf[i];
-                        }
-                    }
-                    if (paramCalf < minCalf) {
-                        sizeCalf = 0;
-                    }
-                }
-                if (sizeAnkle == sizesStockingsLength - 1) {
-                    let minAnkle = sizesStockings[0].ankle[0];
-                    for (let i = 1; i < sizesStockingsLength; i++) {
-                        if (minAnkle > sizesStockings[i].ankle[i]) {
-                            minAnkle = sizesStockings[i].ankle[i];
-                        }
-                    }
-                    if (paramAnkle < minAnkle) {
-                        sizeAnkle = 0;
-                    }
-                }
-                const sizeMax = Math.max(sizeHip, sizeCalf, sizeAnkle);
+                for (let i = 0; i < sizesStockingsLength; i++) {
+                    let curStatus = true;
 
-                $('.calc-result-size').html(sizesStockings[sizeMax].title);
+                    if (paramHip < sizesStockings[i].hip[0] || paramHip > sizesStockings[i].hip[1]) {
+                        curStatus = false;
+                    }
+                    if (paramCalf < sizesStockings[i].calf[0] || paramCalf > sizesStockings[i].calf[1]) {
+                        curStatus = false;
+                    }
+                    if (paramAnkle < sizesStockings[i].ankle[0] || paramAnkle > sizesStockings[i].ankle[1]) {
+                        curStatus = false;
+                    }
+
+                    if (curStatus) {
+                        newSizes.push(sizesStockings[i].title);
+                    }
+                }
+
+                if (newSizes.length > 0) {
+                    $('.calc-result-size').html(newSizes.join(', '));
+                    if (paramHeight) {
+                        newLink += '&';
+                    } else {
+                        newLink += '?';
+                    }
+                    newSizes.forEach(function(newSize, index) {
+                        if (index > 0) {
+                            newLink += '&';
+                        }
+                        newLink += 'size[' + newSize + ']=' + newSize;
+                    });
+                }
             }
 
         }
+        $('.calc-info-link a').attr('href', newLink);
     }
 
     $('.calc .form-input input').change(function() {
