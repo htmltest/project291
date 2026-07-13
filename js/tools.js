@@ -782,7 +782,7 @@ $(document).ready(function() {
 
         $('.calc-result-size').html('&mdash;');
         $('.calc-result-height').html('&mdash;');
-        let newLink = $('.calc-info-link a').attr('href').split('?')[0];
+        let newLink = $('.calc-info-link a').attr('href').split('?')[0] + '?' + 'type=' + curType;
 
         if (curType == 'tights') {
 
@@ -795,7 +795,7 @@ $(document).ready(function() {
                     resultHeight = 'Long';
                 }
                 $('.calc-result-height').html(resultHeight);
-                newLink += '?height=' + resultHeight;
+                newLink += '&height=' + resultHeight;
             }
 
             if (paramWaist && paramHips && paramAnkle && paramHip) {
@@ -828,16 +828,8 @@ $(document).ready(function() {
 
                 if (newSizes.length > 0) {
                     $('.calc-result-size').html(newSizes.join(', '));
-                    if (paramHeight) {
-                        newLink += '&';
-                    } else {
-                        newLink += '?';
-                    }
                     newSizes.forEach(function(newSize, index) {
-                        if (index > 0) {
-                            newLink += '&';
-                        }
-                        newLink += 'size[' + newSize + ']=' + newSize;
+                        newLink += '&size[' + newSize + ']=' + newSize;
                     });
                 }
             }
@@ -850,7 +842,7 @@ $(document).ready(function() {
                     resultHeight = 'Normal';
                 }
                 $('.calc-result-height').html(resultHeight);
-                newLink += '?height=' + resultHeight;
+                newLink += '&height=' + resultHeight;
             }
 
             if (paramAnkle && paramHip && paramCalf) {
@@ -880,16 +872,8 @@ $(document).ready(function() {
 
                 if (newSizes.length > 0) {
                     $('.calc-result-size').html(newSizes.join(', '));
-                    if (paramHeight) {
-                        newLink += '&';
-                    } else {
-                        newLink += '?';
-                    }
                     newSizes.forEach(function(newSize, index) {
-                        if (index > 0) {
-                            newLink += '&';
-                        }
-                        newLink += 'size[' + newSize + ']=' + newSize;
+                        newLink += '&size[' + newSize + ']=' + newSize;
                     });
                 }
             }
@@ -902,7 +886,7 @@ $(document).ready(function() {
                     resultHeight = 'Normal';
                 }
                 $('.calc-result-height').html(resultHeight);
-                newLink += '?height=' + resultHeight;
+                newLink += '&height=' + resultHeight;
             }
 
             if (paramAnkle && paramHip && paramCalf) {
@@ -932,16 +916,8 @@ $(document).ready(function() {
 
                 if (newSizes.length > 0) {
                     $('.calc-result-size').html(newSizes.join(', '));
-                    if (paramHeight) {
-                        newLink += '&';
-                    } else {
-                        newLink += '?';
-                    }
                     newSizes.forEach(function(newSize, index) {
-                        if (index > 0) {
-                            newLink += '&';
-                        }
-                        newLink += 'size[' + newSize + ']=' + newSize;
+                        newLink += '&size[' + newSize + ']=' + newSize;
                     });
                 }
             }
@@ -951,6 +927,10 @@ $(document).ready(function() {
     }
 
     $('.calc .form-input input').change(function() {
+        updateCalc();
+    });
+
+    $('.calc').each(function() {
         updateCalc();
     });
 
