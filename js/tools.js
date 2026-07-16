@@ -780,27 +780,25 @@ $(document).ready(function() {
             }
         ];
 
-        $('.calc-result-size').html('&mdash;');
-        $('.calc-result-height').html('&mdash;');
         let newLink = $('.calc-info-link a').attr('href').split('?')[0] + '?' + 'type=' + curType;
 
         if (curType == 'tights') {
 
             if (paramHeight) {
-                let resultHeight = 'Court';
+                let resultHeight = 'Короткий';
                 if (paramHeight > 69 && paramHeight <= 77) {
-                    resultHeight = 'Normal';
+                    resultHeight = 'Нормальный';
                 }
                 if (paramHeight > 77) {
-                    resultHeight = 'Long';
+                    resultHeight = 'Длинный';
                 }
                 $('.calc-result-height').html(resultHeight);
                 newLink += '&height=' + resultHeight;
+            } else {
+                let resultHeight = $('.calc-result-height').attr('data-text-default');
             }
 
             if (paramWaist && paramHips && paramAnkle && paramHip) {
-                let resultSize = '&mdash;';
-
                 const sizesTightsLength = sizesTights.length;
 
                 const newSizes = [];
@@ -831,23 +829,32 @@ $(document).ready(function() {
                     newSizes.forEach(function(newSize, index) {
                         newLink += '&size[' + newSize + ']=' + newSize;
                     });
+                    $('.calc-info-size').removeClass('hidden');
+                    $('.calc-info-notsize').removeClass('visible');
+                } else {
+                    $('.calc-info-size').addClass('hidden');
+                    $('.calc-info-notsize').addClass('visible');
                 }
+            } else {
+                $('.calc-info-size').removeClass('hidden');
+                $('.calc-info-notsize').removeClass('visible');
+                $('.calc-result-size').html($('.calc-result-size').attr('data-text-default'));
             }
 
         } else if (curType == 'stockings') {
 
             if (paramHeight) {
-                let resultHeight = 'Court';
+                let resultHeight = 'Короткий';
                 if (paramHeight > 74) {
-                    resultHeight = 'Normal';
+                    resultHeight = 'Нормальный';
                 }
                 $('.calc-result-height').html(resultHeight);
                 newLink += '&height=' + resultHeight;
+            } else {
+                let resultHeight = $('.calc-result-height').attr('data-text-default');
             }
 
             if (paramAnkle && paramHip && paramCalf) {
-                let resultSize = '&mdash;';
-
                 const sizesStockingsLength = sizesStockings.length;
 
                 const newSizes = [];
@@ -875,23 +882,32 @@ $(document).ready(function() {
                     newSizes.forEach(function(newSize, index) {
                         newLink += '&size[' + newSize + ']=' + newSize;
                     });
+                    $('.calc-info-size').removeClass('hidden');
+                    $('.calc-info-notsize').removeClass('visible');
+                } else {
+                    $('.calc-info-size').addClass('hidden');
+                    $('.calc-info-notsize').addClass('visible');
                 }
+            } else {
+                $('.calc-info-size').removeClass('hidden');
+                $('.calc-info-notsize').removeClass('visible');
+                $('.calc-result-size').html($('.calc-result-size').attr('data-text-default'));
             }
 
         } else {
 
             if (paramHeight) {
-                let resultHeight = 'Court';
+                let resultHeight = 'Короткий';
                 if (paramHeight > 40) {
-                    resultHeight = 'Normal';
+                    resultHeight = 'Нормальный';
                 }
                 $('.calc-result-height').html(resultHeight);
                 newLink += '&height=' + resultHeight;
+            } else {
+                let resultHeight = $('.calc-result-height').attr('data-text-default');
             }
 
             if (paramAnkle && paramHip && paramCalf) {
-                let resultSize = '&mdash;';
-
                 const sizesStockingsLength = sizesStockings.length;
 
                 const newSizes = [];
@@ -919,7 +935,16 @@ $(document).ready(function() {
                     newSizes.forEach(function(newSize, index) {
                         newLink += '&size[' + newSize + ']=' + newSize;
                     });
+                    $('.calc-info-size').removeClass('hidden');
+                    $('.calc-info-notsize').removeClass('visible');
+                } else {
+                    $('.calc-info-size').addClass('hidden');
+                    $('.calc-info-notsize').addClass('visible');
                 }
+            } else {
+                $('.calc-info-size').removeClass('hidden');
+                $('.calc-info-notsize').removeClass('visible');
+                $('.calc-result-size').html($('.calc-result-size').attr('data-text-default'));
             }
 
         }
@@ -1231,4 +1256,216 @@ $(window).on('load resize scroll', function() {
             $('.up-link').css({'margin-bottom': 0});
         }
     }
+});
+
+
+$(document).ready(function() {
+
+    function popupCenter(url, title) {
+        var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left;
+        var dualScreenTop = window.screenTop !== undefined ? window.screenTop : screen.top;
+        var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+        var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+        var left = ((width / 2) - (480 / 2)) + dualScreenLeft;
+        var top = ((height / 3) - (360 / 3)) + dualScreenTop;
+        var newWindow = window.open(url, title, 'scrollbars=yes, width=' + 480 + ', height=' + 360 + ', top=' + top + ', left=' + left);
+        if (window.focus) {
+            newWindow.focus();
+        }
+    }
+
+    $('body').on('click', '.window-photo-social-item-vk', function(e) {
+        var curTitle = encodeURIComponent($('title').html());
+        var curUrl = encodeURIComponent(window.location.href);
+
+        popupCenter('https://vk.com/share.php?url=' + curUrl + '&description=' + curTitle, curTitle);
+
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-photo-social-item-link', function(e) {
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-photo-social-item-link', function(e) {
+        navigator.clipboard.writeText($(this).attr('data-clipboard-text'));
+        e.preventDefault();
+        alert('OK');
+    });
+
+    $('body').on('click', '[data-lightbox]', function(e) {
+        var curItem = $(this);
+        var curGroup = curItem.attr('data-lightbox');
+        if (curGroup == '') {
+            var curGallery = curItem;
+        } else {
+            var curGallery = $('[data-lightbox="' + curGroup + '"]');
+        }
+        var curIndex = curGallery.index(curItem);
+
+        var curWidth = $(window).width();
+        if (curWidth < 480) {
+            curWidth = 480;
+        }
+
+        var curPadding = $('.wrapper').width();
+        var curScroll = $(window).scrollTop();
+        $('html').addClass('window-photo-open');
+        curPadding = $('.wrapper').width() - curPadding;
+        $('body').css({'margin-right': curPadding + 'px'});
+
+        $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+
+        var windowHTML =    '<div class="window-photo">';
+
+        windowHTML +=           '<div class="window-photo-preview">' +
+                                    '<div class="swiper">' +
+                                        '<div class="swiper-wrapper">';
+
+        var galleryLength = curGallery.length;
+
+        for (var i = 0; i < galleryLength; i++) {
+            var curGalleryItem = curGallery.eq(i);
+            windowHTML +=                           '<div class="swiper-slide"><div class="window-photo-preview-list-item"><a href="#"><img src="' + curGalleryItem.find('img').attr('src') + '" alt="" /></a></div></div>';
+        }
+        windowHTML +=                   '</div>' +
+                                    '</div>' +
+                                '</div>';
+
+        windowHTML +=           '<a href="#" class="window-photo-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-close"></use></svg></a>';
+        windowHTML +=           '<a href="#" class="window-photo-download" target="_blank" download><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-download"></use></svg></a>';
+        windowHTML +=           '<div class="window-photo-social">';
+        windowHTML +=               '<div class="window-photo-social-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share"></use></svg></div>';
+        windowHTML +=               '<div class="window-photo-social-window">';
+        windowHTML +=                   '<a href="#" class="window-photo-social-item window-photo-social-item-link"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-link"></use></svg></a>';
+        windowHTML +=                   '<a href="#" class="window-photo-social-item window-photo-social-item-vk"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-vk"></use></svg></a>';
+        windowHTML +=               '</div>';
+        windowHTML +=           '</div>';
+
+        windowHTML +=           '<div class="window-photo-slider">' +
+                                    '<div class="window-photo-slider-list">' +
+                                        '<div class="swiper">' +
+                                            '<div class="swiper-wrapper">';
+
+        for (var i = 0; i < galleryLength; i++) {
+            var curGalleryItem = curGallery.eq(i);
+            windowHTML +=                       '<div class="swiper-slide">' +
+                                                    '<div class="window-photo-slider-list-item">' +
+                                                        '<div class="window-photo-slider-list-item-inner"><img src="' + pathTemplate + 'images/loading.svg" data-src="' + curGalleryItem.attr('href') + '" alt="" /></div>' +
+                                                    '</div>' +
+                                                '</div>';
+        }
+        windowHTML +=                       '</div>' +
+                                        '</div>' +
+                                        '<div class="swiper-button-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></div>' +
+                                        '<div class="swiper-button-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></div>' +
+                                    '</div>' +
+                                '</div>';
+
+        windowHTML +=       '</div>';
+
+        $('.window-photo').remove();
+        $('body').append(windowHTML);
+
+        $('.wrapper').css({'top': -curScroll});
+        $('.wrapper').data('curScroll', curScroll);
+
+        const thumbsSlider = $('.window-photo-preview')
+        const thumbsSwiper = new Swiper(thumbsSlider.find('.swiper')[0], {
+            slidesPerView: 'auto',
+            spaceBetween: 4,
+            direction: 'vertical',
+            mousewheel: true,
+            freeMode: true,
+        });
+
+        const bigSlider = $('.window-photo-slider-list')
+        const bigSwiper = new Swiper(bigSlider.find('.swiper')[0], {
+            slidesPerView: 1,
+            navigation: {
+                prevEl: bigSlider.find('.swiper-button-prev')[0],
+                nextEl: bigSlider.find('.swiper-button-next')[0]
+            },
+            thumbs: {
+                swiper: thumbsSwiper,
+            },
+            on: {
+                afterInit: function () {
+                    $('.window-photo-preview-list-item').eq(0).addClass('active');
+                    var currentSlide = 0;
+                    $('.window-photo-download').attr('href', $('.window-photo-slider-list-item').eq(currentSlide).find('img').attr('data-src'));
+                    $('.window-photo-social-item-link').attr('data-clipboard-text', $('.window-photo-slider-list-item').eq(currentSlide).find('img').attr('data-src'));
+                    var curIMG = $('.window-photo-slider-list-item').eq(currentSlide).find('img');
+                    if (curIMG.attr('src') !== curIMG.attr('data-src')) {
+                        var newIMG = $('<img src="" alt="" style="position:fixed; left:-9999px; top:-9999px" />');
+                        $('body').append(newIMG);
+                        newIMG.one('load', function(e) {
+                            curIMG.attr('src', curIMG.attr('data-src'));
+                            newIMG.remove();
+                        });
+                        newIMG.attr('src', curIMG.attr('data-src'));
+                        window.setTimeout(function() {
+                            curIMG.attr('src', curIMG.attr('data-src'));
+                            if (newIMG) {
+                                newIMG.remove();
+                            }
+                        }, 3000);
+                    }
+                },
+                slideChange: function () {
+                    $('.window-photo-preview-list-item.active').removeClass('active');
+                    $('.window-photo-preview-list-item').eq(bigSwiper.activeIndex).addClass('active');
+                    var currentSlide = bigSwiper.activeIndex;
+                    $('.window-photo-download').attr('href', $('.window-photo-slider-list-item').eq(currentSlide).find('img').attr('data-src'));
+                    $('.window-photo-social-item-link').attr('data-clipboard-text', $('.window-photo-slider-list-item').eq(currentSlide).find('img').attr('data-src'));
+                    var curIMG = $('.window-photo-slider-list-item').eq(currentSlide).find('img');
+                    if (curIMG.attr('src') !== curIMG.attr('data-src')) {
+                        var newIMG = $('<img src="" alt="" style="position:fixed; left:-9999px; top:-9999px" />');
+                        $('body').append(newIMG);
+                        newIMG.one('load', function(e) {
+                            curIMG.attr('src', curIMG.attr('data-src'));
+                            newIMG.remove();
+                        });
+                        newIMG.attr('src', curIMG.attr('data-src'));
+                        window.setTimeout(function() {
+                            curIMG.attr('src', curIMG.attr('data-src'));
+                            if (newIMG) {
+                                newIMG.remove();
+                            }
+                        }, 3000);
+                    }
+                },
+            },
+        });
+
+        $('.window-photo-preview-list-item a').on('click', function(e) {
+            const curItem = $(this);
+            const curIndex = $('.window-photo-preview-list-item a').index(curItem);
+            bigSwiper.slideTo(curIndex);
+            $('.window-photo-preview-list-item.active').removeClass('active');
+            curItem.parent().addClass('active');
+            e.preventDefault();
+        });
+
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-photo-close', function(e) {
+        $('.window-photo').remove();
+        $('html').removeClass('window-photo-open');
+        $('body').css({'margin-right': 0});
+        $('.wrapper').css({'top': 0});
+        $('meta[name="viewport"]').attr('content', 'width=device-width');
+        $(window).scrollTop($('.wrapper').data('curScroll'));
+        e.preventDefault();
+    });
+
+    $('body').on('keyup', function(e) {
+        if (e.keyCode == 27) {
+            if ($('.window-photo').length > 0) {
+                $('.window-photo-close').trigger('click');
+            }
+        }
+    });
+
 });
