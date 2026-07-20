@@ -164,6 +164,14 @@ $(document).ready(function() {
         curPreview.find('.catalogue-item-preview-dot').eq(curIndex).addClass('active');
     });
 
+    $('body').on('mouseleave', '.catalogue-item-preview', function() {
+        const curPreview = $(this);
+        curPreview.find('.catalogue-item-preview-slide.active').removeClass('active');
+        curPreview.find('.catalogue-item-preview-slide').eq(0).addClass('active');
+        curPreview.find('.catalogue-item-preview-dot.active').removeClass('active');
+        curPreview.find('.catalogue-item-preview-dot').eq(0).addClass('active');
+    });
+
     $('.main-catalogue').each(function() {
         const curSlider = $(this);
         new Swiper(curSlider.find('.swiper')[0], {
@@ -237,6 +245,7 @@ $(document).ready(function() {
 
         const bigSlider = $('.catalogue-card-gallery-big')
         const bigSwiper = new Swiper(bigSlider.find('.swiper')[0], {
+            autoHeight: true,
             navigation: {
                 prevEl: bigSlider.find('.swiper-button-prev')[0],
                 nextEl: bigSlider.find('.swiper-button-next')[0]
