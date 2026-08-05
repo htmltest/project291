@@ -246,6 +246,7 @@ $(document).ready(function() {
         const bigSlider = $('.catalogue-card-gallery-big')
         const bigSwiper = new Swiper(bigSlider.find('.swiper')[0], {
             autoHeight: true,
+            loop: true,
             navigation: {
                 prevEl: bigSlider.find('.swiper-button-prev')[0],
                 nextEl: bigSlider.find('.swiper-button-next')[0]
@@ -261,9 +262,9 @@ $(document).ready(function() {
                 afterInit: function () {
                     $('.catalogue-card-gallery-preview a').eq(0).addClass('active');
                 },
-                slideChange: function () {
+                slideChange: function (swiper) {
                     $('.catalogue-card-gallery-preview a.active').removeClass('active');
-                    $('.catalogue-card-gallery-preview a').eq(bigSwiper.activeIndex).addClass('active');
+                    $('.catalogue-card-gallery-preview a').eq(swiper.realIndex).addClass('active');
                 },
             },
         });
@@ -794,12 +795,12 @@ $(document).ready(function() {
         if (curType == 'tights') {
 
             if (paramHeight) {
-                let resultHeight = 'Короткий';
+                let resultHeight = 'Короткая';
                 if (paramHeight > 69 && paramHeight <= 77) {
-                    resultHeight = 'Нормальный';
+                    resultHeight = 'Нормальная';
                 }
                 if (paramHeight > 77) {
-                    resultHeight = 'Длинный';
+                    resultHeight = 'Длинная';
                 }
                 $('.calc-result-height').html(resultHeight);
                 newLink += '&height=' + resultHeight;
@@ -853,9 +854,9 @@ $(document).ready(function() {
         } else if (curType == 'stockings') {
 
             if (paramHeight) {
-                let resultHeight = 'Короткий';
+                let resultHeight = 'Короткая';
                 if (paramHeight > 74) {
-                    resultHeight = 'Нормальный';
+                    resultHeight = 'Нормальная';
                 }
                 $('.calc-result-height').html(resultHeight);
                 newLink += '&height=' + resultHeight;
@@ -906,9 +907,9 @@ $(document).ready(function() {
         } else {
 
             if (paramHeight) {
-                let resultHeight = 'Короткий';
+                let resultHeight = 'Короткая';
                 if (paramHeight > 40) {
-                    resultHeight = 'Нормальный';
+                    resultHeight = 'Нормальная';
                 }
                 $('.calc-result-height').html(resultHeight);
                 newLink += '&height=' + resultHeight;
@@ -1391,6 +1392,7 @@ $(document).ready(function() {
         const bigSlider = $('.window-photo-slider-list')
         const bigSwiper = new Swiper(bigSlider.find('.swiper')[0], {
             slidesPerView: 1,
+            loop: true,
             navigation: {
                 prevEl: bigSlider.find('.swiper-button-prev')[0],
                 nextEl: bigSlider.find('.swiper-button-next')[0]
@@ -1421,10 +1423,10 @@ $(document).ready(function() {
                         }, 3000);
                     }
                 },
-                slideChange: function () {
+                slideChange: function (swiper) {
                     $('.window-photo-preview-list-item.active').removeClass('active');
-                    $('.window-photo-preview-list-item').eq(bigSwiper.activeIndex).addClass('active');
-                    var currentSlide = bigSwiper.activeIndex;
+                    $('.window-photo-preview-list-item').eq(swiper.realIndex).addClass('active');
+                    var currentSlide = swiper.realIndex;
                     $('.window-photo-download').attr('href', $('.window-photo-slider-list-item').eq(currentSlide).find('img').attr('data-src'));
                     $('.window-photo-social-item-link').attr('data-clipboard-text', $('.window-photo-slider-list-item').eq(currentSlide).find('img').attr('data-src'));
                     var curIMG = $('.window-photo-slider-list-item').eq(currentSlide).find('img');

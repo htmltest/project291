@@ -154,8 +154,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-button-prev"><svg><use xlink:href="images/sprite.svg#gallery-prev"></use></svg></div>
-                                <div class="swiper-button-next"><svg><use xlink:href="images/sprite.svg#gallery-next"></use></svg></div>
+                                <div class="swiper-button-prev"><svg><use xlink:href="images/sprite.svg#swiper-prev"></use></svg></div>
+                                <div class="swiper-button-next"><svg><use xlink:href="images/sprite.svg#swiper-next"></use></svg></div>
                                 <div class="swiper-pagination"></div>
                                 <div class="catalogue-item-tags">
                                     <div class="catalogue-item-tag catalogue-item-tag-new">Новинка</div>
@@ -192,14 +192,15 @@
                                             <div class="catalogue-card-detail-info-block-size"><label><input type="radio" name="size" value="T3+" disabled><span>T3+</span></label></div>
                                             <div class="catalogue-card-detail-info-block-size"><label><input type="radio" name="size" value="T4" disabled><span>T4</span></label></div>
                                         </div>
+                                        <div class="catalogue-card-detail-info-block-sizes-help"><a href="smartlegshop-08-calc.html">Подобрать размер</a></div>
                                         <div class="catalogue-card-detail-info-block-sizes-notice">Некоторые размеры в&nbsp;данный момент отсутствуют<br> <a href="#">Сообщить о&nbsp;поступлении</a> или <a href="#">Оформить предзаказ</a></div>
                                     </div>
                                     <div class="catalogue-card-detail-info-block">
                                         <div class="catalogue-card-detail-info-block-title">Длина</div>
                                         <div class="catalogue-card-detail-info-block-lengths">
-                                            <div class="catalogue-card-detail-info-block-length"><label><input type="radio" name="length" value="Длинные" checked><span>Длинные</span></label></div>
-                                            <div class="catalogue-card-detail-info-block-length"><label><input type="radio" name="length" value="Нормальные"><span>Нормальные</span></label></div>
-                                            <div class="catalogue-card-detail-info-block-length"><label><input type="radio" name="length" value="Короткие"><span>Короткие</span></label></div>
+                                            <div class="catalogue-card-detail-info-block-length"><label><input type="radio" name="length" value="Короткая" checked><span>Короткая</span></label></div>
+                                            <div class="catalogue-card-detail-info-block-length"><label><input type="radio" name="length" value="Нормальная"><span>Нормальная</span></label></div>
+                                            <div class="catalogue-card-detail-info-block-length"><label><input type="radio" name="length" value="Длинная"><span>Длинная</span></label></div>
                                         </div>
                                     </div>
                                 </div>
@@ -304,6 +305,43 @@
 
                             <!-- catalogue card add tab -->
                             <div class="catalogue-card-add-tab" data-title="Таблица размеров">
+                                <div class="calc-height">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Длина гольфов</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Короткая</td>
+                                                <td>Менее или равно 40&nbsp;см</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Нормальная</td>
+                                                <td>Более 40&nbsp;см</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Длина чулок</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Короткая</td>
+                                                <td>Менее или равно 74&nbsp;см</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Нормальная</td>
+                                                <td>Более 74&nbsp;см</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
                                 <table class="catalogue-sizes-table">
                                     <body>
                                         <tr>
@@ -428,34 +466,6 @@
                         </div>
                     </div>
                     <!-- catalogue card add END -->
-
-                    <!-- catalogue video -->
-                    <div class="catalogue-video">
-                        <h3>Полезное видео</h3>
-                        <div class="catalogue-video-list">
-                            <div class="swiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="catalogue-video-list-inner">
-                                            <a href="#" class="catalogue-video-item">
-                                                <div class="catalogue-video-item-preview"><img src="files/catalogue-video-01.jpg" alt=""></div>
-                                                <div class="catalogue-video-item-title">Как правильно снять мерки при подборе колготок Smartleg</div>
-                                            </a>
-                                            <a href="#" class="catalogue-video-item">
-                                                <div class="catalogue-video-item-preview"><img src="files/catalogue-video-02.jpg" alt=""></div>
-                                                <div class="catalogue-video-item-title">Советы по&nbsp;надеванию</div>
-                                            </a>
-                                            <a href="#" class="catalogue-video-item">
-                                                <div class="catalogue-video-item-preview"><img src="files/catalogue-video-03.jpg" alt=""></div>
-                                                <div class="catalogue-video-item-title">Мы&nbsp;&mdash; Smartleg</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- catalogue video END -->
 
                     <!-- catalogue others -->
                     <div class="catalogue-others">
@@ -583,6 +593,34 @@
                         </div>
                     </div>
                     <!-- catalogue others END -->
+
+                    <!-- catalogue video -->
+                    <div class="catalogue-video">
+                        <h3>Полезное видео</h3>
+                        <div class="catalogue-video-list">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="catalogue-video-list-inner">
+                                            <a href="#" class="catalogue-video-item">
+                                                <div class="catalogue-video-item-preview"><img src="files/catalogue-video-01.jpg" alt=""></div>
+                                                <div class="catalogue-video-item-title">Как правильно снять мерки при подборе колготок Smartleg</div>
+                                            </a>
+                                            <a href="#" class="catalogue-video-item">
+                                                <div class="catalogue-video-item-preview"><img src="files/catalogue-video-02.jpg" alt=""></div>
+                                                <div class="catalogue-video-item-title">Советы по&nbsp;надеванию</div>
+                                            </a>
+                                            <a href="#" class="catalogue-video-item">
+                                                <div class="catalogue-video-item-preview"><img src="files/catalogue-video-03.jpg" alt=""></div>
+                                                <div class="catalogue-video-item-title">Мы&nbsp;&mdash; Smartleg</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- catalogue video END -->
 
                 </div>
                 <!-- container END -->
