@@ -198,7 +198,7 @@ li > ol > li {margin:5px 0}
 }
 .form-input.password-view .form-input-password-view svg {display:none}
 .form-input-password-view svg:nth-child(2) {display:none}
-.form-input.password-view .form-input-password-view svg:nth-child(2) {display:block}
+.form-input.password-view .form-input-password-view svg:nth-child(2) {display:block; fill:#000000}
 
 .form-select {position:relative; margin:20px 0}
 .form-select select {position:relative; border:1px solid #ECECEE; font:300 16px/24px Arial, sans-serif; color:rgba(0, 0, 0, 0.8); vertical-align:top; margin:0; padding:22px 15px 5px 15px; width:100%; height:53px; box-sizing:border-box; outline:none; border-radius:0; background:#FFFFFF; -webkit-appearance:none; transition:border-color 0.2s}
@@ -890,17 +890,18 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
 .catalogue-item-tag {padding:5px 10px}
 .catalogue-item-tag-new {background:#00A846}
 .catalogue-item-tag-discount {background:#F24000}
+.catalogue-item-tag-reduction {background:#866857}
 .catalogue-item-tag-event {background:#910071}
-.catalogue-item-content {display:flex; align-items:flex-start; justify-content:space-between; gap:0 20px}
+.catalogue-item-content {display:flex; flex-direction:column-reverse; gap:5px 0}
 .catalogue-item-info {display:flex; flex-direction:column; gap:5px 0}
 .catalogue-item-title {font-weight:500; font-size:16px; line-height:1.5em; letter-spacing:-0.01em; color:#000000}
 .catalogue-item-color {display:flex; align-items:center; gap:10px; flex-wrap:wrap; color:rgba(0, 0, 0, 0.6)}
 .catalogue-item-color-img {min-width:18px; max-width:18px}
 .catalogue-item-color-img img {display:block; width:100%}
 .catalogue-item-buy {display:flex; align-items:center; gap:0 10px; white-space:nowrap}
-.catalogue-item-price-old {font-weight:normal; font-size:12px; line-height:1.5em; color:rgba(0, 0, 0, 0.5); letter-spacing:0.05em; text-decoration:line-through}
-.catalogue-item-price {font-weight:500; color:#000000}
-.catalogue-item-cart {cursor:pointer; min-width:24px; max-width:24px}
+.catalogue-item-price-old {order:1; font-weight:normal; font-size:12px; line-height:1.5em; color:rgba(0, 0, 0, 0.5); letter-spacing:0.05em; text-decoration:line-through}
+.catalogue-item-price {order:0; font-weight:500; color:#000000}
+.catalogue-item-cart {order:2; cursor:pointer; min-width:24px; flex-grow:1; display:flex; justify-content:flex-end}
 .catalogue-item-cart svg {display:block; width:24px; height:24px; fill:#866857; transition:fill 0.2s}
 @media (min-width:1200px) {
     .catalogue-item-cart:hover svg {fill:#000000}
@@ -1487,10 +1488,28 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
 .lk-profile {max-width:480px; margin:40px 0 0 0}
 .lk-profile-change-password-link {margin:-15px 0 20px 0; text-align:right}
 
+.lk-profile-password-template {display:none}
+.lk-profile-password-fields {background:#F9F9F9; padding:20px; margin:0 0 40px 0}
+.lk-profile-password-fields *:first-child {margin-top:0}
+.lk-profile-password-ctrl {display:flex; align-items:center; justify-content:space-between}
+
+.lk-profile-password-message {margin:20px 0; border-width:1px; border-style:solid; padding:20px; position:relative}
+.lk-profile-password-message.error {background:rgba(242, 77, 51, 0.1); border-color:#F24D33}
+.lk-profile-password-message.success {background:rgba(111, 156, 70, 0.1); border-color:#6F9C46}
+.lk-profile-password-message-title {font-weight:normal; font-size:20px; line-height:1em; margin:0 44px 0 0}
+.lk-profile-password-message.error .lk-profile-password-message-title {color:#F24D33}
+.lk-profile-password-message.success .lk-profile-password-message-title {color:#6F9C46}
+.lk-profile-password-message-text {margin:9px 0 0 0}
+.lk-profile-password-message-close {position:absolute; right:20px; top:20px}
+.lk-profile-password-message-close svg {display:block; width:24px; height:24px; fill:rgba(28, 27, 31, 0.5); transition:fill 0.2s}
+@media (min-width:1200px) {
+    .lk-profile-password-message-close:hover svg {fill:rgba(28, 27, 31, 1)}
+}
+
 .lk-dashboard {margin:40px 0 0 0; display:flex; gap:0 20px}
 .lk-dashboard a {display:flex; flex-direction:column; flex:1; justify-content:space-between; padding:20px; background:#F7F7F4; transition:background 0.2s, color 0.2s; min-height:289px}
 @media (min-width:1200px) {
-    .lk-dashboard a:hover {background:#000000; color:#FFFFFF}
+    .lk-dashboard a:hover {background:#6E4A35; color:#FFFFFF}
 }
 .lk-dashboard-item-header {display:flex; align-items:flex-start; justify-content:flex-end; flex-grow:1}
 .lk-dashboard-item-title {margin:10px 0 0 0; font-weight:normal; font-size:24px; line-height:29px; letter-spacing:0}
@@ -1498,6 +1517,10 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
 .lk-dashboard-item-icon svg {display:block; width:54px; height:54px; fill:#866857}
 .lk-dashboard-item-text {margin:10px 0 0 0}
 .lk-dashboard-item-text span {font-weight:500}
+.lk-dashboard-discount+.lk-dashboard {margin:20px 0 0 0}
+.lk-dashboard-discount a {min-width:calc(50% - 10px); max-width:calc(50% - 10px); min-height:126px; position:relative; align-items:flex-start; justify-content:center}
+.lk-dashboard-discount .lk-dashboard-item-header {position:absolute; right:20px; top:20px}
+.lk-dashboard-discount a .lk-dashboard-item-title {margin:0}
 
 @media (max-width:1199px) {
     .lk-dashboard {flex-direction:column; gap:20px 0}
@@ -1505,6 +1528,9 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
     .lk-dashboard-item-title {font-size:20px; line-height:24px}
     .lk-dashboard-item-icon {min-width:36px; max-width:36px; height:36px}
     .lk-dashboard-item-icon svg {width:24px; height:24px}
+    .lk-dashboard-discount a {min-width:0; max-width:none; min-height:0; justify-content:space-between; align-items:stretch}
+    .lk-dashboard-discount .lk-dashboard-item-header {position:relative; right:auto; top:auto}
+    .lk-dashboard-discount a .lk-dashboard-item-title {margin:10px 0 0 0}
 }
 
 .lk-history-ctrl {margin:40px 0 0 0; display:flex; gap:0 10px}

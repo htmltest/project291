@@ -111,6 +111,7 @@
                                 <li class="active"><a href="#">Личные данные</a></li>
                                 <li><a href="#">Заказы</a></li>
                                 <li><a href="#">История заказов</a></li>
+                                <li><a href="#">Товары с уценкой</a></li>
                                 <li><a href="#">Выйти</a></li>
                             </ul>
                         </div>
@@ -127,10 +128,48 @@
                                     <div class="form-input"><span class="form-input-label">Отчество</span><input type="text" name="middlename" value="" disabled></div>
                                     <div class="form-input"><span class="form-input-label">Мобильный телефон <em>*</em></span><input type="text" name="phone" value="+7 915 123–45–67" class="required phoneRU" disabled></div>
                                     <div class="form-input"><span class="form-input-label">Электронная почта <em>*</em></span><input type="text" name="email" value="smartlegclub@innothera.com" class="required email" disabled></div>
-                                    <div class="form-input"><span class="form-input-label">Пароль <em>*</em></span><input type="password" name="password" value="password" class="required" id="password" disabled><a href="#" class="form-input-password-view"><svg><use xlink:href="images/sprite.svg#password-view"></use></svg><svg><use xlink:href="images/sprite.svg#password-notview"></use></svg></a></div>
-                                    <div class="lk-profile-change-password-link"><a href="#">Сменить пароль</a></div>
+                                    <div class="lk-profile-password">
+                                        <div class="form-input"><span class="form-input-label">Пароль <em>*</em></span><input type="password" name="password" value="password" disabled><a href="#" class="form-input-password-view"><svg><use xlink:href="images/sprite.svg#password-view"></use></svg><svg><use xlink:href="images/sprite.svg#password-notview"></use></svg></a></div>
+                                        <div class="lk-profile-change-password-link"><a href="#">Сменить пароль</a></div>
+                                    </div>
                                     <div class="form-submit"><button type="submit" class="btn" disabled>Сохранить</button></div>
                                 </form>
+                            </div>
+                            <div class="lk-profile-password-template lk-profile-password-template-default">
+                                <div class="form-input"><span class="form-input-label">Пароль <em>*</em></span><input type="password" name="password" value="password" disabled><a href="#" class="form-input-password-view"><svg><use xlink:href="images/sprite.svg#password-view"></use></svg><svg><use xlink:href="images/sprite.svg#password-notview"></use></svg></a></div>
+                                <div class="lk-profile-change-password-link"><a href="#">Сменить пароль</a></div>
+                            </div>
+                            <div class="lk-profile-password-template lk-profile-password-template-active">
+                                <div class="lk-profile-password-fields">
+                                    <div class="form-input"><span class="form-input-label">Текущий пароль</span><input type="password" name="oldpassword" value="" class="required"><a href="#" class="form-input-password-view"><svg><use xlink:href="images/sprite.svg#password-view"></use></svg><svg><use xlink:href="images/sprite.svg#password-notview"></use></svg></a></div>
+                                    <div class="form-input"><span class="form-input-label">Новый пароль</span><input type="password" name="password" value="" class="required" id="password"><a href="#" class="form-input-password-view"><svg><use xlink:href="images/sprite.svg#password-view"></use></svg><svg><use xlink:href="images/sprite.svg#password-notview"></use></svg></a></div>
+                                    <div class="form-input"><span class="form-input-label">Поовторите пароль</span><input type="password" name="repassword" value="" class="required" equalTo="#password"><a href="#" class="form-input-password-view"><svg><use xlink:href="images/sprite.svg#password-view"></use></svg><svg><use xlink:href="images/sprite.svg#password-notview"></use></svg></a></div>
+                                    <div class="lk-profile-password-ctrl">
+                                        <a href="#" class="lk-profile-password-cancel">Отменить</a>
+                                        <a href="ajax/changepassword.json" class="btn btn-mini lk-profile-password-submit">Изменить пароль</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lk-profile-password-template lk-profile-password-template-fail">
+                                <div class="lk-profile-password-message error">
+                                    <div class="lk-profile-password-message-title">Не получилось изменить пароль</div>
+                                    <div class="lk-profile-password-message-text">Что-то пошло не так, мы это обязательно починим. Повторите попытку позднее.</div>
+                                    <a href="#" class="lk-profile-password-message-close"><svg><use xlink:href="images/sprite.svg#lk-profile-password-message-close"></use></svg></a>
+                                </div>
+                            </div>
+                            <div class="lk-profile-password-template lk-profile-password-template-error">
+                                <div class="lk-profile-password-message error">
+                                    <div class="lk-profile-password-message-title">Не получилось изменить пароль</div>
+                                    <div class="lk-profile-password-message-text"></div>
+                                    <a href="#" class="lk-profile-password-message-close"><svg><use xlink:href="images/sprite.svg#lk-profile-password-message-close"></use></svg></a>
+                                </div>
+                            </div>
+                            <div class="lk-profile-password-template lk-profile-password-template-success">
+                                <div class="lk-profile-password-message success">
+                                    <div class="lk-profile-password-message-title">Пароль успешно изменен</div>
+                                    <div class="lk-profile-password-message-text">Для входа в&nbsp;систему используйте новый пароль</div>
+                                    <a href="#" class="lk-profile-password-message-close"><svg><use xlink:href="images/sprite.svg#lk-profile-password-message-close"></use></svg></a>
+                                </div>
                             </div>
                         </div>
 

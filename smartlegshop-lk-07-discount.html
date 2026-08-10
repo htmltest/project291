@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>SmartLeg</title>
+
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="js/select2/select2.css">
+        <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css">
+        <link rel="stylesheet" href="js/nouislider/nouislider.css" />
+
+        <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width">
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+
+            <!-- wrapper inner -->
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="container">
+                        <div class="header-inner">
+                            <div class="header-logo"><a href="#"><img src="images/logo.svg" alt=""></a></div>
+                            <nav class="header-menu">
+                                <ul>
+                                    <li><a href="#">Каталог товаров</a></li>
+                                    <li><a href="#">Подобрать размер</a></li>
+                                    <li><a href="#">Почему SMARTLEG&reg;</a></li>
+                                    <li><a href="#">Контакты</a></li>
+                                </ul>
+                            </nav>
+                            <div class="header-right">
+                                <div class="header-search">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-search"></use></svg><span>поиск</span></a>
+                                </div>
+                                <div class="header-user">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg><span>Войти</span></a>
+                                </div>
+                                <div class="header-cart">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-cart"></use></svg><span>корзина</span></a>
+                                </div>
+                                <div class="mobile-menu-link">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#mobile-menu-link"></use></svg><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="header-mobile">
+                    <div class="header-mobile-inner">
+                        <div class="header-mobile-search">
+                            <form action="#" method="post">
+                                <div class="form-input"><span class="form-input-label">Поиск</span><input type="text" name="search" value=""></div>
+                                <div class="header-mobile-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#icon-search"></use></svg></button></div>
+                            </form>
+                        </div>
+                        <div class="header-mobile-menu">
+                            <ul>
+                                <li><a href="#">Каталог товаров</a></li>
+                                <li><a href="#">Подобрать размер</a></li>
+                                <li><a href="#">Почему SMARTLEG&reg;</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </div>
+                        <div class="header-mobile-add">
+                            <ul>
+                                <li><a href="#">Личный кабинет</a></li>
+                                <li><a href="#">Корзина<span>2</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="header-mobile-contacts">
+                            <div class="header-mobile-consult">
+                                <div class="header-mobile-consult-title">Консультация и&nbsp;заказ продукции SMARTLEG&reg; для&nbsp;медицинских работников:</div>
+                                <div class="header-mobile-consult-phone"><a href="tel:+74956400458">+7 (495) 640-04-58</a></div>
+                            </div>
+
+                            <div class="header-mobile-quality">
+                                <div class="header-mobile-quality-title">Для&nbsp;вопросов по&nbsp;качеству и&nbsp;использованию продукции SMARTLEG&reg;:</div>
+                                <div class="header-mobile-quality-email"><a href="mailto:smartlegclub@innothera.com">smartlegclub@innothera.com</a></div>
+                            </div>
+
+                            <div class="header-mobile-social">
+                                <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-vk"></use></svg></a>
+                                <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-max"></use></svg></a>
+                                <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-rt"></use></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- container -->
+                <div class="container">
+
+                    <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SMARTLEG&reg;" itemprop="item"><span itemprop="name">SMARTLEG&reg;</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="История заказов" itemprop="item"><span itemprop="name">История заказов</span><meta itemprop="position" content="2" /></div></div></div>
+                    <div class="breadcrumbs-mobile"><a href="#"><span><svg><use xlink:href="images/sprite.svg#breadcrumbs-mobile"></use></svg></span>SMARTLEG&reg;</a></div>
+
+                    <!-- lk container -->
+                    <div class="lk-container">
+
+                        <div class="lk-menu">
+                            <ul>
+                                <li><a href="#">Мой кабинет</a></li>
+                                <li><a href="#">Личные данные</a></li>
+                                <li><a href="#">Заказы</a></li>
+                                <li><a href="#">История заказов</a></li>
+                                <li class="active"><a href="#">Товары с уценкой</a></li>
+                                <li><a href="#">Выйти</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="lk-content">
+
+                            <h1>Товары с уценкой</h1>
+
+                            <!-- catalogue filter -->
+                            <div class="catalogue-filter">
+                                <form action="#" method="post">
+                                    <div class="catalogue-filter-mobile-link"><a href="#">Фильтр</a></div>
+                                    <div class="catalogue-filter-params">
+
+                                        <div class="catalogue-filter-params-header-mobile">
+                                            <div class="catalogue-filter-params-title-mobile">Фильтр</div>
+                                            <div class="catalogue-filter-params-mobile-close"><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></div>
+                                        </div>
+
+                                        <div class="catalogue-filter-params-list">
+                                            <div class="catalogue-filter-param">
+                                                <div class="catalogue-filter-param-title">
+                                                    <div class="catalogue-filter-param-title-text">Прозрачность</div>
+                                                    <div class="catalogue-filter-param-title-count"></div>
+                                                    <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                                    <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                                </div>
+                                                <div class="catalogue-filter-param-selected-mobile"></div>
+                                                <div class="catalogue-filter-param-content">
+                                                    <div class="catalogue-filter-param-container">
+                                                        <div class="catalogue-filter-param-header-mobile">
+                                                            <div class="catalogue-filter-param-header-mobile-title">Прозрачность</div>
+                                                            <div class="catalogue-filter-param-header-mobile-close"><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-content-inner">
+                                                            <div class="catalogue-filter-param-list">
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="opacity[0]"><span>Прозрачные</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="opacity[1]"><span>Полупрозрачные</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="opacity[2]"><span>Непрозрачные</span></label></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-ctrl-mobile">
+                                                            <a href="#" class="catalogue-filter-param-clear">Очистить все</a>
+                                                            <button class="btn catalogue-filter-param-apply">Применить</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="catalogue-filter-param">
+                                                <div class="catalogue-filter-param-title">
+                                                    <div class="catalogue-filter-param-title-text">Цвет</div>
+                                                    <div class="catalogue-filter-param-title-count"></div>
+                                                    <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                                    <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                                </div>
+                                                <div class="catalogue-filter-param-selected-mobile"></div>
+                                                <div class="catalogue-filter-param-content">
+                                                    <div class="catalogue-filter-param-container">
+                                                        <div class="catalogue-filter-param-header-mobile">
+                                                            <div class="catalogue-filter-param-header-mobile-title">Цвет</div>
+                                                            <div class="catalogue-filter-param-header-mobile-close"><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-content-inner">
+                                                            <div class="catalogue-filter-param-list">
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Radieuse]"><span><img src="files/catalogue-color-03.svg" alt="">Светлый телесный</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Rayonnante]"><span><img src="files/catalogue-color-01.svg" alt="">Сияющий бежевый</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Irresistible]"><span><img src="files/catalogue-color-02.svg" alt="">Неотразимый чёрный</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Mysterieuse]"><span><img src="files/catalogue-color-04.svg" alt="">Мистический чёрный</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Imperiale]"><span><img src="files/catalogue-color-05.svg" alt="">Королевский голубой</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Audacieuse]"><span><img src="files/catalogue-color-06.svg" alt="">Дерзкий бордо</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="color[Delicieuse]"><span><img src="files/catalogue-color-07.svg" alt="">Вкусная карамель</span></label></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-ctrl-mobile">
+                                                            <a href="#" class="catalogue-filter-param-clear">Очистить все</a>
+                                                            <button class="btn catalogue-filter-param-apply">Применить</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="catalogue-filter-param">
+                                                <div class="catalogue-filter-param-title">
+                                                    <div class="catalogue-filter-param-title-text">Длина</div>
+                                                    <div class="catalogue-filter-param-title-count"></div>
+                                                    <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                                    <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                                </div>
+                                                <div class="catalogue-filter-param-selected-mobile"></div>
+                                                <div class="catalogue-filter-param-content">
+                                                    <div class="catalogue-filter-param-container">
+                                                        <div class="catalogue-filter-param-header-mobile">
+                                                            <div class="catalogue-filter-param-header-mobile-title">Длина</div>
+                                                            <div class="catalogue-filter-param-header-mobile-close"><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-content-inner">
+                                                            <div class="catalogue-filter-param-list">
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="length[Длинная]"><span>Длинная</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="length[Нормальная]"><span>Нормальная</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="length[Короткая]"><span>Короткая</span></label></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-ctrl-mobile">
+                                                            <a href="#" class="catalogue-filter-param-clear">Очистить все</a>
+                                                            <button class="btn catalogue-filter-param-apply">Применить</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="catalogue-filter-param">
+                                                <div class="catalogue-filter-param-title">
+                                                    <div class="catalogue-filter-param-title-text">Размер</div>
+                                                    <div class="catalogue-filter-param-title-count"></div>
+                                                    <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                                    <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                                </div>
+                                                <div class="catalogue-filter-param-selected-mobile"></div>
+                                                <div class="catalogue-filter-param-content">
+                                                    <div class="catalogue-filter-param-container">
+                                                        <div class="catalogue-filter-param-header-mobile">
+                                                            <div class="catalogue-filter-param-header-mobile-title">Размер</div>
+                                                            <div class="catalogue-filter-param-header-mobile-close"><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-content-inner">
+                                                            <div class="catalogue-filter-param-list">
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T0]"><span>T0</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T1]"><span>T1</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T1+]"><span>T1+</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T2]"><span>T2</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T2+]"><span>T2+</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T3]"><span>T3</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T3+]"><span>T3+</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="size[T4]"><span>T4</span></label></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-ctrl-mobile">
+                                                            <a href="#" class="catalogue-filter-param-clear">Очистить все</a>
+                                                            <button class="btn catalogue-filter-param-apply">Применить</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="catalogue-filter-param">
+                                                <div class="catalogue-filter-param-title">
+                                                    <div class="catalogue-filter-param-title-text">Цена</div>
+                                                    <div class="catalogue-filter-param-title-count"></div>
+                                                    <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                                    <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                                </div>
+                                                <div class="catalogue-filter-param-selected-mobile"></div>
+                                                <div class="catalogue-filter-param-content">
+                                                    <div class="catalogue-filter-param-container">
+                                                        <div class="catalogue-filter-param-header-mobile">
+                                                            <div class="catalogue-filter-param-header-mobile-title">Цена</div>
+                                                            <div class="catalogue-filter-param-header-mobile-close"><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-content-inner">
+                                                            <div class="catalogue-filter-slider">
+                                                                <div class="form-slider">
+                                                                    <div class="form-slider-hints">
+                                                                        <div class="form-slider-hints-item form-slider-hints-from"><span></span> ₽</div>
+                                                                        <div class="form-slider-hints-item form-slider-hints-to"><span></span> ₽</div>
+                                                                    </div>
+                                                                    <input type="hidden" name="priceFrom" value="1000" class="form-slider-from">
+                                                                    <input type="hidden" name="priceTo" value="20000" class="form-slider-to">
+                                                                    <div class="form-slider-range">
+                                                                        <div class="form-slider-range-inner"></div>
+                                                                    </div>
+                                                                    <div class="form-slider-params">
+                                                                        <div class="form-slider-min">1000</div>
+                                                                        <div class="form-slider-max">20000</div>
+                                                                        <div class="form-slider-step">1</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-ctrl-mobile">
+                                                            <a href="#" class="catalogue-filter-param-clear">Очистить все</a>
+                                                            <button class="btn catalogue-filter-param-apply">Применить</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="catalogue-filter-param">
+                                                <div class="catalogue-filter-param-title">
+                                                    <div class="catalogue-filter-param-title-text">Наличие</div>
+                                                    <div class="catalogue-filter-param-title-count"></div>
+                                                    <div class="catalogue-filter-param-title-arrow"><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                                    <div class="catalogue-filter-param-title-remove"><svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                                </div>
+                                                <div class="catalogue-filter-param-selected-mobile"></div>
+                                                <div class="catalogue-filter-param-content">
+                                                    <div class="catalogue-filter-param-container">
+                                                        <div class="catalogue-filter-param-header-mobile">
+                                                            <div class="catalogue-filter-param-header-mobile-title">Наличие</div>
+                                                            <div class="catalogue-filter-param-header-mobile-close"><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-content-inner">
+                                                            <div class="catalogue-filter-param-list">
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="availability[yes]"><span>В наличии</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="availability[preorder]"><span>Под заказ</span></label></div>
+                                                                <div class="catalogue-filter-param-item"><label><input type="checkbox" name="availability[no]"><span>Нет в наличии</span></label></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="catalogue-filter-param-ctrl-mobile">
+                                                            <a href="#" class="catalogue-filter-param-clear">Очистить все</a>
+                                                            <button class="btn catalogue-filter-param-apply">Применить</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="catalogue-filter-params-count">В наличие (<span>50</span>)</div>
+
+                                            <div class="catalogue-filter-params-clear">Сбросить все<svg><use xlink:href="images/sprite.svg#catalogue-filter-param-remove"></use></svg></div>
+                                        </div>
+
+                                        <div class="catalogue-filter-params-ctrl-mobile">
+                                            <button class="btn btn-border catalogue-filter-params-mobile-cancel">Отменить</button>
+                                            <button class="btn catalogue-filter-params-mobile-apply">Применить</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="catalogue-sort">
+                                        <div class="catalogue-sort-select">
+                                            <div class="catalogue-sort-current"><span>По популярности</span><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                            <div class="catalogue-sort-list">
+                                                <div class="catalogue-sort-list-container">
+                                                    <div class="catalogue-sort-list-header-mobile">
+                                                        <div class="catalogue-sort-list-header-mobile-title">Сортировать</div>
+                                                        <div class="catalogue-sort-list-header-mobile-close"><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></div>
+                                                    </div>
+                                                    <div class="catalogue-sort-list-content-inner">
+                                                        <div class="catalogue-sort-item active" data-value="popular">По популярности</div>
+                                                        <div class="catalogue-sort-item" data-value="priceup">По возрастанию цены</div>
+                                                        <div class="catalogue-sort-item" data-value="pricedown">По убыванию цены</div>
+                                                        <div class="catalogue-sort-item" data-value="name">По названию</div>
+                                                    </div>
+                                                    <div class="catalogue-sort-list-ctrl-mobile">
+                                                        <button class="btn btn-border-light catalogue-sort-list-mobile-cancel">Отменить</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- catalogue filter END -->
+
+                            <!-- catalogue list -->
+                            <div class="catalogue-list">
+
+                                <!-- catalogue item -->
+                                <div class="catalogue-item">
+                                    <a href="#" class="catalogue-item-inner">
+                                        <div class="catalogue-item-preview">
+                                            <div class="catalogue-item-preview-slides">
+                                                <div class="catalogue-item-preview-slide"><img src="files/catalogue-05.jpg" alt=""></div>
+                                            </div>
+                                        </div>
+                                        <div class="catalogue-item-tags">
+                                            <div class="catalogue-item-tag catalogue-item-tag-reduction">уценка</div>
+                                        </div>
+                                        <div class="catalogue-item-content">
+                                            <div class="catalogue-item-info">
+                                                <div class="catalogue-item-title">Колготки медицинские компрессионные SMARTLEG&reg; полупрозрачные</div>
+                                                <div class="catalogue-item-color">
+                                                    <div class="catalogue-item-color-img"><img src="files/catalogue-color-02.svg" alt=""></div>
+                                                    <div class="catalogue-item-color-rus">Неотрозимый черный</div>
+                                                </div>
+                                            </div>
+                                            <div class="catalogue-item-buy">
+                                                <div class="catalogue-item-price-old">17000 ₽</div>
+                                                <div class="catalogue-item-price">12 000 ₽</div>
+                                                <div class="catalogue-item-cart"><svg><use xlink:href="images/sprite.svg#icon-cart-add"></use></svg></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- catalogue item END -->
+
+                                <!-- catalogue item -->
+                                <div class="catalogue-item">
+                                    <a href="#" class="catalogue-item-inner">
+                                        <div class="catalogue-item-preview">
+                                            <div class="catalogue-item-preview-slides">
+                                                <div class="catalogue-item-preview-slide"><img src="files/catalogue-06.jpg" alt=""></div>
+                                            </div>
+                                        </div>
+                                        <div class="catalogue-item-tags">
+                                            <div class="catalogue-item-tag catalogue-item-tag-reduction">уценка</div>
+                                        </div>
+                                        <div class="catalogue-item-content">
+                                            <div class="catalogue-item-info">
+                                                <div class="catalogue-item-title">Колготки медицинские компрессионные SMARTLEG&reg; полупрозрачные</div>
+                                                <div class="catalogue-item-color">
+                                                    <div class="catalogue-item-color-img"><img src="files/catalogue-color-02.svg" alt=""></div>
+                                                    <div class="catalogue-item-color-rus">Неотрозимый черный</div>
+                                                </div>
+                                            </div>
+                                            <div class="catalogue-item-buy">
+                                                <div class="catalogue-item-price-old">17000 ₽</div>
+                                                <div class="catalogue-item-price">12 000 ₽</div>
+                                                <div class="catalogue-item-cart"><svg><use xlink:href="images/sprite.svg#icon-cart-add"></use></svg></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- catalogue item END -->
+
+                                <!-- catalogue item -->
+                                <div class="catalogue-item">
+                                    <a href="#" class="catalogue-item-inner">
+                                        <div class="catalogue-item-preview">
+                                            <div class="catalogue-item-preview-slides">
+                                                <div class="catalogue-item-preview-slide"><img src="files/catalogue-07.jpg" alt=""></div>
+                                            </div>
+                                        </div>
+                                        <div class="catalogue-item-tags">
+                                            <div class="catalogue-item-tag catalogue-item-tag-reduction">уценка</div>
+                                        </div>
+                                        <div class="catalogue-item-content">
+                                            <div class="catalogue-item-info">
+                                                <div class="catalogue-item-title">Чулки медицинские компрессионные SMARTLEG&reg; полупрозрачные</div>
+                                                <div class="catalogue-item-color">
+                                                    <div class="catalogue-item-color-img"><img src="files/catalogue-color-02.svg" alt=""></div>
+                                                    <div class="catalogue-item-color-rus">Неотрозимый черный</div>
+                                                </div>
+                                            </div>
+                                            <div class="catalogue-item-buy">
+                                                <div class="catalogue-item-price-old">17000 ₽</div>
+                                                <div class="catalogue-item-price">12 000 ₽</div>
+                                                <div class="catalogue-item-cart"><svg><use xlink:href="images/sprite.svg#icon-cart-add"></use></svg></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- catalogue item END -->
+
+                                <!-- catalogue item -->
+                                <div class="catalogue-item">
+                                    <a href="#" class="catalogue-item-inner">
+                                        <div class="catalogue-item-preview">
+                                            <div class="catalogue-item-preview-slides">
+                                                <div class="catalogue-item-preview-slide"><img src="files/catalogue-08.jpg" alt=""></div>
+                                            </div>
+                                        </div>
+                                        <div class="catalogue-item-tags">
+                                            <div class="catalogue-item-tag catalogue-item-tag-reduction">уценка</div>
+                                        </div>
+                                        <div class="catalogue-item-content">
+                                            <div class="catalogue-item-info">
+                                                <div class="catalogue-item-title">Колготки медицинские компрессионные SMARTLEG&reg; полупрозрачные</div>
+                                                <div class="catalogue-item-color">
+                                                    <div class="catalogue-item-color-img"><img src="files/catalogue-color-02.svg" alt=""></div>
+                                                    <div class="catalogue-item-color-rus">Неотрозимый черный</div>
+                                                </div>
+                                            </div>
+                                            <div class="catalogue-item-buy">
+                                                <div class="catalogue-item-price-old">17000 ₽</div>
+                                                <div class="catalogue-item-price">12 000 ₽</div>
+                                                <div class="catalogue-item-cart"><svg><use xlink:href="images/sprite.svg#icon-cart-add"></use></svg></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- catalogue item END -->
+
+                                <!-- catalogue item -->
+                                <div class="catalogue-item">
+                                    <a href="#" class="catalogue-item-inner">
+                                        <div class="catalogue-item-preview">
+                                            <div class="catalogue-item-preview-slides">
+                                                <div class="catalogue-item-preview-slide"><img src="files/catalogue-09.jpg" alt=""></div>
+                                            </div>
+                                        </div>
+                                        <div class="catalogue-item-tags">
+                                            <div class="catalogue-item-tag catalogue-item-tag-reduction">уценка</div>
+                                        </div>
+                                        <div class="catalogue-item-content">
+                                            <div class="catalogue-item-info">
+                                                <div class="catalogue-item-title">Чулки медицинские компрессионные SMARTLEG&reg; полупрозрачные</div>
+                                                <div class="catalogue-item-color">
+                                                    <div class="catalogue-item-color-img"><img src="files/catalogue-color-02.svg" alt=""></div>
+                                                    <div class="catalogue-item-color-rus">Неотрозимый черный</div>
+                                                </div>
+                                            </div>
+                                            <div class="catalogue-item-buy">
+                                                <div class="catalogue-item-price-old">17000 ₽</div>
+                                                <div class="catalogue-item-price">12 000 ₽</div>
+                                                <div class="catalogue-item-cart"><svg><use xlink:href="images/sprite.svg#icon-cart-add"></use></svg></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- catalogue item END -->
+
+                                <!-- catalogue item -->
+                                <div class="catalogue-item">
+                                    <a href="#" class="catalogue-item-inner">
+                                        <div class="catalogue-item-preview">
+                                            <div class="catalogue-item-preview-slides">
+                                                <div class="catalogue-item-preview-slide"><img src="files/catalogue-10.jpg" alt=""></div>
+                                            </div>
+                                        </div>
+                                        <div class="catalogue-item-tags">
+                                            <div class="catalogue-item-tag catalogue-item-tag-reduction">уценка</div>
+                                        </div>
+                                        <div class="catalogue-item-content">
+                                            <div class="catalogue-item-info">
+                                                <div class="catalogue-item-title">Колготки медицинские компрессионные SMARTLEG&reg; полупрозрачные</div>
+                                                <div class="catalogue-item-color">
+                                                    <div class="catalogue-item-color-img"><img src="files/catalogue-color-02.svg" alt=""></div>
+                                                    <div class="catalogue-item-color-rus">Неотрозимый черный</div>
+                                                </div>
+                                            </div>
+                                            <div class="catalogue-item-buy">
+                                                <div class="catalogue-item-price-old">17000 ₽</div>
+                                                <div class="catalogue-item-price">12 000 ₽</div>
+                                                <div class="catalogue-item-cart"><svg><use xlink:href="images/sprite.svg#icon-cart-add"></use></svg></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- catalogue item END -->
+
+                            </div>
+                            <!-- catalogue list END -->
+
+                            <div class="catalogue-more"><a href="#" class="btn btn-mini btn-border-light">показать еще</a></div>
+
+                            <div class="catalogue-paging">
+                                <div class="pager">
+                                    <a href="#" class="pager-prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
+                                    <a href="#">1</a>
+                                    <a href="#">2</a>
+                                    <a href="#" class="active">3</a>
+                                    <span>...</span>
+                                    <a href="#">12</a>
+                                    <a href="#" class="pager-next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                                </div>
+
+                                <div class="page-size">
+                                    <div class="page-size-title">Показать:</div>
+                                    <div class="page-size-select">
+                                        <div class="page-size-current">по<span>9</span><svg><use xlink:href="images/sprite.svg#page-size-arrow"></use></svg></div>
+                                        <div class="page-size-list">
+                                            <div class="page-size-item">6</div>
+                                            <div class="page-size-item active">9</div>
+                                            <div class="page-size-item">12</div>
+                                            <div class="page-size-item">16</div>
+                                            <div class="page-size-item">20</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- lk container END -->
+
+                </div>
+                <!-- container END -->
+
+            </div>
+            <!-- wrapper inner END -->
+
+            <footer>
+                <div class="container">
+                    <div class="footer-container">
+                        <div class="footer-content">
+                            <div class="footer-left">
+                                <div class="footer-logo"><img src="images/logo.svg" alt=""></div>
+                                <div class="footer-user">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-user"></use></svg></a>
+                                </div>
+                                <div class="footer-cart">
+                                    <a href="#"><svg><use xlink:href="images/sprite.svg#icon-cart"></use></svg></a>
+                                </div>
+                            </div>
+
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="#">Каталог товаров</a></li>
+                                    <li><a href="#">Подобрать размер</a></li>
+                                    <li><a href="#">Почему SMARTLEG&reg;</a></li>
+                                    <li><a href="#">Возврат и обмен</a></li>
+                                    <li><a href="#">Контакты</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="footer-right">
+                                <div class="footer-consult">
+                                    <div class="footer-consult-title">Консультация и&nbsp;заказ продукции SMARTLEG&reg; для&nbsp;медицинских работников:</div>
+                                    <div class="footer-consult-phone"><a href="tel:+74956400458">+7 (495) 640-04-58</a></div>
+                                </div>
+
+                                <div class="footer-quality">
+                                    <div class="footer-quality-title">Для&nbsp;вопросов по&nbsp;качеству и&nbsp;использованию продукции SMARTLEG&reg;:</div>
+                                    <div class="footer-quality-email"><a href="mailto:smartlegclub@innothera.com">smartlegclub@innothera.com</a></div>
+                                </div>
+
+                                <div class="footer-social">
+                                    <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-vk"></use></svg></a>
+                                    <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-max"></use></svg></a>
+                                    <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#footer-social-rt"></use></svg></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer-disclamer">Имеются противопоказания. Перед применением ознакомьтесь с&nbsp;инструкцией</div>
+
+                        <div class="footer-links">
+                            <div class="footer-link"><a href="#">Карта сайта</a></div>
+                            <div class="footer-link"><a href="#">Условия использования сайта</a></div>
+                            <div class="footer-link"><a href="#">Политика в&nbsp;отношении персональных данных</a></div>
+                        </div>
+
+                        <div class="footer-sep"></div>
+
+                        <div class="footer-info">
+                            <p>Владельцем сайта smartlegclub.&nbsp;ru&nbsp;является ООО &laquo;ИННОТЕК&raquo;, которое полностью отвечает за&nbsp;его содержимое. Сайт ориентирован на&nbsp;физических и&nbsp;юридических лиц из&nbsp;России. Номера рег. удостоверений: Трикотаж медицинский компрессионный SMARTLEG&reg; РУ &#8470; РЗН 2020/9894 от&nbsp;07&nbsp;апреля 2020&nbsp;г</p>
+                            <p>Информация, размещенная на&nbsp;сайте, носит справочный характер и&nbsp;не&nbsp;может считаться консультацией медицинского работника или заменить&nbsp;ее. Для получения более подробной информации мы&nbsp;рекомендуем вам обратиться к&nbsp;специалисту. Последнее обновление: 11.11.2020&nbsp;г.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-cookie">
+                    <div class="container">
+                        <p>На&nbsp;этом сайте используются файлы cookie. Продолжая просмотр сайта, Вы&nbsp;разрешаете их&nbsp;использование.</p>
+                        <p>Представленные изображения являются ознакомительным вариантом оформления</p>
+                    </div>
+                </div>
+            </footer>
+
+            <a href="#" class="up-link"><svg><use xlink:href="images/sprite.svg#up-link"></use></svg></a>
+
+        </div>
+        <!-- wrapper END -->
+
+        <script>
+            var pathTemplate = './';
+        </script>
+
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/fileupload/jquery.ui.widget.js"></script>
+        <script src="js/fileupload/jquery.iframe-transport.js"></script>
+        <script src="js/fileupload/jquery.fileupload.js"></script>
+        <script src="js/fileupload/jquery.fileupload-ui.js"></script>
+        <script src="js/swiper/swiper-bundle.min.js"></script>
+        <script src="js/nouislider/nouislider.min.js"></script>
+        <script src="js/nouislider/wNumb.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>

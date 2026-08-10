@@ -126,6 +126,19 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('body').on('focus', '.form-input input, .form-input textarea', function() {
+        $(this).parent().addClass('focus');
+    });
+
+    $('body').on('blur', '.form-input input, .form-input textarea', function(e) {
+        $(this).parent().removeClass('focus');
+        if ($(this).val() == '') {
+            $(this).parent().removeClass('full');
+        } else {
+            $(this).parent().addClass('full');
+        }
+    });
+
     $('form').each(function() {
         initForm($(this));
     });
@@ -631,9 +644,79 @@ $(document).ready(function() {
         const curLink = $(this);
         curLink.toggleClass('active');
         if (curLink.hasClass('active')) {
-            $('.lk-profile input, .lk-profile .btn').prop('disabled', false);
+            $('.lk-profile input, .lk-profile .btn').each(function() {
+                const curField = $(this);
+                if (curField.parents().filter('.lk-profile-password').length == 0) {
+                    curField.prop('disabled', false);
+                }
+            });
         } else {
-            $('.lk-profile input, .lk-profile .btn').prop('disabled', true);
+            $('.lk-profile input, .lk-profile .btn').each(function() {
+                const curField = $(this);
+                if (curField.parents().filter('.lk-profile-password').length == 0) {
+                    curField.prop('disabled', true);
+                }
+            });
+        }
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.lk-profile-password .lk-profile-change-password-link a', function(e) {
+        $('.lk-profile-password').html($('.lk-profile-password-template-active').html());
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.lk-profile-password .lk-profile-password-cancel', function(e) {
+        $('.lk-profile-password').html($('.lk-profile-password-template-default').html());
+        $('.lk-profile-password').find('.form-input input').each(function() {
+            if ($(this).val() != '') {
+                $(this).parent().addClass('full');
+            }
+        });
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.lk-profile-password .lk-profile-password-message-close', function(e) {
+        $('.lk-profile-password').html($('.lk-profile-password-template-default').html());
+        $('.lk-profile-password').find('.form-input input').each(function() {
+            if ($(this).val() != '') {
+                $(this).parent().addClass('full');
+            }
+        });
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.lk-profile-password .lk-profile-password-submit', function(e) {
+        const curLink = $(this);
+        let isError = false;
+        let dataFields = {};
+        $('.lk-profile-password .form-input input').each(function() {
+            const curInput = $(this);
+            curInput.valid();
+            if (curInput.val() == '' || curInput.hasClass('error')) {
+                isError = true;
+            }
+            dataFields[curInput.attr('name')] =  curInput.val();
+        });
+        if (!isError) {
+            $.ajax({
+                type: 'POST',
+                url: curLink.attr('href'),
+                processData: false,
+                contentType: false,
+                dataType: 'json',
+                data: JSON.stringify(dataFields),
+                cache: false
+            }).done(function(data) {
+                if (data.status) {
+                    $('.lk-profile-password').html($('.lk-profile-password-template-success').html());
+                } else {
+                    $('.lk-profile-password').html($('.lk-profile-password-template-error').html());
+                    $('.lk-profile-password .lk-profile-password-message-text').html(data.messageError);
+                }
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                $('.lk-profile-password').html($('.lk-profile-password-template-fail').html());
+            });
         }
         e.preventDefault();
     });
@@ -1013,19 +1096,6 @@ function initForm(curForm) {
 
     curForm.find('.form-input input, .form-input textarea').each(function() {
         if ($(this).val() != '') {
-            $(this).parent().addClass('full');
-        }
-    });
-
-    curForm.find('.form-input input, .form-input textarea').focus(function() {
-        $(this).parent().addClass('focus');
-    });
-
-    curForm.find('.form-input input, .form-input textarea').blur(function(e) {
-        $(this).parent().removeClass('focus');
-        if ($(this).val() == '') {
-            $(this).parent().removeClass('full');
-        } else {
             $(this).parent().addClass('full');
         }
     });
