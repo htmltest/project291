@@ -218,7 +218,7 @@ $(document).ready(function() {
     });
 
     $('.catalogue-card-gallery').each(function() {
-        const thumbsSlider = $('.catalogue-card-gallery-preview')
+        const thumbsSlider = $('.catalogue-card-gallery-preview');
         const thumbsSwiper = new Swiper(thumbsSlider.find('.swiper')[0], {
             slidesPerView: 'auto',
             spaceBetween: 10,
@@ -229,25 +229,25 @@ $(document).ready(function() {
                 init: function() {
                     thumbsSlider.addClass('with-bottom');
                 },
-                sliderMove: function() {
-                    if (thumbsSwiper.progress > 0) {
+                sliderMove: function(swiper) {
+                    if (swiper.progress > 0) {
                         thumbsSlider.addClass('with-top');
                     } else {
                         thumbsSlider.removeClass('with-top');
                     }
-                    if (thumbsSwiper.progress >= 1) {
+                    if (swiper.progress >= 1) {
                         thumbsSlider.removeClass('with-bottom');
                     } else {
                         thumbsSlider.addClass('with-bottom');
                     }
                 },
-                transitionEnd: function() {
-                    if (thumbsSwiper.progress > 0) {
+                transitionEnd: function(swiper) {
+                    if (swiper.progress > 0) {
                         thumbsSlider.addClass('with-top');
                     } else {
                         thumbsSlider.removeClass('with-top');
                     }
-                    if (thumbsSwiper.progress >= 1) {
+                    if (swiper.progress >= 1) {
                         thumbsSlider.removeClass('with-bottom');
                     } else {
                         thumbsSlider.addClass('with-bottom');
@@ -256,7 +256,7 @@ $(document).ready(function() {
             }
         });
 
-        const bigSlider = $('.catalogue-card-gallery-big')
+        const bigSlider = $('.catalogue-card-gallery-big');
         const bigSwiper = new Swiper(bigSlider.find('.swiper')[0], {
             autoHeight: true,
             loop: true,
@@ -1450,7 +1450,7 @@ $(document).ready(function() {
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
 
-        const thumbsSlider = $('.window-photo-preview')
+        const thumbsSlider = $('.window-photo-preview');
         const thumbsSwiper = new Swiper(thumbsSlider.find('.swiper')[0], {
             slidesPerView: 'auto',
             spaceBetween: 4,
@@ -1459,7 +1459,7 @@ $(document).ready(function() {
             freeMode: true,
         });
 
-        const bigSlider = $('.window-photo-slider-list')
+        const bigSlider = $('.window-photo-slider-list');
         const bigSwiper = new Swiper(bigSlider.find('.swiper')[0], {
             slidesPerView: 1,
             loop: true,
