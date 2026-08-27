@@ -887,14 +887,12 @@ $(document).ready(function() {
                 }
                 $('.calc-result-height').html(resultHeight);
                 newLink += '&height=' + resultHeight;
-            } else {
-                let resultHeight = $('.calc-result-height').attr('data-text-default');
             }
+
+            const newSizes = [];
 
             if (paramWaist && paramHips && paramAnkle && paramHip) {
                 const sizesTightsLength = sizesTights.length;
-
-                const newSizes = [];
 
                 for (let i = 0; i < sizesTightsLength; i++) {
                     let curStatus = true;
@@ -922,16 +920,23 @@ $(document).ready(function() {
                     newSizes.forEach(function(newSize, index) {
                         newLink += '&size[' + newSize + ']=' + newSize;
                     });
-                    $('.calc-info-size').removeClass('hidden');
-                    $('.calc-info-notsize').removeClass('visible');
-                } else {
-                    $('.calc-info-size').addClass('hidden');
-                    $('.calc-info-notsize').addClass('visible');
                 }
-            } else {
+            }
+
+            if (paramHeight && newSizes.length > 0) {
                 $('.calc-info-size').removeClass('hidden');
                 $('.calc-info-notsize').removeClass('visible');
-                $('.calc-result-size').html($('.calc-result-size').attr('data-text-default'));
+                $('.calc-info-notselect').removeClass('visible');
+            }
+            if (paramHeight && (paramWaist && paramHips && paramAnkle && paramHip) && newSizes.length == 0) {
+                $('.calc-info-size').addClass('hidden');
+                $('.calc-info-notsize').addClass('visible');
+                $('.calc-info-notselect').removeClass('visible');
+            }
+            if (!paramHeight || !(paramWaist && paramHips && paramAnkle && paramHip)) {
+                $('.calc-info-size').addClass('hidden');
+                $('.calc-info-notsize').removeClass('visible');
+                $('.calc-info-notselect').addClass('visible');
             }
 
         } else if (curType == 'stockings') {
@@ -943,14 +948,12 @@ $(document).ready(function() {
                 }
                 $('.calc-result-height').html(resultHeight);
                 newLink += '&height=' + resultHeight;
-            } else {
-                let resultHeight = $('.calc-result-height').attr('data-text-default');
             }
+
+            const newSizes = [];
 
             if (paramAnkle && paramHip && paramCalf) {
                 const sizesStockingsLength = sizesStockings.length;
-
-                const newSizes = [];
 
                 for (let i = 0; i < sizesStockingsLength; i++) {
                     let curStatus = true;
@@ -975,16 +978,23 @@ $(document).ready(function() {
                     newSizes.forEach(function(newSize, index) {
                         newLink += '&size[' + newSize + ']=' + newSize;
                     });
-                    $('.calc-info-size').removeClass('hidden');
-                    $('.calc-info-notsize').removeClass('visible');
-                } else {
-                    $('.calc-info-size').addClass('hidden');
-                    $('.calc-info-notsize').addClass('visible');
                 }
-            } else {
+            }
+
+            if (paramHeight && newSizes.length > 0) {
                 $('.calc-info-size').removeClass('hidden');
                 $('.calc-info-notsize').removeClass('visible');
-                $('.calc-result-size').html($('.calc-result-size').attr('data-text-default'));
+                $('.calc-info-notselect').removeClass('visible');
+            }
+            if (paramHeight && (paramAnkle && paramHip && paramCalf) && newSizes.length == 0) {
+                $('.calc-info-size').addClass('hidden');
+                $('.calc-info-notsize').addClass('visible');
+                $('.calc-info-notselect').removeClass('visible');
+            }
+            if (!paramHeight || !(paramAnkle && paramHip && paramCalf)) {
+                $('.calc-info-size').addClass('hidden');
+                $('.calc-info-notsize').removeClass('visible');
+                $('.calc-info-notselect').addClass('visible');
             }
 
         } else {
@@ -996,14 +1006,12 @@ $(document).ready(function() {
                 }
                 $('.calc-result-height').html(resultHeight);
                 newLink += '&height=' + resultHeight;
-            } else {
-                let resultHeight = $('.calc-result-height').attr('data-text-default');
             }
+
+            const newSizes = [];
 
             if (paramAnkle && paramHip && paramCalf) {
                 const sizesStockingsLength = sizesStockings.length;
-
-                const newSizes = [];
 
                 for (let i = 0; i < sizesStockingsLength; i++) {
                     let curStatus = true;
@@ -1028,16 +1036,23 @@ $(document).ready(function() {
                     newSizes.forEach(function(newSize, index) {
                         newLink += '&size[' + newSize + ']=' + newSize;
                     });
-                    $('.calc-info-size').removeClass('hidden');
-                    $('.calc-info-notsize').removeClass('visible');
-                } else {
-                    $('.calc-info-size').addClass('hidden');
-                    $('.calc-info-notsize').addClass('visible');
                 }
-            } else {
+            }
+
+            if (paramHeight && newSizes.length > 0) {
                 $('.calc-info-size').removeClass('hidden');
                 $('.calc-info-notsize').removeClass('visible');
-                $('.calc-result-size').html($('.calc-result-size').attr('data-text-default'));
+                $('.calc-info-notselect').removeClass('visible');
+            }
+            if (paramHeight && (paramAnkle && paramHip && paramCalf) && newSizes.length == 0) {
+                $('.calc-info-size').addClass('hidden');
+                $('.calc-info-notsize').addClass('visible');
+                $('.calc-info-notselect').removeClass('visible');
+            }
+            if (!paramHeight || !(paramAnkle && paramHip && paramCalf)) {
+                $('.calc-info-size').addClass('hidden');
+                $('.calc-info-notsize').removeClass('visible');
+                $('.calc-info-notselect').addClass('visible');
             }
 
         }

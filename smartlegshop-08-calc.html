@@ -102,7 +102,7 @@
                     <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="#" title="SMARTLEG&reg;" itemprop="item"><span itemprop="name">SMARTLEG&reg;</span><meta itemprop="position" content="1" /></a></div><div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><svg><use xlink:href="images/sprite.svg#breadcrumbs"></use></svg><div title="Калькулятор размеров" itemprop="item"><span itemprop="name">Калькулятор размеров</span><meta itemprop="position" content="2" /></div></div></div>
                     <div class="breadcrumbs-mobile"><a href="#"><span><svg><use xlink:href="images/sprite.svg#breadcrumbs-mobile"></use></svg></span>SMARTLEG&reg;</a></div>
 
-                    <h1>Калькулятор размеров</h1>
+                    <h1>Подобрать размер</h1>
 
                     <!-- calc -->
                     <div class="calc">
@@ -111,7 +111,7 @@
                                 <form action="#" method="post">
                                     <div class="calc-form-col">
                                         <div class="calc-form-block">
-                                            <h3>Основное</h3>
+                                            <h3>Параметры</h3>
 
                                             <div class="form-select">
                                                 <select name="type" data-placeholder="Тип" class="calc-form-select-type">
@@ -121,7 +121,7 @@
                                                 </select>
                                             </div>
 
-                                            <div class="form-input"><span class="form-input-label">Высота</span><input type="text" name="height" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
+                                            <div class="form-input"><span class="form-input-label">Длина</span><input type="text" name="height" value="" class="inputCalcNumber"><div class="calc-form-input-unit">см</div></div>
                                         </div>
 
                                         <div class="calc-form-block calc-form-inputs-tights">
@@ -158,13 +158,17 @@
                             </div>
 
                             <div class="calc-info">
-                                <div class="calc-info-size">
+                                <div class="calc-info-size hidden">
                                     <div class="calc-info-size-title">Ваш размер:</div>
-                                    <div class="calc-info-size-value calc-result-size" data-text-default="Введите данные">Введите данные</div>
+                                    <div class="calc-info-size-value calc-result-size">Введите данные</div>
                                 </div>
-                                <div class="calc-info-size">
+                                <div class="calc-info-size hidden">
                                     <div class="calc-info-size-title">Длина</div>
-                                    <div class="calc-info-size-value calc-result-height" data-text-default="Введите данные">Введите данные</div>
+                                    <div class="calc-info-size-value calc-result-height">Введите данные</div>
+                                </div>
+                                <div class="calc-info-notselect visible">
+                                    <div class="calc-info-notselect-title">Введите данные</div>
+                                    <div class="calc-info-notselect-text">Для подбора персонального размера введите данные в&nbsp;форме справа</div>
                                 </div>
                                 <div class="calc-info-notsize">
                                     <div class="calc-info-notsize-title">Не получилось подобрать размер</div>
