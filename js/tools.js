@@ -769,35 +769,35 @@ $(document).ready(function() {
                 'waist' : 88.5,
                 'hips'  : [80, 120],
                 'hip'   : [43, 57],
-                'ankle' : [16, 19]
+                'ankle' : [15, 18]
             },
             {
                 'title' : 'Т1',
                 'waist' : 88.5,
                 'hips'  : [70, 110],
                 'hip'   : [40, 54],
-                'ankle' : [16, 19]
+                'ankle' : [19, 21]
             },
             {
                 'title' : 'Т1+',
                 'waist' : 96,
                 'hips'  : [90, 130],
-                'hip'   : [54, 66],
-                'ankle' : [19, 22]
+                'hip'   : [55, 66],
+                'ankle' : [19, 21]
             },
             {
                 'title' : 'Т2',
                 'waist' : 95,
                 'hips'  : [80, 120],
                 'hip'   : [45, 59],
-                'ankle' : [22, 25]
+                'ankle' : [22, 24]
             },
             {
                 'title' : 'Т2+',
                 'waist' : 106,
                 'hips'  : [95, 135],
-                'hip'   : [59, 71],
-                'ankle' : [22, 25]
+                'hip'   : [60, 71],
+                'ankle' : [22, 24]
             },
             {
                 'title' : 'Т3',
@@ -810,7 +810,7 @@ $(document).ready(function() {
                 'title' : 'Т3+',
                 'waist' : 120,
                 'hips'  : [115, 155],
-                'hip'   : [65, 77],
+                'hip'   : [66, 77],
                 'ankle' : [25, 28]
             },
             {
@@ -818,7 +818,7 @@ $(document).ready(function() {
                 'waist' : 129,
                 'hips'  : [110, 150],
                 'hip'   : [60, 74],
-                'ankle' : [28, 31]
+                'ankle' : [29, 31]
             }
         ];
 
@@ -827,31 +827,31 @@ $(document).ready(function() {
                 'title' : 'Т0',
                 'hip'   : [45, 57],
                 'calf'  : [28, 36],
-                'ankle' : [16, 19]
+                'ankle' : [15, 18]
             },
             {
                 'title' : 'Т1',
                 'hip'   : [42, 54],
                 'calf'  : [26, 34],
-                'ankle' : [19, 22]
+                'ankle' : [19, 21]
             },
             {
                 'title' : 'Т1+',
                 'hip'   : [54, 66],
-                'calf'  : [34, 42],
-                'ankle' : [19, 22]
+                'calf'  : [35, 42],
+                'ankle' : [19, 21]
             },
             {
                 'title' : 'Т2',
                 'hip'   : [47, 59],
                 'calf'  : [30, 38],
-                'ankle' : [22, 25]
+                'ankle' : [22, 24]
             },
             {
                 'title' : 'Т2+',
                 'hip'   : [59, 71],
-                'calf'  : [38, 46],
-                'ankle' : [22, 25]
+                'calf'  : [39, 46],
+                'ankle' : [22, 24]
             },
             {
                 'title' : 'Т3',
@@ -862,14 +862,14 @@ $(document).ready(function() {
             {
                 'title' : 'Т3+',
                 'hip'   : [65, 77],
-                'calf'  : [42, 50],
+                'calf'  : [43, 50],
                 'ankle' : [25, 28]
             },
             {
                 'title' : 'Т4',
                 'hip'   : [62, 74],
                 'calf'  : [40, 48],
-                'ankle' : [28, 31]
+                'ankle' : [29, 31]
             }
         ];
 
