@@ -1067,6 +1067,13 @@ $(document).ready(function() {
         updateCalc();
     });
 
+    $('.notice-link').click(function(e) {
+        $('.notice-content').each(function() {
+            $('html, body').animate({'scrollTop': $('.notice-content').offset().top - $('header').height()});
+        });
+        e.preventDefault();
+    });
+
 });
 
 function checkCatalogueFilter() {

@@ -25,7 +25,7 @@ iframe {border:none; max-width:100%}
 .swiper-button-next {-moz-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none}
 
 strong, b {font-weight:normal}
-sup {vertical-align:top; font-size:0.6em; line-height:2em}
+sup {vertical-align:top; font-size:0.6em; line-height:1em}
 
 h1 {margin:60px 0 20px 0; padding:0; font-weight:normal; font-size:36px; line-height:44px; letter-spacing:0; color:#000000}
 h2 {margin:40px 0 20px 0; padding:0; font-weight:normal; font-size:30px; line-height:36px; letter-spacing:0; color:#000000}
@@ -446,6 +446,7 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
 .main-welcome-content {position:absolute; left:0; top:0; right:0; padding:170px 0 0 0}
 .main-welcome-content .container {display:flex; flex-direction:column; gap:40px 0}
 .main-welcome-content h1 {margin:0; max-width:527px}
+.main-welcome-content h1 span {display:block; margin:10px 0 0 0; font-weight:300; font-size:24px; line-height:1.3em; color:rgba(0, 0, 0, 0.8)}
 .main-welcome-ctrl {position:absolute; left:0; bottom:10px; right:0; display:flex; align-items:center; justify-content:center; gap:0 40px}
 .main-welcome-ctrl .swiper-button-prev,
 .main-welcome-ctrl .swiper-button-next {width:24px; height:24px; position:relative; left:auto; top:auto; bottom:auto; right:auto; margin:0; border:none; background:transparent; border-radius:0}
@@ -473,6 +474,7 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
     .main-welcome-content {padding:100px 0 0 0}
     .main-welcome-content .container {gap:30px 0}
     .main-welcome-content h1 {max-width:none}
+    .main-welcome-content h1 span {font-size:16px; line-height:1.3em}
     .main-welcome-ctrl {left:16px; bottom:5px; right:16px}
     .main-welcome-ctrl .swiper-button-prev,
     .main-welcome-ctrl .swiper-button-next {width:20px; height:20}
@@ -682,7 +684,7 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
 .main-asqual-main-logo {display:flex; gap:0 56px}
 .main-asqual-main-logo img {height:134px}
 .main-asqual-descr {flex:1}
-.main-asqual-notice {margin:40px 0 0 0; padding:20px 0 0 0; border-top:1px solid #EFEFEF; font-size:12px; line-height:1.5em}
+.main-asqual-notice {margin:40px 0 0 0; padding:20px 0 0 0; border-top:1px solid #EFEFEF; font-size:14px; line-height:1.5em; font-style:italic; color:rgba(0, 0, 0, 0.5)}
 
 @media (max-width:1199px) {
     .main-asqual {flex-direction:column; gap:20px 0; margin:20px 0 0 0}
@@ -1432,6 +1434,11 @@ header.fixed .header-logo {min-width:101px; max-width:101px}
 @media (max-width:1199px) {
     .up-link {right:15px; bottom:15px; width:40px; height:40px}
     .up-link svg {width:16px; height:16px}
+}
+
+.smartleg-link {position:fixed; z-index:99; right:12px; top:50%; padding:12px 20px 17px 20px; background:#866857; transform:translate(50%, -50%) rotate(-90deg); transition-origin:center bottom; font-weight:normal; font-size:12px; line-height:12px; text-transform:uppercase; color:#FFFFFF; transition:right 0.2s}
+@media (min-width:1200px) {
+    .smartleg-link:hover {right:17px; color:#FFFFFF}
 }
 
 .lk-auth {max-width:480px; margin:80px auto 0 auto}
@@ -2295,3 +2302,5 @@ footer {margin:120px 0 0 0; border-top:1px solid #ECECEE}
 }
 .window-photo-slider-list .swiper-button-prev::after,
 .window-photo-slider-list .swiper-button-next::after {display:none}
+
+.notice-link {cursor:pointer}
